@@ -18,14 +18,20 @@ grids_sheet = SHEET.worksheet('grid')
 data = grids_sheet.get_all_values()
 
 def create_game_board():
+    """
+    This function writes the board on screen
+    """
     print("|%%%%%%%%%%%%%-- ICEBURG ----%%%%%%%%%%%%|")
-    print("  |A ||B ||C ||D ||E ||F ||G ||H ||I ||j |")
-    print("  +--++--++--++--++--++--++--++--++--++--+")
-    for x in range(10):
-        print(x,("|--|")*10) 
-
-
-
+    print("   |A ||B ||C ||D ||E ||F ||G ||H ||I ||j |")
+    print("   +--++--++--++--++--++--++--++--++--++--+")
+   
+    for x in range(11):
+        if x == 10:
+            """ Alows for double didgets in spacing """ 
+            print(x,("|--|")*11)
+        else:
+            print(x,"",("|--|")*11) 
+        
 create_game_board()
 
 
