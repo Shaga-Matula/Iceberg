@@ -30,15 +30,34 @@ data = grids_sheet.get_all_values()
 # print(grids_sheet.acell('b1').value)
 # print(grids_sheet.cell(1,1).value)
 
-i = 1
-o = 'b'
-b = o,i
-c = str(b)
-print(c)
 
+# i=1
+# 
 
-# while i  <= 18:
-#     grids_sheet.update_acell(('A4'),'30000000')
-#     i += i
+def create_game_array(grid_size):
+    i = 1
+    
+    alpha_var = '`' 
+    while i <= grid_size:
+        dump_num1 = bytes(alpha_var, 'utf-8')
+        dump_num2 = dump_num1[0] + 1
+        alpha_var = (chr(dump_num2))
+        i += 1
+        odin = 1
+        while odin  <= 18:
+            num_var = str(odin)
+            cell_var = str(alpha_var+num_var)
+            odin += 1
+            # print(cell_var)
+            my_array= []
+            my_array.append(cell_var)
+            print(my_array)
+            grids_sheet.update_acell(cell_var,0)
+            
+           
+        # 
 
-# grids.write(1, 0, 'ISBT DEHRADUN')
+        # return my_array
+
+create_game_array(2)
+
