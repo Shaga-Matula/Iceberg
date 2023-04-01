@@ -1,6 +1,7 @@
 import gspread
 from google.oauth2.service_account import Credentials
 import json
+import os
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -18,27 +19,54 @@ grids_sheet = SHEET.worksheet('grid')
 data = grids_sheet.get_all_values()
 
 def create_game_board():
+    os.system('cls')
     """
     This function writes the board on screen
     """
     print("|%%%%%%%%%%%%%-- ICEBURG ----%%%%%%%%%%%%|")
     print("   |A ||B ||C ||D ||E ||F ||G ||H ||I ||j |")
     print("   +--++--++--++--++--++--++--++--++--++--+")
-   
-    for x in range(11):
-        if x == 10:
-            """ Alows for double didgets in spacing """ 
-            print(x,("|--|")*11)
-        else:
-            print(x,"",("|--|")*11) 
+    
+
+
+    hits_var = [24,66,87]
+    very_near = [1,5,9]
+    miss_var = [3,7,88,22,44]
+    grid_space_counter = 0 
+    for x in range(30):
+        insert_symbol = ""
+        for y in range(10):
+            symbol= "|---|"
+            if grid_space_counter in hits_var:
+                symbol= "|-x-|"
+            if grid_space_counter in very_near:
+                symbol= "|-1-|"
+            if grid_space_counter in miss_var:
+                symbol= "|-0-|"
+            insert_symbol = insert_symbol + symbol
+            grid_space_counter = grid_space_counter + 1 
+                if x == 10:
+        #     """ Alows for double didgets in spacing """ 
+        #     print(x,("|--|")*11)
+        # else:
         
+        
+        print(x,"",insert_symbol) 
+        # print(grid_space_counter)
+
+
 create_game_board()
 
 
 
 
 
-
+        #       if x == 10:
+        #     """ Alows for double didgets in spacing """ 
+        #     print(x,("|--|")*11)
+        # else:
+        #     print(x,"",("|--|")*11) 
+        
 
 
 
