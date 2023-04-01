@@ -17,6 +17,117 @@ SHEET = GSPREAD_CLIENT.open("Iceberg")
 grids_sheet = SHEET.worksheet('grid')
 data = grids_sheet.get_all_values()
 
+def create_game_board():
+    print("|%%%%%%%%%%%%%-- ICEBURG ----%%%%%%%%%%%%|")
+    print("  |A ||B ||C ||D ||E ||F ||G ||H ||I ||j |")
+    print("  +--++--++--++--++--++--++--++--++--++--+")
+    for x in range(10):
+        print(x,("|--|")*10) 
+
+
+
+create_game_board()
+
+
+
+
+
+
+
+
+
+
+# def print_board(board):
+#     print("  A B C D E F G H")
+#     print("  +-+-+-+-+-+-+-+")
+#     row_number = 1
+#     for row in board:
+#         print("%d|%s|" % (row_number, "|".join(row)))
+#         row_number += 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # def make_playbord_in_sheet(data):
 #     """ 
@@ -34,30 +145,30 @@ data = grids_sheet.get_all_values()
 # i=1
 # 
 
-def create_game_array(grid_size):
-    i = 1
+# def create_game_array(grid_size):
+#     i = 1
     
-    alpha_var = '`' 
-    while i <= grid_size:
-        dump_num1 = bytes(alpha_var, 'utf-8')
-        dump_num2 = dump_num1[0] + 1
-        alpha_var = (chr(dump_num2))
-        i += 1
-        odin = 1
-        while odin  <= 18:
-            num_var = str(odin)
-            cell_var = str(alpha_var+num_var)
-            odin += 1
-            # print(cell_var)
-            my_array= []
-            my_array.append(cell_var)
-            print(my_array)
-            grids_sheet.update_acell(cell_var,0)
+#     alpha_var = '`' 
+#     while i <= grid_size:
+#         dump_num1 = bytes(alpha_var, 'utf-8')
+#         dump_num2 = dump_num1[0] + 1
+#         alpha_var = (chr(dump_num2))
+#         i += 1
+#         odin = 1
+#         while odin  <= 18:
+#             num_var = str(odin)
+#             cell_var = str(alpha_var+num_var)
+#             odin += 1
+#             # print(cell_var)
+#             my_array= []git ststus
+#             my_array.append(cell_var)
+#             print(my_array)
+#             grids_sheet.update_acell(cell_var,0)
             
            
-        # 
+#         # 
 
-        # return my_array
+#         # return my_array
 
-create_game_array(2)
+# create_game_array(2)
 
