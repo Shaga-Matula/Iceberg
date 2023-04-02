@@ -34,7 +34,9 @@ def create_game_board():
     miss_var = [3,7,88,22,44]
     grid_space_counter = 0 
     for x in range(30):
-        insert_symbol = ""
+        insert_symbol = " "
+        if x >= 10:
+            insert_symbol = ""
         for y in range(10):
             symbol= "|---|"
             if grid_space_counter in hits_var:
@@ -45,7 +47,11 @@ def create_game_board():
                 symbol= "|-0-|"
             insert_symbol = insert_symbol + symbol
             grid_space_counter = grid_space_counter + 1 
-                if x == 10:
+            # if x == 10:
+
+
+
+
         #     """ Alows for double didgets in spacing """ 
         #     print(x,("|--|")*11)
         # else:
