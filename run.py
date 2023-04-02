@@ -3,6 +3,9 @@ from google.oauth2.service_account import Credentials
 import json
 import os
 
+# importing the random module
+import random
+
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -19,19 +22,18 @@ grids_sheet = SHEET.worksheet('grid')
 data = grids_sheet.get_all_values()
 
 def create_game_board():
-    os.system('cls')
+    hits_var = []
+    # very_near = [1,5,9]
+    miss_var = []
     """
     This function writes the board on screen
     """
-    print("|%%%%%%%%%%%%%-- ICEBURG ----%%%%%%%%%%%%|")
-    print("   |A ||B ||C ||D ||E ||F ||G ||H ||I ||j |")
-    print("   +--++--++--++--++--++--++--++--++--++--+")
+    print("     |%%%%%%%%%%%%%--%%%  ICEBURG  %%%--%%%%%%%%%%%%|\n")
+    print("    | A || B || C || D || E || F || G || H || I || J |")
+    print("    +---++---++---++---++---++---++---++---++---++---+")
     
-
-
-    hits_var = [24,66,87]
-    very_near = [1,5,9]
-    miss_var = [3,7,88,22,44]
+   
+    
     grid_space_counter = 0 
     for x in range(30):
         insert_symbol = " "
@@ -47,125 +49,46 @@ def create_game_board():
                 symbol= "|-0-|"
             insert_symbol = insert_symbol + symbol
             grid_space_counter = grid_space_counter + 1 
-            # if x == 10:
-
-
-
-
-        #     """ Alows for double didgets in spacing """ 
-        #     print(x,("|--|")*11)
-        # else:
-        
         
         print(x,"",insert_symbol) 
-        # print(grid_space_counter)
+      
+def pick_calculate_iceberg_squares():
+    """
+    # This function will pick a random number between 1,100 thet is not in the excluded list and 
+    # return the value
+    """
+    excluded_numbers = [1,2,3,4,5,6,7,8,9,10,11,21,31,41,51,61,71,81,91,20,30,40,50,60,70,80,90,100,0]
+    random_number = random.choice([i for i in range(1, 280) if i not in excluded_numbers])
+    print(random_number)
+    return random_number
 
+def get_squares(num):
+    my_iceberg_numbers = []
+    new_num = num, num +1, num -1, num + 10, num -10, num -9, num + 9, num -11, num + 11
+    return new_num
 
+the_number = pick_calculate_iceberg_squares()
+very_near = get_squares(the_number)
+print(very_near)
+
+# print(f"THE END {the_number}")
 create_game_board()
 
 
 
 
-
-        #       if x == 10:
-        #     """ Alows for double didgets in spacing """ 
-        #     print(x,("|--|")*11)
-        # else:
-        #     print(x,"",("|--|")*11) 
-        
-
-
-
-
-# def print_board(board):
-#     print("  A B C D E F G H")
-#     print("  +-+-+-+-+-+-+-+")
-#     row_number = 1
-#     for row in board:
-#         print("%d|%s|" % (row_number, "|".join(row)))
-#         row_number += 1
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+get_num = 0
+    # print(f"This is the value before {get_num}")
+    # get_num = random.randint(1,100)
+    # print(f"This is the randam mumber {get_num}")
+    # if not get_num in exclude:
+    #     print(f"Its Not in the list {get_num} great")
+    #     return get_num
+    # else:
+    #     get_num = get_num
+    #     print(f"Yes its HEREEEEE {get_num}")
+    
+    #     # get_num = get_num.pop()
 
 
 
