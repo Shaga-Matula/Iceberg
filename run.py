@@ -34,8 +34,9 @@ def create_game_board():
     
    
     
-    grid_space_counter = 0 
-    for x in range(30):
+    grid_space_counter = 1
+    # loop will start at the 1 count for 20 more
+    for x in range(1,21):
         insert_symbol = " "
         if x >= 10:
             insert_symbol = ""
@@ -52,32 +53,43 @@ def create_game_board():
         
         print(x,"",insert_symbol) 
       
+
+top_row = [1,2,3,4,5,6,7,8,9,10]
+right_row = [10,20,30,40,50,60,70,80,90,100,110,120,130,140,150,160,170,180,190,200]
+left_row = [11,21,31,31,41,51,61,71,81,91,101,111,121,131,141,151,161,171,181,191,201]
+bottom_row = [202,203,204,205,206,207,208,209,210]
+excluded_numbers = top_row + right_row + left_row + bottom_row
+print(excluded_numbers)
 def pick_calculate_iceberg_squares():
-    """
     # This function will pick a random number between 1,100 thet is not in the excluded list and 
     # return the value
-    """
-    excluded_numbers = [1,2,3,4,5,6,7,8,9,10,11,21,31,41,51,61,71,81,91,20,30,40,50,60,70,80,90,100,0]
-    random_number = random.choice([i for i in range(1, 280) if i not in excluded_numbers])
+    # excluded_numbers = [1,2,3,4,5,6,7,8,9,10,11,21,31,41,51,61,71,81,91,20,30,40,50,60,70,80,90,100,0]
+    random_number = random.choice([i for i in range(1, 200) if i not in excluded_numbers])
     print(random_number)
     return random_number
 
 def get_squares(num):
     my_iceberg_numbers = []
-    new_num = num, num +1, num -1, num + 10, num -10, num -9, num + 9, num -11, num + 11
-    return new_num
+    new_num_box = num, num +1, num -1, num + 10, num -10, num -9, num + 9, num -11, num + 11
+    print(f"First time cal new_num {new_num_box}")
+    return new_num_box
 
-the_number = pick_calculate_iceberg_squares()
-very_near = get_squares(the_number)
-print(very_near)
+iceberg_location_number = pick_calculate_iceberg_squares()
 
-# print(f"THE END {the_number}")
+# The very_near var will hold iceberg cordanates and one surronding squair
+# These numbers must be appended to the exclusion so there are no repeates 
+very_near = get_squares(iceberg_location_number)
+print(f"This is the iceberg squair {very_near}")
+# Append the new iceberg location to excleded numbers 
+excluded_numbers.append(very_near)
+print(excluded_numbers)
+# print(f"THE END {iceberg_location_number}")
 create_game_board()
 
 
 
 
-get_num = 0
+# get_num = 0
     # print(f"This is the value before {get_num}")
     # get_num = random.randint(1,100)
     # print(f"This is the randam mumber {get_num}")
