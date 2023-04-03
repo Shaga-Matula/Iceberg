@@ -22,69 +22,83 @@ grids_sheet = SHEET.worksheet('grid')
 data = grids_sheet.get_all_values()
 
 def create_game_board():
-    hits_var = []
-    # very_near = [1,5,9]
-    miss_var = []
-    """
-    This function writes the board on screen
-    """
-    print("     |%%%%%%%%%%%%%--%%%  ICEBURG  %%%--%%%%%%%%%%%%|\n")
-    print("    | A || B || C || D || E || F || G || H || I || J |")
-    print("    +---++---++---++---++---++---++---++---++---++---+")
-    
-   
-    
-    grid_space_counter = 1
-    # loop will start at the 1 count for 20 more
-    for x in range(1,21):
-        insert_symbol = " "
-        if x >= 10:
-            insert_symbol = ""
-        for y in range(10):
-            symbol= "|---|"
-            if grid_space_counter in hits_var:
-                symbol= "|-x-|"
-            if grid_space_counter in very_near:
-                symbol= "|-1-|"
-            if grid_space_counter in miss_var:
-                symbol= "|-0-|"
-            insert_symbol = insert_symbol + symbol
-            grid_space_counter = grid_space_counter + 1 
+        hits_var = []
+        miss_var = []
+        """
+        This function writes the board on screen
+        """
+        print("     |%%%%%%%%%%%%%--%%%  ICEBURG  %%%--%%%%%%%%%%%%|\n")
+        print("    | A || B || C || D || E || F || G || H || I || J |")
+        print("    +---++---++---++---++---++---++---++---++---++---+")
+        grid_space_counter = 1
+        # loop will start at the 1 count for 20 more
+        for x in range(1,21):
+            insert_symbol = " "
+            if x >= 10:
+                insert_symbol = ""
+            for y in range(10):
+                symbol= "|---|"
+                if grid_space_counter in hits_var:
+                    symbol= "|-x-|"
+                if grid_space_counter in very_near:
+                    symbol= "|-1-|"
+                if grid_space_counter in miss_var:
+                    symbol= "|-0-|"
+                insert_symbol = insert_symbol + symbol
+                grid_space_counter = grid_space_counter + 1 
+            
+            print(x,"",insert_symbol) 
         
-        print(x,"",insert_symbol) 
-      
 
-top_row = [1,2,3,4,5,6,7,8,9,10]
-right_row = [10,20,30,40,50,60,70,80,90,100,110,120,130,140,150,160,170,180,190,200]
-left_row = [11,21,31,31,41,51,61,71,81,91,101,111,121,131,141,151,161,171,181,191,201]
-bottom_row = [202,203,204,205,206,207,208,209,210]
+top_row = [1,2,3,4,5,6,7,8,9]
+right_row = [10,20,30,40,50,60,70,80,90,100,110,120,130,140,150,160,170,180,190]
+left_row = [11,21,31,31,41,51,61,71,81,91,101,111,121,131,141,151,161,171,181,191]
+bottom_row = [192,193,194,195,196,197,198,199,200]
 excluded_numbers = top_row + right_row + left_row + bottom_row
-print(excluded_numbers)
-def pick_calculate_iceberg_squares():
-    # This function will pick a random number between 1,100 thet is not in the excluded list and 
-    # return the value
-    # excluded_numbers = [1,2,3,4,5,6,7,8,9,10,11,21,31,41,51,61,71,81,91,20,30,40,50,60,70,80,90,100,0]
-    random_number = random.choice([i for i in range(1, 200) if i not in excluded_numbers])
-    print(random_number)
-    return random_number
+# print(excluded_numbers)
 
-def get_squares(num):
-    my_iceberg_numbers = []
-    new_num_box = num, num +1, num -1, num + 10, num -10, num -9, num + 9, num -11, num + 11
-    print(f"First time cal new_num {new_num_box}")
-    return new_num_box
+def pick_calculate_iceberg_squares(iceburges):
+    # This function will pick a random number between 1,200 that is not in the excluded list and 
+    # return the value of 3 sets of 9 numbers representing the icebergs
+    
+    # Declair variables needed
+    x = 1
+    tree_icebergs = [] 
+    ice_burg_container = []
+    outer_numbers = []
+    # Pick randam number and compair to exclusion list
+    while x <= iceburges:
+        num = random.choice([i for i in range(1, 200) if i not in excluded_numbers])
+        #Place all 8 surounding boxes into exclusion array  
+        ice_burg_container = num, num +1, num -1, num + 10, num -10, num -9, num + 9, num -11, num + 11
+        #Calculate outer box from given randam number
+        outer_top = num -18, num -19, num -20, num -21, num -22
+        outer_left_right = num -2, num -12, num - 8, num + 2, num + 12, num +8
+        outer_bottom = num + 18, num + 19, num + 20, num + 21, num +22
+        outer_numbers = outer_bottom + outer_left_right + outer_top
+        #Merge all 3 iceburg 3x3 into tree iceburg array
+        tree_icebergs.extend(ice_burg_container)
+        #Merge all numbers to exclusion array 
+        excluded_numbers.extend(tree_icebergs)
+        excluded_numbers.extend(outer_numbers)
+        
+        x += 1
+    return tree_icebergs
 
-iceberg_location_number = pick_calculate_iceberg_squares()
-
+very_near = pick_calculate_iceberg_squares(3)
+excluded_numbers.append(very_near)
+create_game_board()
 # The very_near var will hold iceberg cordanates and one surronding squair
 # These numbers must be appended to the exclusion so there are no repeates 
-very_near = get_squares(iceberg_location_number)
-print(f"This is the iceberg squair {very_near}")
+
+# very_near 
+# print(f"This is the iceberg squair {very_near}")
+
 # Append the new iceberg location to excleded numbers 
-excluded_numbers.append(very_near)
-print(excluded_numbers)
+# excluded_numbers.append(very_near)
+# print(excluded_numbers)
 # print(f"THE END {iceberg_location_number}")
-create_game_board()
+# create_game_board()
 
 
 
