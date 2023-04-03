@@ -2,6 +2,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 import json
 import os
+from colorama import Fore, Back, Style
 
 # importing the random module
 import random
@@ -27,9 +28,9 @@ def create_game_board():
         """
         This function writes the board on screen
         """
-        print("     |%%%%%%%%%%%%%--%%%  ICEBURG  %%%--%%%%%%%%%%%%|\n")
-        print("    | A || B || C || D || E || F || G || H || I || J |")
-        print("    +---++---++---++---++---++---++---++---++---++---+")
+        print(Fore.YELLOW + "\n     |%%%%%%%%%%%%%--%%%  ICEBURG  %%%--%%%%%%%%%%%%|\n")
+        print(Fore.BLUE + "    | A || B || C || D || E || F || G || H || I || J |")
+        print(Fore.GREEN + "    +---++---++---++---++---++---++---++---++---++---+")
         grid_space_counter = 1
         # loop will start at the 1 count for 20 more
         for x in range(1,21):
@@ -47,7 +48,7 @@ def create_game_board():
                 insert_symbol = insert_symbol + symbol
                 grid_space_counter = grid_space_counter + 1 
             
-            print(x,"",insert_symbol) 
+            print(Fore.BLUE + (f"{x}  {insert_symbol}"))
         
 
 top_row = [1,2,3,4,5,6,7,8,9]

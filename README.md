@@ -6,5 +6,7 @@ Paul-Gleeson,
 ### Iceberg
 
 
-* Error 1, grid alignment (2/4/2023)
+* Bug 1, grid alignment (2/4/2023)
 * Installed Math random (2/4/2023)
+* Bug 2, border bug fix (3/4/2023)
+* INstalled pip install colorama (3/4/2023)
