@@ -93,18 +93,24 @@ def pick_calculate_iceberg_squares(iceburges):
 user_shot = ["","","",""]
 
 def get_user_input():
+    
     """
     This function valadates the input data from the user
     """
+    print("#####################################################")
     print("\n Please input target cordanance ...\n")
     print("It must be a letter first then a number")
-    print("With a colon seperating eg.. b:6 or B:5 or c:16 \n")
+    print("If the number is single diget please use a '0'") 
+    print("to fill. Eg one = 01 six = 06")
+    print("With a colon seperating eg.. b:06 or B:05 or c:16 \n")
     user_shot = input("Choose cordanates:" )
-    if user_shot == '':
-        print("empty")
+    if (len(user_shot)) != 4:
+        print("Incorrect number of charictors, you must choose 4")
+        print("Try Again :")
+        get_user_input()
     elif (user_shot[0].isalpha()) != True:
         print(f"You entered {user_shot[0]} as first diget")
-        print("This must be a latter, please try again")
+        print("This must be a letter, please try again")
         get_user_input()
     elif (user_shot[1]) != ":":
         print(f"Second input {user_shot[1]} must be a colon => : ")
@@ -115,8 +121,9 @@ def get_user_input():
     elif (user_shot[3].isdigit()) != True:
         print(f"Third input {user_shot[3]} must be a number => 1, 2, 27 etc ")
         print("No")
-
-
+   
+os.system('cls' if os.name == 'nt' else 'clear')
+get_user_input()
 
 
     # print(user_shot[1]) 
