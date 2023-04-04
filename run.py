@@ -90,23 +90,34 @@ def pick_calculate_iceberg_squares(iceburges):
         x += 1
     return tree_icebergs
 
-user_shot = ()
+user_shot = ["","","",""]
+
 def get_user_input():
     """
     This function valadates the input data from the user
     """
-    print("Please input target cordanance ...")
+    print("\n Please input target cordanance ...\n")
     print("It must be a letter first then a number")
-    print("With a comma seperating rg.. b,6 or B,5 or c,16")
+    print("With a colon seperating eg.. b:6 or B:5 or c:16 \n")
     user_shot = input("Choose cordanates:" )
-    print(f"You entered {user_shot[1]}")
-    if (user_shot[0].isalpha()) != True:
+    if user_shot == '':
+        print("empty")
+    elif (user_shot[0].isalpha()) != True:
         print(f"You entered {user_shot[0]} as first diget")
         print("This must be a latter, please try again")
         get_user_input()
-    elif (user_shot[1].isnumeric()) != True:
+    elif (user_shot[1]) != ":":
+        print(f"Second input {user_shot[1]} must be a colon => : ")
         print("No")
-   
+    elif (user_shot[2].isdigit()) != True:
+        print(f"Third input {user_shot[2]} must be a number => 1, 2, 27 etc ")
+        print("No")
+    elif (user_shot[3].isdigit()) != True:
+        print(f"Third input {user_shot[3]} must be a number => 1, 2, 27 etc ")
+        print("No")
+
+
+
 
     # print(user_shot[1]) 
     # if (len(user_shot)) != 2:
