@@ -70,15 +70,19 @@ def pick_calculate_iceberg_squares(iceburges):
     # Pick randam number and compair to exclusion list
     while x <= iceburges:
         num = random.choice([i for i in range(1, 200) if i not in excluded_numbers])
+        
         #Place all 8 surounding boxes into exclusion array  
         ice_burg_container = num, num +1, num -1, num + 10, num -10, num -9, num + 9, num -11, num + 11
+        
         #Calculate outer box from given randam number
         outer_top = num -18, num -19, num -20, num -21, num -22
         outer_left_right = num -2, num -12, num - 8, num + 2, num + 12, num +8
         outer_bottom = num + 18, num + 19, num + 20, num + 21, num +22
         outer_numbers = outer_bottom + outer_left_right + outer_top
+        
         #Merge all 3 iceburg 3x3 into tree iceburg array
         tree_icebergs.extend(ice_burg_container)
+        
         #Merge all numbers to exclusion array 
         excluded_numbers.extend(tree_icebergs)
         excluded_numbers.extend(outer_numbers)
@@ -86,44 +90,37 @@ def pick_calculate_iceberg_squares(iceburges):
         x += 1
     return tree_icebergs
 
-very_near = pick_calculate_iceberg_squares(3)
-excluded_numbers.append(very_near)
-create_game_board()
-# The very_near var will hold iceberg cordanates and one surronding squair
-# These numbers must be appended to the exclusion so there are no repeates 
+user_shot = ()
+def get_user_input():
+    """
+    This function valadates the input data from the user
+    """
+    print("Please input target cordanance ...")
+    print("It must be a letter first then a number")
+    print("With a comma seperating rg.. b,6 or B,5 or c,16")
+    user_shot = input("Choose cordanates:" )
+    print(f"You entered {user_shot[1]}")
+    if (user_shot[0].isalpha()) != True:
+        print(f"You entered {user_shot[0]} as first diget")
+        print("This must be a latter, please try again")
+        get_user_input()
+    elif (user_shot[1].isnumeric()) != True:
+        print("No")
+   
 
-# very_near 
-# print(f"This is the iceberg squair {very_near}")
+    # print(user_shot[1]) 
+    # if (len(user_shot)) != 2:
+    #     print(f"Input must be 2 in lenght first letter second number")
+    #     get_user_input()
+    #     print(user_shot[0].isalpha())
+       
+    # # else:
+    #     If if user_shot[0] 
+get_user_input()
 
-# Append the new iceberg location to excleded numbers 
+# very_near = pick_calculate_iceberg_squares(3)
 # excluded_numbers.append(very_near)
-# print(excluded_numbers)
-# print(f"THE END {iceberg_location_number}")
 # create_game_board()
-
-
-
-
-# get_num = 0
-    # print(f"This is the value before {get_num}")
-    # get_num = random.randint(1,100)
-    # print(f"This is the randam mumber {get_num}")
-    # if not get_num in exclude:
-    #     print(f"Its Not in the list {get_num} great")
-    #     return get_num
-    # else:
-    #     get_num = get_num
-    #     print(f"Yes its HEREEEEE {get_num}")
-    
-    #     # get_num = get_num.pop()
-
-
-
-# def make_playbord_in_sheet(data):
-#     """ 
-#     Create a board for the game in ICEBERG sheet
-#     """ 
-
 
 # for cell in grids_sheet.range('a1:b2'):
 #     print(cell.value)
@@ -132,33 +129,4 @@ create_game_board()
 # print(grids_sheet.cell(1,1).value)
 
 
-# i=1
-# 
-
-# def create_game_array(grid_size):
-#     i = 1
-    
-#     alpha_var = '`' 
-#     while i <= grid_size:
-#         dump_num1 = bytes(alpha_var, 'utf-8')
-#         dump_num2 = dump_num1[0] + 1
-#         alpha_var = (chr(dump_num2))
-#         i += 1
-#         odin = 1
-#         while odin  <= 18:
-#             num_var = str(odin)
-#             cell_var = str(alpha_var+num_var)
-#             odin += 1
-#             # print(cell_var)
-#             my_array= []git ststus
-#             my_array.append(cell_var)
-#             print(my_array)
-#             grids_sheet.update_acell(cell_var,0)
-            
-           
-#         # 
-
-#         # return my_array
-
-# create_game_array(2)
 
