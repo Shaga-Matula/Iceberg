@@ -21,10 +21,11 @@ SHEET = GSPREAD_CLIENT.open("Iceberg")
 
 grids_sheet = SHEET.worksheet('grid')
 data = grids_sheet.get_all_values()
-
+very_near = []
 def create_game_board():
-        hits_var = []
-        miss_var = []
+        hits_var = [33]
+        miss_var = [12]
+       
         """
         This function writes the board on screen
         """
@@ -90,7 +91,7 @@ def pick_calculate_iceberg_squares(iceburges):
         x += 1
     return tree_icebergs
 
-user_shot = ["","","",""]
+
 
 def get_user_input():
     
@@ -121,20 +122,15 @@ def get_user_input():
     elif (user_shot[3].isdigit()) != True:
         print(f"Third input {user_shot[3]} must be a number => 1, 2, 27 etc ")
         print("No")
-   
-os.system('cls' if os.name == 'nt' else 'clear')
-get_user_input()
 
 
-    # print(user_shot[1]) 
-    # if (len(user_shot)) != 2:
-    #     print(f"Input must be 2 in lenght first letter second number")
-    #     get_user_input()
-    #     print(user_shot[0].isalpha())
-       
-    # # else:
-    #     If if user_shot[0] 
-get_user_input()
+very_near = pick_calculate_iceberg_squares(3)
+create_game_board()
+
+
+
+# get_user_input()
+
 
 # very_near = pick_calculate_iceberg_squares(3)
 # excluded_numbers.append(very_near)
