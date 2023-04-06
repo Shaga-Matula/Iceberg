@@ -6,6 +6,8 @@ from colorama import Fore, Back, Style
 
 # importing the random module
 import random
+# importing string for alpha betic calculation
+import string
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -21,14 +23,19 @@ SHEET = GSPREAD_CLIENT.open("Iceberg")
 
 grids_sheet = SHEET.worksheet('grid')
 data = grids_sheet.get_all_values()
+
+
+
+
 very_near = []
+print(f"Very near 1 = {very_near}")
+direct_hit_list = []
+miss_var = []
 def create_game_board():
-        hits_var = [33]
-        miss_var = [12]
-       
         """
         This function writes the board on screen
         """
+        #This prints the headder fo the game
         print(Fore.YELLOW + "\n     |%%%%%%%%%%%%%--%%%  ICEBURG  %%%--%%%%%%%%%%%%|\n")
         print(Fore.BLUE + "    | A || B || C || D || E || F || G || H || I || J |")
         print(Fore.GREEN + "    +---++---++---++---++---++---++---++---++---++---+")
@@ -40,7 +47,8 @@ def create_game_board():
                 insert_symbol = ""
             for y in range(10):
                 symbol= "|---|"
-                if grid_space_counter in hits_var:
+                if grid_space_counter in direct_hit_list:
+                    Print("Thats a hit captin but you only nicked her")
                     symbol= "|-x-|"
                 if grid_space_counter in very_near:
                     symbol= "|-1-|"
@@ -52,12 +60,18 @@ def create_game_board():
             print(Fore.BLUE + (f"{x}  {insert_symbol}"))
         
 
+#These are the exclusions for the outer frame of the game/Note to shorten later
 top_row = [1,2,3,4,5,6,7,8,9]
 right_row = [10,20,30,40,50,60,70,80,90,100,110,120,130,140,150,160,170,180,190]
 left_row = [11,21,31,31,41,51,61,71,81,91,101,111,121,131,141,151,161,171,181,191]
 bottom_row = [192,193,194,195,196,197,198,199,200]
 excluded_numbers = top_row + right_row + left_row + bottom_row
-# print(excluded_numbers)
+
+
+tree_icebergs = [] 
+ice_burg_container = []
+outer_numbers = []
+hidden_iceberg= []
 
 def pick_calculate_iceberg_squares(iceburges):
     # This function will pick a random number between 1,200 that is not in the excluded list and 
@@ -65,15 +79,13 @@ def pick_calculate_iceberg_squares(iceburges):
     
     # Declair variables needed
     x = 1
-    tree_icebergs = [] 
-    ice_burg_container = []
-    outer_numbers = []
+   
     # Pick randam number and compair to exclusion list
     while x <= iceburges:
         num = random.choice([i for i in range(1, 200) if i not in excluded_numbers])
-        
+        hidden_iceberg.append(num)
         #Place all 8 surounding boxes into exclusion array  
-        ice_burg_container = num, num +1, num -1, num + 10, num -10, num -9, num + 9, num -11, num + 11
+        ice_burg_container = num +1, num -1, num + 10, num -10, num -9, num + 9, num -11, num + 11
         
         #Calculate outer box from given randam number
         outer_top = num -18, num -19, num -20, num -21, num -22
@@ -85,10 +97,11 @@ def pick_calculate_iceberg_squares(iceburges):
         tree_icebergs.extend(ice_burg_container)
         
         #Merge all numbers to exclusion array 
-        excluded_numbers.extend(tree_icebergs)
+        # excluded_numbers.extend(tree_icebergs)
         excluded_numbers.extend(outer_numbers)
         
         x += 1
+  
     return tree_icebergs
 
 
@@ -116,16 +129,89 @@ def get_user_input():
     elif (user_shot[1]) != ":":
         print(f"Second input {user_shot[1]} must be a colon => : ")
         print("No")
+        get_user_input()
     elif (user_shot[2].isdigit()) != True:
         print(f"Third input {user_shot[2]} must be a number => 1, 2, 27 etc ")
         print("No")
+        get_user_input()
     elif (user_shot[3].isdigit()) != True:
         print(f"Third input {user_shot[3]} must be a number => 1, 2, 27 etc ")
         print("No")
+        get_user_input()
+
+    return user_shot
+#################################################################################
+"""
+This function compaires the user imput to its coradnents and translates to board
+
+"""
+
+letters = []
+def translate_user_input(user_input):
+    #Gives alphabet a to j
+    for i in range(97, 107):
+        letters.append(chr(i))
+    numbers = (list(range(1, 21)))
+    print(numbers)
+  
+    final = []
+    for i in (numbers):
+        for content in (letters):
+            num = content + ":" + str(i)
+            alpha_num = num.strip()
+            final.append(alpha_num)
+        
+    
+    
+    dicts = {}
+    keys = final
+    values = (list(range(1, 200)))
+    dict_1 = dict(zip(final, values))
+    user_shot = (dict_1.get(user_input))
+    print(f"User shot =  {user_shot}")
+ 
+
+    
+    
+    # yeababy = ()
+    # return yeababy
 
 
-very_near = pick_calculate_iceberg_squares(3)
+
+    # for i in keys:
+    #     print(f"This is i {i}")
+    #     for x in values:
+    #         print(f"This is x {x}")
+    #         dicts[i] = x
+    # print(dicts)
+    
+    
+
+
+usr_input = get_user_input()
+my_user_number = translate_user_input(usr_input)
+very_near.append(my_user_number)
+print(f"Very near 1 = {very_near}")
 create_game_board()
+
+# print(my_user_number)
+# print(f"This is it {my_user_number}")
+
+
+# Calling this function will pass the var number (3) is recomended. 
+ 
+# user_shot = get_user_input()
+# tree_iceberg = pick_calculate_iceberg_squares(3)
+# print(f"Users Shot {user_shot}")
+# print(f"Outer Icebergs circle = {tree_iceberg}")
+# print((f"Core Iceberg = {hidden_iceberg}"))
+# create_game_board()
+
+
+# hit_very_near = pick_calculate_iceberg_squares(3)
+
+# print(hit_very_near)
+# create_game_board()
 
 
 
