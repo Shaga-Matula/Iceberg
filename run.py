@@ -28,7 +28,7 @@ data = grids_sheet.get_all_values()
 
 
 very_near = []
-print(f"Very near 1 = {very_near}")
+print(f"Very near here = {very_near}")
 direct_hit_list = []
 miss_var = []
 def create_game_board():
@@ -67,6 +67,7 @@ left_row = [11,21,31,31,41,51,61,71,81,91,101,111,121,131,141,151,161,171,181,19
 bottom_row = [192,193,194,195,196,197,198,199,200]
 excluded_numbers = top_row + right_row + left_row + bottom_row
 
+##########################################################################################
 
 tree_icebergs = [] 
 ice_burg_container = []
@@ -105,7 +106,7 @@ def pick_calculate_iceberg_squares(iceburges):
     return tree_icebergs
 
 
-
+#############################################################################
 def get_user_input():
     
     """
@@ -138,7 +139,8 @@ def get_user_input():
         print(f"Third input {user_shot[3]} must be a number => 1, 2, 27 etc ")
         print("No")
         get_user_input()
-
+    else:
+         print(f"Gt Usr Inp  =  {user_shot}")
     return user_shot
 #################################################################################
 """
@@ -148,6 +150,7 @@ This function compaires the user imput to its coradnents and translates to board
 
 letters = []
 def translate_user_input(user_input):
+    print(f"User input at start of tui = {user_input}")
     #Gives alphabet a to j
     for i in range(97, 107):
         letters.append(chr(i))
@@ -160,17 +163,17 @@ def translate_user_input(user_input):
             num = content + ":" + str(i)
             alpha_num = num.strip()
             final.append(alpha_num)
-        
-    
     
     dicts = {}
     keys = final
-    values = (list(range(1, 200)))
+    values = (list(range(1, 201)))
     dict_1 = dict(zip(final, values))
+    print(f"Dict_1 =  {dict_1}")
     user_shot = (dict_1.get(user_input))
+    print(f"User input =  {user_input}")
     print(f"User shot =  {user_shot}")
  
-
+    return user_shot
     
     
     # yeababy = ()
@@ -187,12 +190,18 @@ def translate_user_input(user_input):
     
     
 
+def main():
+    usr_input = get_user_input()
+    print(f"User input (Main) = {usr_input}")
+    my_user_number = translate_user_input(usr_input)
+    print(f"Moain My User Num (return from transl) =  {my_user_number}")
+    very_near.append(my_user_number)
+    print(f"Very near 1 = {very_near}")
+    create_game_board()
+    main()
 
-usr_input = get_user_input()
-my_user_number = translate_user_input(usr_input)
-very_near.append(my_user_number)
-print(f"Very near 1 = {very_near}")
-create_game_board()
+main()
+
 
 # print(my_user_number)
 # print(f"This is it {my_user_number}")
