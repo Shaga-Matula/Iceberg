@@ -150,37 +150,33 @@ do_this = True
 letters = []
 dict_1 = {}
 
-
-def calc_dict_1():
-    #Gives alphabet a to j
-    
-    run_once = 0
-    while 1:
-        if run_once == 0:   
-            for i in range(97, 107):
-                letters.append(chr(i))
-                numbers = (list(range(1, 21)))
-               
+def translate_user_input(user_input):
+    print(f"User input at start of tui = {user_input}")
+    for i in range(97, 107):
+        letters.append(chr(i))
+        numbers = (list(range(1, 21)))
+        print(numbers)
         
-                final = []
-                i = 1
-                for i in (numbers):
-                    for content in (letters):
-                        num = content + ":" + str(i)
-                        alpha_num = num.strip()
-                        final.append(alpha_num)
-            
-                    values = (list(range(1, 201)))
-                    dict_1 = dict(zip(final, values))
-            
-            return dict_1
-    run_once = 1
+        final = []
+        i = 0
+        for i in (numbers):
+            for content in (letters):
+                num = content + ":" + str(i)
+                alpha_num = num.strip()
+                final.append(alpha_num)
+        
 
-def translate_user_input(user_input, dict_1):
+      
+        values = (list(range(1, 201)))
+        dict_1 = dict(zip(final, values))
  
-    # print(f"Final_zip =  {final}")
-    # print(f"Values zip =  {values}")
-    print(f"Dict_1 returned =  {dict_1}")
+
+
+    
+   
+    print(f"Final_zip =  {final}")
+    print(f"Values zip =  {values}")
+    print(f"Dict_1 =  {dict_1}")
     user_shot = (dict_1.get(user_input))
     print(f"User input =  {user_input}")
     print(f"User shot =  {user_shot}")
@@ -203,15 +199,13 @@ def translate_user_input(user_input, dict_1):
     
 
 def main():
-    create_game_board()
-    dict_1 = calc_dict_1()
     usr_input = get_user_input()
     print(f"User input (Main) = {usr_input}")
-    my_user_number = translate_user_input(usr_input,dict_1)
+    my_user_number = translate_user_input(usr_input)
     print(f"Main My User Num (return from transl) =  {my_user_number}")
     very_near.append(my_user_number)
     print(f"Very near 1 = {very_near}")
-
+    create_game_board()
     main()
 
 main()
