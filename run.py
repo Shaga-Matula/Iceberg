@@ -167,9 +167,6 @@ def translate_user_input(user_input):
         dict_1 = dict(zip(final, values))
  
 
-
-    
-   
     print(f"Final_zip =  {final}")
     print(f"Values zip =  {values}")
     print(f"Dict_1 =  {dict_1}")
