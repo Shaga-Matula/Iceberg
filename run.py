@@ -165,8 +165,6 @@ def translate_user_input(user_input):
                 alpha_num = num.strip()
                 final.append(alpha_num)
         
-
-      
         values = (list(range(1, 201)))
         dict_1 = dict(zip(final, values))
  
