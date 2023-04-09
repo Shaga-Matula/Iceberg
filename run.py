@@ -24,9 +24,6 @@ SHEET = GSPREAD_CLIENT.open("Iceberg")
 grids_sheet = SHEET.worksheet('grid')
 data = grids_sheet.get_all_values()
 
-
-
-
 very_near = []
 print(f"Very near here = {very_near}")
 direct_hit_list = []
@@ -147,10 +144,11 @@ This function compaires the user imput to its coradnents and translates to board
 
 """
 do_this = True
-letters = []
+
 dict_1 = {}
 
 def translate_user_input(user_input):
+    letters = []
     print(f"User input at start of tui = {user_input}")
     for i in range(97, 107):
         letters.append(chr(i))
