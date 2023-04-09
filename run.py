@@ -13,7 +13,7 @@ SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
     "https://www.googleapis.com/auth/drive"
-    ]
+]
 
 creds = json.load(open('creds.json'))
 CREDS = Credentials.from_service_account_info(creds)
@@ -143,8 +143,6 @@ def get_user_input():
 This function compaires the user imput to its coradnents and translates to board
 
 """
-do_this = True
-
 dict_1 = {}
 
 def translate_user_input(user_input):
@@ -188,7 +186,10 @@ def translate_user_input(user_input):
     #         print(f"This is x {x}")
     #         dicts[i] = x
     # print(dicts)
-    
+
+
+for cell in grids_sheet.range('a1:b2'):
+     print(cell.value)
     
 
 def main():
