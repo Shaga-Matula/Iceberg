@@ -116,7 +116,7 @@ def get_user_input():
     print("With a colon seperating eg.. b:06 or B:05 or c:16 \n")
     user_shot = input("Choose cordanates:" )
     
-    if (user_shot[0].isalpha()) == True:
+    if (user_shot[0].isalpha()) == True:# If user inputs upper case make lower case
         if user_shot[0].isupper() == True:
             user_shot = user_shot.swapcase()
             print(f"its upper {user_shot[0]}")
