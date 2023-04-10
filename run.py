@@ -140,7 +140,7 @@ def get_user_input():
     return user_shot
 #################################################################################
 """
-This function compaires the user imput to its coradnents and translates to board
+This function compaires the user input to its coradnents and translates to board
 
 """
 dict_1 = {}
@@ -152,6 +152,10 @@ def translate_user_input(user_input):
         letters.append(chr(i))
         numbers = (list(range(1, 21)))
         print(numbers)
+        #If the number is between 1 to 9 make double diget  
+        for i in range(len(numbers)):
+            if numbers[i] <= 9:
+                numbers[i] = str(numbers[i]).zfill(2)
         
         final = []
         i = 0
