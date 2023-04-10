@@ -104,7 +104,7 @@ def pick_calculate_iceberg_squares(iceburges):
 
 #############################################################################
 def get_user_input():
-    
+    allowed_letters = "abcdefgjABCDEFGHIJ"
     """
     This function valadates the input data from the user
     """
@@ -115,13 +115,30 @@ def get_user_input():
     print("to fill. Eg one = 01 six = 06")
     print("With a colon seperating eg.. b:06 or B:05 or c:16 \n")
     user_shot = input("Choose cordanates:" )
+    
+    if (user_shot[0].isalpha()) == True:
+        if user_shot[0].isupper() == True:
+            user_shot = user_shot.swapcase()
+            print(f"its upper {user_shot[0]}")
+        
+        
+    print(f"Second user shot {user_shot[0]}")
+    
+    
+    
+    
     if (len(user_shot)) != 4:
         print("Incorrect number of charictors, you must choose 4")
         print("Try Again :")
         get_user_input()
     elif (user_shot[0].isalpha()) != True:
         print(f"You entered {user_shot[0]} as first diget")
-        print("This must be a letter, please try again")
+        print("This must be a letter, please try again .. ")
+        get_user_input()
+    elif user_shot[0] not in allowed_letters:
+        
+        print(f"Noooooooooooooo {user_shot[0]} out fo range")
+        print("This must be a letter, please try again .. ")
         get_user_input()
     elif (user_shot[1]) != ":":
         print(f"Second input {user_shot[1]} must be a colon => : ")
@@ -151,12 +168,12 @@ def translate_user_input(user_input):
     for i in range(97, 107):
         letters.append(chr(i))
         numbers = (list(range(1, 21)))
-        print(numbers)
+        # print(numbers)
         #If the number is between 1 to 9 make double diget  
         for i in range(len(numbers)):
             if numbers[i] <= 9:
                 numbers[i] = str(numbers[i]).zfill(2)
-        
+        #Set format of string eg b:12
         final = []
         i = 0
         for i in (numbers):
@@ -164,17 +181,17 @@ def translate_user_input(user_input):
                 num = content + ":" + str(i)
                 alpha_num = num.strip()
                 final.append(alpha_num)
-        
+        #Zip to directory
         values = (list(range(1, 201)))
         dict_1 = dict(zip(final, values))
  
 
-    print(f"Final_zip =  {final}")
-    print(f"Values zip =  {values}")
-    print(f"Dict_1 =  {dict_1}")
+    # print(f"Final_zip =  {final}")
+    # print(f"Values zip =  {values}")
+    # print(f"Dict_1 =  {dict_1}")
     user_shot = (dict_1.get(user_input))
-    print(f"User input =  {user_input}")
-    print(f"User shot =  {user_shot}")
+    # print(f"User input =  {user_input}")
+    # print(f"User shot =  {user_shot}")
 
     return user_shot
     
