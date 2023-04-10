@@ -127,28 +127,31 @@ def get_user_input():
     
     
     
-    if (len(user_shot)) != 4:
+    if (len(user_shot)) != 4: #Error if more than 4 digets
         print("Incorrect number of charictors, you must choose 4")
         print("Try Again :")
         get_user_input()
-    elif (user_shot[0].isalpha()) != True:
+    elif (user_shot[0].isalpha()) != True: #Error if not a letter
         print(f"You entered {user_shot[0]} as first diget")
         print("This must be a letter, please try again .. ")
         get_user_input()
-    elif user_shot[0] not in allowed_letters:
-        
+    elif user_shot[0] not in allowed_letters:#Error if not in list a to j
         print(f"Noooooooooooooo {user_shot[0]} out fo range")
         print("This must be a letter, please try again .. ")
         get_user_input()
-    elif (user_shot[1]) != ":":
+    elif (user_shot[1]) != ":":# Error if not a colon :
         print(f"Second input {user_shot[1]} must be a colon => : ")
         print("No")
         get_user_input()
-    elif (user_shot[2].isdigit()) != True:
+    elif (user_shot[2].isdigit()) != True:#Error if not a number diget
         print(f"Third input {user_shot[2]} must be a number => 1, 2, 27 etc ")
         print("No")
         get_user_input()
-    elif (user_shot[3].isdigit()) != True:
+    elif int(user_shot[2]) >= 3: #Error if value is over 20 in choce 
+        print(f"Must be below 20 {user_shot[2]}")
+        print("No")
+        get_user_input()
+    elif (user_shot[3].isdigit()) != True:#Error if not a number
         print(f"Third input {user_shot[3]} must be a number => 1, 2, 27 etc ")
         print("No")
         get_user_input()
