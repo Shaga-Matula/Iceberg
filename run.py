@@ -104,7 +104,7 @@ def pick_calculate_iceberg_squares(iceburges):
 
 #############################################################################
 def get_user_input():
-    allowed_letters = "abcdefgjABCDEFGHIJ"
+    allowed_letters = "abcdefghijABCDEFGHIJ"
     """
     This function valadates the input data from the user
     """
@@ -124,39 +124,37 @@ def get_user_input():
         
     print(f"Second user shot {user_shot[0]}")
     
-    
-    
-    
     if (len(user_shot)) != 4: #Error if more than 4 digets
         print("Incorrect number of charictors, you must choose 4")
         print("Try Again :")
-        get_user_input()
+        reset_screen()
     elif (user_shot[0].isalpha()) != True: #Error if not a letter
         print(f"You entered {user_shot[0]} as first diget")
         print("This must be a letter, please try again .. ")
-        get_user_input()
+        reset_screen()
     elif user_shot[0] not in allowed_letters:#Error if not in list a to j
+        wait = input("Press Enter to continue.")
         print(f"Noooooooooooooo {user_shot[0]} out fo range")
         print("This must be a letter, please try again .. ")
-        get_user_input()
+        reset_screen()
     elif (user_shot[1]) != ":":# Error if not a colon :
         print(f"Second input {user_shot[1]} must be a colon => : ")
         print("No")
-        get_user_input()
+        reset_screen()
     elif (user_shot[2].isdigit()) != True:#Error if not a number diget
         print(f"Third input {user_shot[2]} must be a number => 1, 2, 27 etc ")
         print("No")
-        get_user_input()
+        reset_screen()
     elif int(user_shot[2]) >= 3: #Error if value is over 20 in choce 
         print(f"Must be below 20 {user_shot[2]}")
         print("No")
-        get_user_input()
+        reset_screen()
     elif (user_shot[3].isdigit()) != True:#Error if not a number
         print(f"Third input {user_shot[3]} must be a number => 1, 2, 27 etc ")
         print("No")
-        get_user_input()
+        reset_screen()
     else:
-         print(f"Gt Usr Inp  =  {user_shot}")
+        print(f"This is  User Imput(User Shot)  =  {user_shot}")
     return user_shot
 #################################################################################
 """
@@ -197,33 +195,26 @@ def translate_user_input(user_input):
     # print(f"User shot =  {user_shot}")
 
     return user_shot
+   ############################################################################ 
     
-    
-    # yeababy = ()
-    # return yeababy
+def reset_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+    create_game_board()
+    get_user_input()
 
-
-
-    # for i in keys:
-    #     print(f"This is i {i}")
-    #     for x in values:
-    #         print(f"This is x {x}")
-    #         dicts[i] = x
-    # print(dicts)
-
-
+#Test connection to google sheets
 for cell in grids_sheet.range('a1:b2'):
      print(cell.value)
     
-
 def main():
+    create_game_board()
     usr_input = get_user_input()
     print(f"User input (Main) = {usr_input}")
     my_user_number = translate_user_input(usr_input)
     print(f"Main My User Num (return from transl) =  {my_user_number}")
     very_near.append(my_user_number)
     print(f"Very near 1 = {very_near}")
-    create_game_board()
+    
     main()
 
 main()
