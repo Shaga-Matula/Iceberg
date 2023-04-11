@@ -8,6 +8,8 @@ from colorama import Fore, Back, Style
 import random
 # importing string for alpha betic calculation
 import string
+#import sys for break in loops
+import sys
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -45,7 +47,7 @@ def create_game_board():
             for y in range(10):
                 symbol= "|---|"
                 if grid_space_counter in direct_hit_list:
-                    Print("Thats a hit captin but you only nicked her")
+                    print("Thats a hit captin but you only nicked her")
                     symbol= "|-x-|"
                 if grid_space_counter in very_near:
                     symbol= "|-1-|"
@@ -108,7 +110,7 @@ def get_user_input():
     """
     This function valadates the input data from the user
     """
-    print("#####################################################")
+    print("\n    ##################################################")
     print("\n Please input target cordanance ...\n")
     print("It must be a letter first then a number")
     print("If the number is single diget please use a '0'") 
@@ -116,45 +118,70 @@ def get_user_input():
     print("With a colon seperating eg.. b:06 or B:05 or c:16 \n")
     user_shot = input("Choose cordanates:" )
     
+
+    
+    
+    
+    if user_shot == "":# if string is empty
+        print("Incorrect number of charictors, you must choose 4")
+        print("Try Again :")
+        return "error"
+        main()
+    
+    
+    
     if (user_shot[0].isalpha()) == True:# If user inputs upper case make lower case
         if user_shot[0].isupper() == True:
             user_shot = user_shot.swapcase()
             print(f"its upper {user_shot[0]}")
+      
         
         
-    print(f"Second user shot {user_shot[0]}")
-    
-    if (len(user_shot)) != 4: #Error if more than 4 digets
+    print(f"User shot ... After empty and Lower case ==  {user_shot}")
+        
+    if user_shot == "error":#there wans an error 
+        print("################ error")
+        print("Try Again :")
+        main()
+    elif (len(user_shot)) != 4: #Error if more than 4 digets
         print("Incorrect number of charictors, you must choose 4")
         print("Try Again :")
-        reset_screen()
+        user_shot = "error"
+        main()
     elif (user_shot[0].isalpha()) != True: #Error if not a letter
         print(f"You entered {user_shot[0]} as first diget")
         print("This must be a letter, please try again .. ")
-        reset_screen()
+        user_shot = "error"
+        main()
     elif user_shot[0] not in allowed_letters:#Error if not in list a to j
-        wait = input("Press Enter to continue.")
         print(f"Noooooooooooooo {user_shot[0]} out fo range")
         print("This must be a letter, please try again .. ")
-        reset_screen()
+        # os.system('cls' if os.name == 'nt' else 'clear')
+        user_shot = "error"
+        main()
+        wait = input("Press Enter to continue.")
     elif (user_shot[1]) != ":":# Error if not a colon :
         print(f"Second input {user_shot[1]} must be a colon => : ")
         print("No")
-        reset_screen()
+        user_shot = "error"
+        main()
     elif (user_shot[2].isdigit()) != True:#Error if not a number diget
         print(f"Third input {user_shot[2]} must be a number => 1, 2, 27 etc ")
         print("No")
-        reset_screen()
+        user_shot = "error"
+        main()
     elif int(user_shot[2]) >= 3: #Error if value is over 20 in choce 
         print(f"Must be below 20 {user_shot[2]}")
         print("No")
-        reset_screen()
+        user_shot = "error"
+        main()
     elif (user_shot[3].isdigit()) != True:#Error if not a number
         print(f"Third input {user_shot[3]} must be a number => 1, 2, 27 etc ")
         print("No")
-        reset_screen()
+        user_shot = "error"
+        main()
     else:
-        print(f"This is  User Imput(User Shot)  =  {user_shot}")
+         print(f"After all checks User shot =  {user_shot}")
     return user_shot
 #################################################################################
 """
@@ -191,30 +218,42 @@ def translate_user_input(user_input):
     # print(f"Values zip =  {values}")
     # print(f"Dict_1 =  {dict_1}")
     user_shot = (dict_1.get(user_input))
-    # print(f"User input =  {user_input}")
-    # print(f"User shot =  {user_shot}")
+    print(f"User input =  {user_input}")
+    print(f"User shot =  {user_shot}")
 
     return user_shot
-   ############################################################################ 
     
-def reset_screen():
-    os.system('cls' if os.name == 'nt' else 'clear')
-    create_game_board()
-    get_user_input()
+    
+    # yeababy = ()
+    # return yeababy
 
-#Test connection to google sheets
-for cell in grids_sheet.range('a1:b2'):
-     print(cell.value)
+
+
+    # for i in keys:
+    #     print(f"This is i {i}")
+    #     for x in values:
+    #         print(f"This is x {x}")
+    #         dicts[i] = x
+    # print(dicts)
+
+
+# for cell in grids_sheet.range('a1:b2'):
+#      print(cell.value)
     
+
 def main():
     create_game_board()
     usr_input = get_user_input()
+    if usr_input == "error":
+        print("Its an error")
+        usr_input = ""
+        main()
     print(f"User input (Main) = {usr_input}")
     my_user_number = translate_user_input(usr_input)
     print(f"Main My User Num (return from transl) =  {my_user_number}")
     very_near.append(my_user_number)
     print(f"Very near 1 = {very_near}")
-    
+   
     main()
 
 main()
