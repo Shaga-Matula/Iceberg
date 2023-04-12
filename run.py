@@ -133,7 +133,7 @@ def get_user_input():
     """
     This function valadates the input data from the user
     """
-    print("\n    ##################################################")
+    # print("\n    ##################################################")
     # print("\n Please input target cordanance ...\n")
     # print("It must be a letter first then a number")
     # print("If the number is single diget please use a '0'") 
