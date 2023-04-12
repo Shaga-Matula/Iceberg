@@ -139,7 +139,7 @@ def get_user_input():
     # print("If the number is single diget please use a '0'") 
     # print("to fill. Eg one = 01 six = 06")
     # print("With a colon seperating eg.. b:06 or B:05 or c:16 \n")
-    user_shot = input("\n Choose cordanates:" )
+    user_shot = input("\n Choose coordinates:" )
     
     
     
@@ -245,7 +245,7 @@ def translate_user_input(user_input):
     # print(f"Dict_1 =  {dict_1}")
     user_shot = (dict_1.get(user_input))
     print(f"User input =  {user_input}")
-    print(f"User shot =  {user_shot}")
+   
 
     return user_shot
     
@@ -276,6 +276,13 @@ def main():
         miss_var.append(user_number)
         played_shot_hist.append(user_number)
     
+    if  (len(hit_list) == 1):
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print(f"Yeaaaa You Win, you got all three Icebergs ")
+            wait = input("Press Enter to continue.")
+
+        
+
     
     
     print(f"Very near 1 = {very_near}")
