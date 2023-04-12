@@ -3,6 +3,9 @@ from google.oauth2.service_account import Credentials
 import json
 import os
 from colorama import Fore, Back, Style
+import json
+import os
+from colorama import Fore, Back, Style
 
 # importing the random module
 import random
@@ -31,7 +34,9 @@ print(f"Very near here = {very_near}")
 direct_hit_list = []
 miss_var = []
 hit_list = []
+played_shot_hist = []
 user_number = ()
+
 def create_game_board():
         print(f"Ice berg List {direct_hit_list}")
         print(f"Mises {miss_var}")
@@ -45,6 +50,7 @@ def create_game_board():
         print(Fore.GREEN + "    +---++---++---++---++---++---++---++---++---++---+")
         grid_space_counter = 1
         # loop will start at the 1 count for 20 more
+        color_ama = (Fore.BLUE)
         for x in range(1,21):
             insert_symbol = " "
             if x >= 10:
@@ -61,10 +67,10 @@ def create_game_board():
                 insert_symbol = insert_symbol + symbol
                 grid_space_counter = grid_space_counter + 1 
             
-            print(Fore.BLUE + (f"{x}  {insert_symbol}"))
+            print(color_ama + (f"{x}  {insert_symbol}"))
         
 
-#These are the exclusions for the outer frame of the game/Note to shorten later
+#These are the exclusions for the outer frame of the game/Note to shorten later if time
 top_row = [1,2,3,4,5,6,7,8,9]
 right_row = [10,20,30,40,50,60,70,80,90,100,110,120,130,140,150,160,170,180,190]
 left_row = [11,21,31,31,41,51,61,71,81,91,101,111,121,131,141,151,161,171,181,191]
@@ -116,10 +122,12 @@ def calculate_iceberg_squares():
             print(f"excluded numbers == {excluded_numbers}") 
             print(f"core excluded numbers == {direct_hit_list}") 
             doit = "done"
+        print(f"Outer Numbers == {tree_icebergs}") 
         return tree_icebergs
 
 
 #############################################################################
+user_shot_taken = []
 def get_user_input():
     allowed_letters = "abcdefghijABCDEFGHIJ"
     """
@@ -132,6 +140,17 @@ def get_user_input():
     print("to fill. Eg one = 01 six = 06")
     print("With a colon seperating eg.. b:06 or B:05 or c:16 \n")
     user_shot = input("Choose cordanates:" )
+    
+    
+    
+    if user_shot in user_shot_taken:
+        print("Already Chosen")
+        print("Try Again :")
+        return "error"
+        main()
+
+    
+    user_shot_taken.append(user_shot)
     
     if user_shot == "":# if string is empty
         print("Incorrect number of charictors, you must choose 4")
@@ -230,20 +249,7 @@ def translate_user_input(user_input):
 
     return user_shot
     
-    
-    # yeababy = ()
-    # return yeababy
-
-
-
-    # for i in keys:
-    #     print(f"This is i {i}")
-    #     for x in values:
-    #         print(f"This is x {x}")
-    #         dicts[i] = x
-    # print(dicts)
-
-
+   
 # for cell in grids_sheet.range('a1:b2'):
 #      print(cell.value)
     
@@ -262,10 +268,13 @@ def main():
     
     if user_number in direct_hit_list:
         hit_list.append(user_number)
-    elif user_number in direct_hit_list:
-        hit_list.append(user_number)
-    elif user_number not in direct_hit_list:
+        played_shot_hist.append(user_number)
+    elif user_number in tree_icebergs:
+        very_near.append(user_number)
+        played_shot_hist.append(user_number)
+    else:
         miss_var.append(user_number)
+        played_shot_hist.append(user_number)
     
     
     
