@@ -143,18 +143,25 @@ def get_user_input():
     
     
     
-    if user_shot in user_shot_taken:
-        print("Already Chosen")
-        print("Try Again :")
-        return "error"
-        main()
+    # if user_shot in user_shot_taken:
+        
+    #     print(f"This is User shot before ==:  {user_shot} ")
+    #     os.system('cls' if os.name == 'nt' else 'clear')
+    #     print("\n \n You have already inputed these coordinates:... Please try again")
+       
+    #     wait = input("\n \n Press Enter to continue.")
 
-    
-    user_shot_taken.append(user_shot)
+    #     return "error"
+    #     main()
+
+    # user_shot = user_shot[0].lower() + user_shot[1:]
+    # print(f"This is User shot before ==:  {user_shot} ")
+    # user_shot_taken.append(user_shot)
     
     if user_shot == "":# if string is empty
-        print("Incorrect number of charictors, you must choose 4")
-        print("Try Again :")
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print("Incorrect number of charictors, you must choose 4. Please try again")
+        wait = input("\n \n Press Enter to continue.")
         return "error"
         main()
     
@@ -170,44 +177,58 @@ def get_user_input():
         print("Try Again :")
         main()
     elif (len(user_shot)) != 4: #Error if more than 4 digets
-        print("Incorrect number of charictors, you must choose 4")
-        print("Try Again :")
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print("Incorrect number of inputs, you must choose 4. Please try again")
+        wait = input("\n \n Press Enter to continue.")
         user_shot = "error"
         main()
     elif (user_shot[0].isalpha()) != True: #Error if not a letter
-        print(f"You entered {user_shot[0]} as first diget")
-        print("This must be a letter, please try again .. ")
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print(f"You first input was {user_shot[0]}. This must be a letter betwwn A and J ")
+        wait = input("\n \n Press Enter to continue.")
         user_shot = "error"
         main()
     elif user_shot[0] not in allowed_letters:#Error if not in list a to j
-        print(f"Noooooooooooooo {user_shot[0]} out fo range")
-        print("This must be a letter, please try again .. ")
-        # os.system('cls' if os.name == 'nt' else 'clear')
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print(f"Your first input was {user_shot[0]} it must be between A and J. Please try again")
+        wait = input("\n \n Press Enter to continue.")
         user_shot = "error"
         main()
         wait = input("Press Enter to continue.")
     elif (user_shot[1]) != ":":# Error if not a colon :
+        os.system('cls' if os.name == 'nt' else 'clear')
         print(f"Second input {user_shot[1]} must be a colon => : ")
-        print("No")
+        wait = input("\n \n Press Enter to continue.")
         user_shot = "error"
         main()
     elif (user_shot[2].isdigit()) != True:#Error if not a number diget
-        print(f"Third input {user_shot[2]} must be a number => 1, 2, 27 etc ")
-        print("No")
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print(f"Third input {user_shot[2]} must be a number")
+        wait = input("\n \n Press Enter to continue.")
         user_shot = "error"
         main()
     elif int(user_shot[2]) >= 3: #Error if value is over 20 in choce 
-        print(f"Must be below 20 {user_shot[2]}")
-        print("No")
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print(f"Your third input was {user_shot[2]} It must be 0, 1 or 2 only ")
+        wait = input("\n \n Press Enter to continue.")
         user_shot = "error"
         main()
     elif (user_shot[3].isdigit()) != True:#Error if not a number
-        print(f"Third input {user_shot[3]} must be a number => 1, 2, 27 etc ")
-        print("No")
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print(f"Your fourth input was {user_shot[3]} it must be a number. Please try again")
+        wait = input("\n \n Press Enter to continue.")
         user_shot = "error"
         main()
+    elif user_shot in user_shot_taken:# If Duplicate input
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print("\n \n You have already inputed these coordinates:... Please try again")
+        wait = input("\n \n Press Enter to continue.")
+        os.system('cls' if os.name == 'nt' else 'clear')
+        main()
     else:
-         print(f"After all checks User shot =  {user_shot}")
+        print(f"After all checks User shot =  {user_shot}")
+        user_shot_taken.append(user_shot)
+        print(f"After append =  {user_shot_taken}")
     return user_shot
 #################################################################################
 """
