@@ -59,7 +59,7 @@ def create_game_board():
                 symbol= "|---|"
                 if grid_space_counter in hit_list:
                     # if grid_space_counter in direct_hit_list:
-                    symbol= "|-x-|"
+                    symbol= "|-X-|"
                 if grid_space_counter in very_near:
                     symbol= "|-1-|"
                 if grid_space_counter in miss_var:
@@ -297,7 +297,7 @@ def main():
         miss_var.append(user_number)
         played_shot_hist.append(user_number)
     
-    if  (len(hit_list) == 1):
+    if  (len(hit_list) == 3):
             os.system('cls' if os.name == 'nt' else 'clear')
             print(f"Yeaaaa You Win, you got all three Icebergs ")
             wait = input("Press Enter to continue.")
