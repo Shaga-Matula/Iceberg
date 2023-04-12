@@ -134,11 +134,11 @@ def get_user_input():
     This function valadates the input data from the user
     """
     print("\n    ##################################################")
-    print("\n Please input target cordanance ...\n")
-    print("It must be a letter first then a number")
-    print("If the number is single diget please use a '0'") 
-    print("to fill. Eg one = 01 six = 06")
-    print("With a colon seperating eg.. b:06 or B:05 or c:16 \n")
+    # print("\n Please input target cordanance ...\n")
+    # print("It must be a letter first then a number")
+    # print("If the number is single diget please use a '0'") 
+    # print("to fill. Eg one = 01 six = 06")
+    # print("With a colon seperating eg.. b:06 or B:05 or c:16 \n")
     user_shot = input("Choose cordanates:" )
     
     
