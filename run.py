@@ -283,11 +283,21 @@ def main():
         print("Its an error")
         usr_input = ""
         main()
+    
+    
+    
     print(f"User input (Main) = {usr_input}")
     user_number = translate_user_input(usr_input)
     print(f"Main My User Num (return from transl) =  {user_number}")
     
+    print(user_number)
+    print(direct_hit_list)
+    
+    
     if user_number in direct_hit_list:
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print(f"Its a hit Captain its a hit!!!, you sunk an Iceberg captain")
+        wait = input("\n \n Press Enter to continue.")
         hit_list.append(user_number)
         played_shot_hist.append(user_number)
     elif user_number in tree_icebergs:
