@@ -45,9 +45,9 @@ def create_game_board():
         This function writes the board on screen
         """
         #This prints the headder fo the game
-        print(Fore.YELLOW + "\n     |%%%%%%%%%%%%%--%%%  ICEBURG  %%%--%%%%%%%%%%%%|\n")
+        print(Fore.YELLOW + "\n     |%%%%%%%%%%%%%--%%%  ICEBURG  %%%--%%%%%%%%%%%%|")
         print(Fore.BLUE + "    | A || B || C || D || E || F || G || H || I || J |")
-        print(Fore.GREEN + "    +---++---++---++---++---++---++---++---++---++---+")
+        # print(Fore.GREEN + "    +---++---++---++---++---++---++---++---++---++---+")
         grid_space_counter = 1
         # loop will start at the 1 count for 20 more
         color_ama = (Fore.BLUE)
@@ -139,7 +139,7 @@ def get_user_input():
     # print("If the number is single diget please use a '0'") 
     # print("to fill. Eg one = 01 six = 06")
     # print("With a colon seperating eg.. b:06 or B:05 or c:16 \n")
-    user_shot = input("Choose cordanates:" )
+    user_shot = input("\n Choose cordanates:" )
     
     
     
