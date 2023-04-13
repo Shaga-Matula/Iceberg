@@ -129,9 +129,20 @@ def calculate_iceberg_squares():
 
 #############################################################################
 user_shot_taken = []
+
+def error_1(chestnut):#Prints out user error
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print(chestnut)
+    wait = input("\n \n Press Enter to continue.")
+    user_shot = "error"
+    main()
+
+
+
+
 def get_user_input():
     chestnut = []
-    error_1 = ()
+       
     allowed_letters = "abcdefghijABCDEFGHIJ"
     """
     This function valadates the input data from the user
@@ -142,26 +153,9 @@ def get_user_input():
     # print("If the number is single diget please use a '0'") 
     # print("to fill. Eg one = 01 six = 06")
     # print("With a colon seperating eg.. b:06 or B:05 or c:16 \n")
-    user_shot = input("\n Choose coordinates:" )
+    user_shot = input("\n Please Choose Coordinates Captain:" )
     
-    
-    
-    # if user_shot in user_shot_taken:
-        
-    #     print(f"This is User shot before ==:  {user_shot} ")
-    #     os.system('cls' if os.name == 'nt' else 'clear')
-    #     print("\n \n You have already inputed these coordinates:... Please try again")
-       
-    #     wait = input("\n \n Press Enter to continue.")
-
-    #     return "error"
-    #     main()
-
-    # user_shot = user_shot[0].lower() + user_shot[1:]
-    # print(f"This is User shot before ==:  {user_shot} ")
-    # user_shot_taken.append(user_shot)
-    
-    if user_shot == "":# if string is empty
+    if user_shot == "":# If the string is empty
         print("Incorrect number of charictors, you must choose 4")
         print("Try Again :")
         return "error"
@@ -170,62 +164,47 @@ def get_user_input():
     if (user_shot[0].isalpha()) == True:# If user inputs upper case make lower case
         if user_shot[0].isupper() == True:
             user_shot = user_shot.swapcase()
-            print(f"its upper {user_shot[0]}")
 
-    print(f"User shot ... After empty and Lower case ==  {user_shot}")
+    # print(f"User shot ... After empty and Lower case ==  {user_shot}")
         
     if user_shot == "error":#there was an error 
-        print("################ error")
-        print("Try Again :")
         main()
     elif (len(user_shot)) != 4: #Error if more than 4 digets
-        print("Incorrect number of charictors, you must choose 4")
-        print("Try Again :")
-        user_shot = "error"
-        main()
+        chestnut = "\n\n\n\n\n\n\n\n\n\n Incorrect number of inputs, you must choose 4. Please try again"
+        error_1(chestnut)
     elif (user_shot[0].isalpha()) != True: #Error if not a letter
-        print(f"You entered {user_shot[0]} as first diget")
-        print("This must be a letter, please try again .. ")
-        user_shot = "error"
-        main()
+        chestnut = (f"\n\n\n\n\n\n\n\n\n\n Your first input was {user_shot[0]}. This must be a letter between A and J. Please try again")
+        error_1(chestnut)
     elif user_shot[0] not in allowed_letters:#Error if not in list a to j
-        print(f"Noooooooooooooo {user_shot[0]} out fo range")
-        print("This must be a letter, please try again .. ")
-        # os.system('cls' if os.name == 'nt' else 'clear')
-        user_shot = "error"
-        main()
-        wait = input("Press Enter to continue.")
+        chestnut = (f"\n\n\n\n\n\n\n\n\n\n Your first input was {user_shot[0]} it must be between A and J. Please try again")
+        error_1(chestnut)
     elif (user_shot[1]) != ":":# Error if not a colon :
-        print(f"Second input {user_shot[1]} must be a colon => : ")
-        print("No")
-        user_shot = "error"
-        main()
+        chestnut =(f"\n\n\n\n\n\n\n\n\n\n Your second input was {user_shot[1]} sorry it must be a colon => : ")
+        error_1(chestnut)
     elif (user_shot[2].isdigit()) != True:#Error if not a number diget
-        print(f"Third input {user_shot[2]} must be a number => 1, 2, 27 etc ")
-        print("No")
-        user_shot = "error"
-        main()
+        chestnut =(f"\n\n\n\n\n\n\n\n\n\n Third input {user_shot[2]} must be a number => 0, 1 or 2 ")
+        error_1(chestnut)
     elif int(user_shot[2]) >= 3: #Error if value is over 20 in choce 
-        print(f"Must be below 20 {user_shot[2]}")
-        print("No")
-        user_shot = "error"
-        main()
+        chestnut =(f"\n\n\n\n\n\n\n\n\n\n  Out of range 3rd diget must be 0, 1 or 2 ")
+        error_1(chestnut)
+    elif int(user_shot[2]) == 2 and int(user_shot[3]) != 0:  #Error if value is over 20 in choce 
+        chestnut =(f"\n\n\n\n\n\n\n\n\n\n If the first diget is 2 second diget can only be 0 as the range is 1 to 200")
+        error_1(chestnut)
     elif (user_shot[3].isdigit()) != True:#Error if not a number
-        print(f"Third input {user_shot[3]} must be a number => 1, 2, 27 etc ")
-        print("No")
-        user_shot = "error"
-        main()
+        chestnut = (f"\n\n\n\n\n\n\n\n\n\n Third input {user_shot[3]} must be a number => 1, 2,  etc ")
+        error_1(chestnut)
     elif user_shot in user_shot_taken:# If Duplicate input
-        os.system('cls' if os.name == 'nt' else 'clear')
-        print("\n \n You have already inputed these coordinates:... Please try again")
-        wait = input("\n \n Press Enter to continue.")
-        os.system('cls' if os.name == 'nt' else 'clear')
-        main()
+        chestnut =("\n\n\n\n\n\n\n\n\n\n Sorry, you have already inputed these coordinates:... Please try again")
+        error_1(chestnut)
     else:
-        print(f"After all checks User shot =  {user_shot}")
+        # print(f"After all checks User shot =  {user_shot}")
         user_shot_taken.append(user_shot)
-        print(f"After append =  {user_shot_taken}")
+        # print(f"After append =  {user_shot_taken}")
     return user_shot
+
+
+
+   
 
 #################################################################################
 """
@@ -309,10 +288,6 @@ def main():
             print(f"Yeaaaa You Win, you got all three Icebergs ")
             wait = input("Press Enter to continue.")
 
-        
-
-    
-    
     print(f"Very near 1 = {very_near}")
    
     main()
