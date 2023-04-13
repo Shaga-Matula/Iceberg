@@ -38,6 +38,29 @@ hit_list = []
 played_shot_hist = []
 user_number = ()
 
+def print_rules():
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print(Fore.YELLOW + "\n     |%%%%%%%%%%%%%--%%%  ICEBURG  %%%--%%%%%%%%%%%%|" + Style.RESET_ALL)
+    print("\n   Hello and welcome to Icebberge, a game of cunning and guile\n")
+    print("   The object of the game is to destroy 3 Icebergs to clear a")
+    print("   path for your shipto cross, but! its fogy and you cant see.") 
+    print("\n   This is done by selecting Coordinates to launch your torpedos")
+    print("   Firstly select a letter from the top row of A to J.\n")
+    print("   Then insert a colon : to seperate letters from numbers\n")
+    print("   After the colon you can select a number from 1 to 20")
+    print(Fore.BLUE + "   Please note the input must be 4 char long"  + Style.RESET_ALL)
+    print("   An example of this would be B:12, for colume b row 12\n" )
+    print("   If you choose row number under 10 it must be precede with an 0")
+    print("   An example of this for colum h row 2, would be H:02 \n" )
+    print("   Icebures are huge and 90% is hidden underwater, so you will need")
+    print("   hit it dead center to destroy the Iceberg.")
+    print("   Thus you may hit outside of the Iceberg before you can hit its center.")
+    print("   If so the computer will display a 1, if its a miss you get a 0")
+    print("   An example of this for colum h row 2, would be H:02 \n\n" )
+   
+
+
+
 def create_game_board():
         print(f"Ice berg List {direct_hit_list}")
         print(f"Mises {miss_var}")
@@ -58,12 +81,11 @@ def create_game_board():
                 insert_symbol = ""
             for y in range(10):
                 symbol= "|---|"
-                if grid_space_counter in hit_list:
-                    # if grid_space_counter in direct_hit_list:
+                if grid_space_counter in hit_list:#Hit List:Reveal = direct_hit_list
                     symbol= "|-X-|"
-                if grid_space_counter in very_near:
+                if grid_space_counter in very_near:#Very Near:Reveal = tree_icebergs
                     symbol= "|-1-|"
-                if grid_space_counter in miss_var:
+                if grid_space_counter in miss_var:#Miss Var
                     symbol= "|-0-|"
                 insert_symbol = insert_symbol + symbol
                 grid_space_counter = grid_space_counter + 1 
@@ -115,7 +137,7 @@ def calculate_iceberg_squares():
             tree_icebergs.extend(ice_burg_container)
             
             #Merge all numbers to exclusion array 
-            # excluded_numbers.extend(tree_icebergs)
+            excluded_numbers.extend(tree_icebergs)
             excluded_numbers.extend(outer_numbers)
             x += 1
         
@@ -123,6 +145,8 @@ def calculate_iceberg_squares():
             print(f"excluded numbers == {excluded_numbers}") 
             print(f"core excluded numbers == {direct_hit_list}") 
             doit = "done"
+
+
         print(f"Outer Numbers == {tree_icebergs}") 
         return tree_icebergs
 
@@ -130,7 +154,7 @@ def calculate_iceberg_squares():
 #############################################################################
 user_shot_taken = []
 
-def error_1(chestnut):#Prints out user error
+def error_1(chestnut):#Prints out user errors
     os.system('cls' if os.name == 'nt' else 'clear')
     print(chestnut)
     wait = input("\n \n Press Enter to continue.")
@@ -145,15 +169,17 @@ def get_user_input():
        
     allowed_letters = "abcdefghijABCDEFGHIJ"
     """
-    This function valadates the input data from the user
+    This function valadates the input data from the user.
     """
-    # print("\n    ##################################################")
-    # print("\n Please input target cordanance ...\n")
-    # print("It must be a letter first then a number")
-    # print("If the number is single diget please use a '0'") 
-    # print("to fill. Eg one = 01 six = 06")
-    # print("With a colon seperating eg.. b:06 or B:05 or c:16 \n")
+   
     user_shot = input("\n Please Choose Coordinates Captain:" )
+    
+    
+    if user_shot == "end_game":
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print("\n\n\n\n\n\n\n\n\n\n You have chosen to end game. Come back soon!!")
+        wait = input("\n \n Press Enter to continue.")
+        quit() 
     
     if user_shot == "":# If the string is empty
         print("Incorrect number of charictors, you must choose 4")
@@ -293,7 +319,7 @@ def main():
     main()
 
 
-
+# print_rules()
 main()
 
 
