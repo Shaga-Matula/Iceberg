@@ -1,10 +1,11 @@
 # import gspread
 # from google.oauth2.service_account import Credentials
 import json
+
+#This allows identity of operating system 
 import os
-from colorama import Fore, Back, Style
-import json
-import os
+
+#Imports colored print 
 from colorama import Fore, Back, Style
 
 # importing the random module
@@ -129,6 +130,8 @@ def calculate_iceberg_squares():
 #############################################################################
 user_shot_taken = []
 def get_user_input():
+    chestnut = []
+    error_1 = ()
     allowed_letters = "abcdefghijABCDEFGHIJ"
     """
     This function valadates the input data from the user
@@ -159,64 +162,57 @@ def get_user_input():
     # user_shot_taken.append(user_shot)
     
     if user_shot == "":# if string is empty
-        os.system('cls' if os.name == 'nt' else 'clear')
-        print("Incorrect number of charictors, you must choose 4. Please try again")
-        wait = input("\n \n Press Enter to continue.")
+        print("Incorrect number of charictors, you must choose 4")
+        print("Try Again :")
         return "error"
         main()
-    
+
     if (user_shot[0].isalpha()) == True:# If user inputs upper case make lower case
         if user_shot[0].isupper() == True:
             user_shot = user_shot.swapcase()
             print(f"its upper {user_shot[0]}")
-        
+
     print(f"User shot ... After empty and Lower case ==  {user_shot}")
         
-    if user_shot == "error":#there wans an error 
+    if user_shot == "error":#there was an error 
         print("################ error")
         print("Try Again :")
         main()
     elif (len(user_shot)) != 4: #Error if more than 4 digets
-        os.system('cls' if os.name == 'nt' else 'clear')
-        print("Incorrect number of inputs, you must choose 4. Please try again")
-        wait = input("\n \n Press Enter to continue.")
+        print("Incorrect number of charictors, you must choose 4")
+        print("Try Again :")
         user_shot = "error"
         main()
     elif (user_shot[0].isalpha()) != True: #Error if not a letter
-        os.system('cls' if os.name == 'nt' else 'clear')
-        print(f"You first input was {user_shot[0]}. This must be a letter betwwn A and J ")
-        wait = input("\n \n Press Enter to continue.")
+        print(f"You entered {user_shot[0]} as first diget")
+        print("This must be a letter, please try again .. ")
         user_shot = "error"
         main()
     elif user_shot[0] not in allowed_letters:#Error if not in list a to j
-        os.system('cls' if os.name == 'nt' else 'clear')
-        print(f"Your first input was {user_shot[0]} it must be between A and J. Please try again")
-        wait = input("\n \n Press Enter to continue.")
+        print(f"Noooooooooooooo {user_shot[0]} out fo range")
+        print("This must be a letter, please try again .. ")
+        # os.system('cls' if os.name == 'nt' else 'clear')
         user_shot = "error"
         main()
         wait = input("Press Enter to continue.")
     elif (user_shot[1]) != ":":# Error if not a colon :
-        os.system('cls' if os.name == 'nt' else 'clear')
         print(f"Second input {user_shot[1]} must be a colon => : ")
-        wait = input("\n \n Press Enter to continue.")
+        print("No")
         user_shot = "error"
         main()
     elif (user_shot[2].isdigit()) != True:#Error if not a number diget
-        os.system('cls' if os.name == 'nt' else 'clear')
-        print(f"Third input {user_shot[2]} must be a number")
-        wait = input("\n \n Press Enter to continue.")
+        print(f"Third input {user_shot[2]} must be a number => 1, 2, 27 etc ")
+        print("No")
         user_shot = "error"
         main()
     elif int(user_shot[2]) >= 3: #Error if value is over 20 in choce 
-        os.system('cls' if os.name == 'nt' else 'clear')
-        print(f"Your third input was {user_shot[2]} It must be 0, 1 or 2 only ")
-        wait = input("\n \n Press Enter to continue.")
+        print(f"Must be below 20 {user_shot[2]}")
+        print("No")
         user_shot = "error"
         main()
     elif (user_shot[3].isdigit()) != True:#Error if not a number
-        os.system('cls' if os.name == 'nt' else 'clear')
-        print(f"Your fourth input was {user_shot[3]} it must be a number. Please try again")
-        wait = input("\n \n Press Enter to continue.")
+        print(f"Third input {user_shot[3]} must be a number => 1, 2, 27 etc ")
+        print("No")
         user_shot = "error"
         main()
     elif user_shot in user_shot_taken:# If Duplicate input
@@ -230,6 +226,7 @@ def get_user_input():
         user_shot_taken.append(user_shot)
         print(f"After append =  {user_shot_taken}")
     return user_shot
+
 #################################################################################
 """
 This function compaires the user input to its coradnents and translates to board
