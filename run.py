@@ -1,5 +1,4 @@
-# import gspread
-# from google.oauth2.service_account import Credentials
+
 import json
 
 #This allows identity of operating system
@@ -15,23 +14,8 @@ import string
 #import sys for break in loops
 import sys
 
-# SCOPE = [
-#     "https://www.googleapis.com/auth/spreadsheets",
-#     "https://www.googleapis.com/auth/drive.file",
-#     "https://www.googleapis.com/auth/drive"
-# ]
-
-# creds = json.load(open('creds.json'))
-# CREDS = Credentials.from_service_account_info(creds)
-# SCOPED_CREDS = CREDS.with_scopes(SCOPE)
-# GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-# SHEET = GSPREAD_CLIENT.open("Iceberg")
-
-# grids_sheet = SHEET.worksheet('grid')
-# data = grids_sheet.get_all_values()
 
 very_near = []
-print(f"Very near here = {very_near}")
 direct_hit_list = []
 miss_var = []
 hit_list = []
@@ -39,7 +23,7 @@ user_shot_taken = []
 user_number = ()
 
 
-def print_rules():
+def print_rules():# Rules of the game
     os.system('cls' if os.name == 'nt' else 'clear')
     print(Fore.YELLOW +
           "\n     |%%%%%%%%%%%%%--%%%  ICEBURG  %%%--%%%%%%%%%%%%|" +
@@ -67,8 +51,7 @@ def print_rules():
 
 
 def create_game_board():
-    print(f"Ice berg List {direct_hit_list}")
-    print(f"Mises {miss_var}")
+  
     """
         This function writes the board on screen
         """
@@ -138,10 +121,7 @@ def calculate_iceberg_squares():
             num = random.choice(
                 [i for i in range(1, 200) if i not in excluded_numbers])
             direct_hit_list.append(num)
-            
-            
-            
-            print(f"core excluded numbers == {num}")
+       
             #Place all 8 surounding boxes into exclusion array
             ice_burg_container = num + 1, num - 1, num + 10, num - 10, num - 9, num + 9, num - 11, num + 11
             
@@ -164,27 +144,17 @@ def calculate_iceberg_squares():
                 iceberg_one.append(num)   
                 for element in ice_burg_container:
                     iceberg_one.append(element)
-            print(f"Ice Berg One == {iceberg_one}")
-            if x == 2:
+            elif x == 2:
                 iceberg_two.append(num)   
                 for element in ice_burg_container:
                     iceberg_two.append(element)
-            print(f"Ice Berg two == {iceberg_two}")
-            if x == 3:
+            elif x == 3:
                 iceberg_three.append(num)   
                 for element in ice_burg_container:
                     iceberg_three.append(element)
-            print(f"Ice Berg three == {iceberg_three}")
-
-
+            
             x += 1
-
-            # print(f"excluded numbers == {excluded_numbers}")
-            # print(f"core excluded numbers == {direct_hit_list}")
             doit = "done"
-        # iceberg_one.append(num)
-        # print(f"Outer Numbers == {tree_icebergs}")
-        
 
         return tree_icebergs
 
@@ -229,8 +199,6 @@ def get_user_input():
         ) == True:  # If user inputs upper case make lower case
         if user_shot[0].isupper() == True:
             user_shot = user_shot.swapcase()
-
-    # print(f"User shot ... After empty and Lower case ==  {user_shot}")
 
     if user_shot == "error":  #there was an error
         main()
@@ -278,11 +246,10 @@ def get_user_input():
         )
         error_1(chestnut)
     else:
-        # print(f"After all checks User shot =  {user_shot}")
         user_shot_taken.append(user_shot)
-        # print(f"After append =  {user_shot_taken}")
+     
     return user_shot
-
+create_game_board()
 
 #################################################################################
 """
@@ -294,11 +261,10 @@ dict_1 = {}
 
 def translate_user_input(user_input):
     letters = []
-    print(f"User input at start of tui = {user_input}")
     for i in range(97, 107):
         letters.append(chr(i))
         numbers = (list(range(1, 21)))
-        # print(numbers)
+
         #If the number is between 1 to 9 make double diget
         for i in range(len(numbers)):
             if numbers[i] <= 9:
@@ -315,35 +281,20 @@ def translate_user_input(user_input):
         values = (list(range(1, 201)))
         dict_1 = dict(zip(final, values))
 
-    # print(f"Final_zip =  {final}")
-    # print(f"Values zip =  {values}")
-    # print(f"Dict_1 =  {dict_1}")
     user_shot = (dict_1.get(user_input))
-    print(f"User input =  {user_input}")
 
+    
     return user_shot
 
-
-# for cell in grids_sheet.range('a1:b2'):
-#      print(cell.value)
-
-
-
-
-def check_hits():
+def check_hits():#User experience feedback
     usr_input = get_user_input()
     if usr_input == "error":
         print("Its an error")
         usr_input = ""
         main()
 
-    print(f"User input (Main) = {usr_input}")
     user_number = translate_user_input(usr_input)
-    print(f"Main My User Num (return from transl) =  {user_number}")
-
-    print(user_number)
-    print(direct_hit_list)
-
+ 
     if user_number in direct_hit_list:
         os.system('cls' if os.name == 'nt' else 'clear')
         print(f"Its a hit Captain its a hit!!!, you sunk an Iceberg captain")
@@ -351,36 +302,25 @@ def check_hits():
         hit_list.append(user_number)
         ########################## Reveal if correct #########################
         if user_number in iceberg_one:# If user hits iceberg reveal surounding
-            print(f"Its here in One {iceberg_one}")
             del iceberg_one[0]
-            print(f"Iceberg one afrer del {iceberg_one}")
             for element in iceberg_one:
                 very_near.append(element)
                 user_shot_taken.append(element)
-            user_shot_taken.append(user_number)
-            user_index = (dict_1.get(user_number))
-            print(user_index)
-            print(very_near)
         elif user_number in iceberg_two:# If user hits iceberg reveal surounding
-            print(f"Its here in 2 {iceberg_two}")
             del iceberg_two[0]
-            print(f"Iceberg one afrer del {iceberg_two}")
             for element in iceberg_two:
                 very_near.append(element)
-            user_shot_taken.append(user_number)
-            print(very_near)
+                user_shot_taken.append(user_number)
         elif user_number in iceberg_three:# If user hits iceberg reveal surounding
-            print(f"Its here in 3 {iceberg_three}")
             del iceberg_three[0]
-            print(f"Iceberg one afrer del {iceberg_three}")
             for element in iceberg_three:
                 very_near.append(element)
-            user_shot_taken.append(user_number)
-            print(very_near)
+                user_shot_taken.append(user_number)
+        
         ##############################
     elif user_number in tree_icebergs:
         os.system('cls' if os.name == 'nt' else 'clear')
-        print(f"Youv'e cliped it Captain its a near hit!!!, Your close to a Iceberg Captain")
+        print(f"Youv'e cliped one Captain its a near hit!!!, Your close to a Iceberg Captain")
         wait = input("\n \n Press Enter to continue.")
         very_near.append(user_number)
         user_shot_taken.append(user_number)
@@ -390,10 +330,10 @@ def check_hits():
 
     if (len(hit_list) == 3):
         os.system('cls' if os.name == 'nt' else 'clear')
-        print(f"Yeaaaa You Win, you got all three Icebergs ")
+        print(f"Yeaaaa You Win, your amazing .. you got all three Icebergs ")
         wait = input("Press Enter to continue.")
+    
 create_game_board()
-
 
 
 def main():
@@ -401,43 +341,9 @@ def main():
     create_game_board()
     # usr_input = get_user_input()
     check_hits()
-    # if usr_input == "error":
-    #     print("Its an error")
-    #     usr_input = ""
-    #     main()
-
-    # print(f"User input (Main) = {usr_input}")
-    # user_number = translate_user_input(usr_input)
-    # print(f"Main My User Num (return from transl) =  {user_number}")
-
-    # print(user_number)
-    # print(direct_hit_list)
-
-    # if user_number in direct_hit_list:
-    #     os.system('cls' if os.name == 'nt' else 'clear')
-    #     print(f"Its a hit Captain its a hit!!!, you sunk an Iceberg captain")
-    #     wait = input("\n \n Press Enter to continue.")
-    #     hit_list.append(user_number)
-    #     played_shot_hist.append(user_number)
-    # elif user_number in tree_icebergs:
-    #     os.system('cls' if os.name == 'nt' else 'clear')
-    #     print(f"Youv'e cliped it Captain its a near hit!!!, Your close to a Iceberg Captain")
-    #     wait = input("\n \n Press Enter to continue.")
-    #     very_near.append(user_number)
-    #     played_shot_hist.append(user_number)
-    # else:
-    #     miss_var.append(user_number)
-    #     played_shot_hist.append(user_number)
-
-    # if (len(hit_list) == 3):
-    #     os.system('cls' if os.name == 'nt' else 'clear')
-    #     print(f"Yeaaaa You Win, you got all three Icebergs ")
-    #     wait = input("Press Enter to continue.")
-
-    print(f"Very near 1 = {very_near}")
+      
 
     main()
 
 
-# print_rules()
 main()
