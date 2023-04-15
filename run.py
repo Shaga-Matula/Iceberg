@@ -387,7 +387,7 @@ def check_hits():#User experience feedback
     if (len(hit_list) == 3):
         os.system('cls' if os.name == 'nt' else 'clear')
         print("\n\n\n\n\n You did it Captain, You did it. You Win .. you got all three Icebergs ")
-        print(" \n            Congratulations You WON!!!!!!!")
+        print(" \n            Congratulations You WON!!!!!!!\n\n\n\n")
 
         wait = input("Press Enter to continue.")
     
