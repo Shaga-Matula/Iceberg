@@ -67,7 +67,7 @@ def print_rules():# Rules of the game
             "  Thus you may hit outside of the Iceberg before you can hit its center."
         )
         print("  If so the computer will display a 1, if it’s a miss you get a 0")
-        print("  An example of this for Column h row 2, would be H:02 \n")
+        print("  Icebergs take up 9 spaces, X in middle, surounded by 1's \n")
         print("  The game is over when you sink all 3 Icebergs or quit game \n")
         print("  Good luck captain and God Speed! \n\n")
         wait = input("\n \n  Press Enter to continue.")
