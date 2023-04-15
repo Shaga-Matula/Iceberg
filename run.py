@@ -29,7 +29,7 @@ def print_rules():# Rules of the game
         print("\n\n")
         os.system('cls' if os.name == 'nt' else 'clear')
         print(Fore.YELLOW +
-            "     |%%%%%%%%%%%%%--%%%  ICEBERGS  %%%--%%%%%%%%%%%%|" +
+            "     |%%%%%%%%%%%%%--%%%  ICEBERGS  %%%--%%%%%%%%%%%%|\n" +
             Style.RESET_ALL)
         print("  Hello and welcome to Iceberg’s, a game of cunning and guile.\n")
         print("  The object of the game is to destroy 3 Icebergs to clear a")
@@ -40,9 +40,12 @@ def print_rules():# Rules of the game
         print("\n  Use this tranquility to your advantage, your crew will listen ")
         print("  out for the sound of ice crushing under the weight your torpedoes")
         print("  as you hunt in the fog for the ICEBERGS")
-        wait = input("\n \n Press Enter to continue." + Style.RESET_ALL)
+        wait = input("\n \n  Press Enter to continue." + Style.RESET_ALL)
         os.system('cls' if os.name == 'nt' else 'clear')
-        print("\n  You can achieve your goal by selecting Coordinates to launch ")
+        print(Fore.YELLOW +
+            "     |%%%%%%%%%%%%%--%%%  ICEBERGS  %%%--%%%%%%%%%%%%|\n" +
+            Style.RESET_ALL)
+        print("  You can achieve your goal by selecting Coordinates to launch ")
         print("  your torpedoes into the foggy night.\n")
         print("  Firstly select a letter from the top row of A to J.\n")
         print("  Then insert a colon : to separate letters from numbers\n")
@@ -52,8 +55,11 @@ def print_rules():# Rules of the game
         print("  An example of this would be B:12, for Column b row 12\n")
         print("  If you choose row number under 10 it must be preceded with a 0")
         print("  An example of this for Column h row 2, would be H:02 \n")
-        wait = input("\n \n Press Enter to continue." + Style.RESET_ALL)
+        wait = input("\n \n  Press Enter to continue." + Style.RESET_ALL)
         os.system('cls' if os.name == 'nt' else 'clear')
+        print(Fore.YELLOW +
+            "     |%%%%%%%%%%%%%--%%%  ICEBERGS  %%%--%%%%%%%%%%%%|\n" +
+            Style.RESET_ALL)
         print(
             "  Iceburgs are huge and 90% is hidden underwater, so you will need")
         print("  hit it dead centre to destroy the Iceberg.\n")
@@ -62,15 +68,20 @@ def print_rules():# Rules of the game
         )
         print("  If so the computer will display a 1, if it’s a miss you get a 0")
         print("  An example of this for Column h row 2, would be H:02 \n")
-        print("  The game is over when you sink all 3 Iceburgs or quit game \n")
+        print("  The game is over when you sink all 3 Icebergs or quit game \n")
         print("  Good luck captain and God Speed! \n\n")
-        wait = input("\n \n Press Enter to continue.")
+        wait = input("\n \n  Press Enter to continue.")
         os.system('cls' if os.name == 'nt' else 'clear')
-        print(Fore.BLUE + "\n \n \n \n \n If you need to see the rules again")
-        print(Fore.BLUE +" input 'help' to the Coordinates with no quotations")
-        print(Fore.BLUE + "\n \n \n \n \n If you want to quit the game.")
-        print(Fore.BLUE +" input 'end_game' to the Coordinates with no quotations")
-        wait = input("\n \n Press Enter to continue." + Style.RESET_ALL)
+        print(Fore.YELLOW +
+            "     |%%%%%%%%%%%%%--%%%  ICEBERGS  %%%--%%%%%%%%%%%%|\n" +
+            Style.RESET_ALL)
+        print(Fore.BLUE +   "\n  The game will reveal the complete iceberg if you smash its center.")
+        print(Fore.BLUE +   "  Smash all three Icebergs.. You Win!, quit game... You Lose!")
+        print(Fore.BLUE + "\n \n \n  If you need to see the rules again.")
+        print(Fore.BLUE +"  Input 'help' to the Coordinates with no quotations.")
+        print(Fore.BLUE + "\n \n \n  If you want to quit the game.")
+        print(Fore.BLUE +"  Input 'end_game' to the Coordinates with no quotations")
+        wait = input("\n \n\n\n  Press Enter to continue." + Style.RESET_ALL)
         os.system('cls' if os.name == 'nt' else 'clear')
         run_help = ("no_help")
         return run_help
@@ -135,6 +146,7 @@ doit = "notdone"
 def calculate_iceberg_squares():
     global doit
     if doit == ("notdone"):
+        #note to shorten code below repetitive, if time.
         # This function will pick a random number between 1,200 that is not in the excluded list and
         # return the value of 3 sets of 9 numbers representing the icebergs
 
@@ -165,6 +177,7 @@ def calculate_iceberg_squares():
             excluded_numbers.extend(outer_numbers)
 
         ############# seperate Iceburgs for reveal ################
+        #note to shorten code below repetitive, if time.
             if x == 1:
                 iceberg_one.append(num)   
                 for element in ice_burg_container:
@@ -342,6 +355,7 @@ def check_hits():#User experience feedback
         wait = input("\n \n Press Enter to continue.")
         hit_list.append(user_number)
         ########################## Reveal if correct #########################
+        #note to shorten code below repetitive, if time.
         if user_number in iceberg_one:# If user hits iceberg reveal surounding
             del iceberg_one[0]
             for element in iceberg_one:
@@ -381,10 +395,7 @@ def main():
     print_rules()
     calculate_iceberg_squares()
     create_game_board()
-    # usr_input = get_user_input()
     check_hits()
-      
-
     main()
 
 
