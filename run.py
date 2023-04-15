@@ -22,34 +22,44 @@ hit_list = []
 user_shot_taken = []
 user_number = ()
 
-
+run_help = ("help")
 def print_rules():# Rules of the game
-    os.system('cls' if os.name == 'nt' else 'clear')
-    print(Fore.YELLOW +
-          "\n     |%%%%%%%%%%%%%--%%%  ICEBURG  %%%--%%%%%%%%%%%%|" +
-          Style.RESET_ALL)
-    print("\n   Hello and welcome to Icebberge, a game of cunning and guile\n")
-    print("   The object of the game is to destroy 3 Icebergs to clear a")
-    print("   path for your shipto cross, but! its fogy and you cant see.")
-    print("\n   This is done by selecting Coordinates to launch your torpedos")
-    print("   Firstly select a letter from the top row of A to J.\n")
-    print("   Then insert a colon : to seperate letters from numbers\n")
-    print("   After the colon you can select a number from 1 to 20")
-    print(Fore.BLUE + "   Please note the input must be 4 char long" +
-          Style.RESET_ALL)
-    print("   An example of this would be B:12, for colume b row 12\n")
-    print("   If you choose row number under 10 it must be precede with an 0")
-    print("   An example of this for colum h row 2, would be H:02 \n")
-    print(
-        "   Icebures are huge and 90% is hidden underwater, so you will need")
-    print("   hit it dead center to destroy the Iceberg.")
-    print(
-        "   Thus you may hit outside of the Iceberg before you can hit its center."
-    )
-    print("   If so the computer will display a 1, if its a miss you get a 0")
-    print("   An example of this for colum h row 2, would be H:02 \n\n")
-
-
+    global run_help
+    if run_help == ("help"):
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print(Fore.YELLOW +
+            "\n     |%%%%%%%%%%%%%--%%%  ICEBURGS  %%%--%%%%%%%%%%%%|" +
+            Style.RESET_ALL)
+        print("\n  Hello and welcome to Iceberge's, a game of cunning and guile.\n")
+        print("  The object of the game is to destroy 3 Icebergs to clear a")
+        print("  path for your ship to cross, but! its fogy and you can not see,")
+        print("  fortuneatly the sea is flat as a pancake and you can hear the sound")
+        print("  dripping water as the icebergs melt, 'Its so quite' the first mate says.")
+        print("\n  Use this to your advantage, your crew will listen out for the ")
+        print("  sound of ice crushing under the weight your torpedios")
+        print("  as you hunt in the fog for the ICEBERGS")
+        print("\n  You can acheve your goal by selecting Coordinates to launch ")
+        print(" your torpedos into the foggy night.")
+        print("  Firstly select a letter from the top row of A to J.\n")
+        print("  Then insert a colon : to seperate letters from numbers\n")
+        print("  After the colon you can select a number from 1 to 20")
+        print(Fore.BLUE + "  Please note the input must be 4 char long." +
+            Style.RESET_ALL)
+        print("  An example of this would be B:12, for colum b row 12\n")
+        print("  If you choose row number under 10 it must be precede with an 0")
+        print("  An example of this for colum h row 2, would be H:02 \n")
+        print(
+            "  Icebures are huge and 90% is hidden underwater, so you will need")
+        print("  hit it dead center to destroy the Iceberg.")
+        print(
+            "  Thus you may hit outside of the Iceberg before you can hit its center."
+        )
+        print("  If so the computer will display a 1, if its a miss you get a 0")
+        print("  An example of this for colum h row 2, would be H:02 \n\n")
+        wait = input("\n \n Press Enter to continue.")
+        run_help = ("no_help")
+        os.system('cls' if os.name == 'nt' else 'clear')
+        main()
 def create_game_board():
   
     """
@@ -181,6 +191,15 @@ def get_user_input():
 
     user_shot = input("\n Please Choose Coordinates Captain:")
 
+
+    if user_shot == "help":
+        os.system('cls' if os.name == 'nt' else 'clear')
+        run_help = ("help")
+        print(
+            "\n\n\n\n\n\n\n\n\n\n You have chosen to help. Come back soon!!"
+        )
+        wait = input("\n \n Press Enter to continue.")
+        print_rules()
     if user_shot == "end_game":
         os.system('cls' if os.name == 'nt' else 'clear')
         print(
@@ -337,6 +356,7 @@ create_game_board()
 
 
 def main():
+    print_rules()
     calculate_iceberg_squares()
     create_game_board()
     # usr_input = get_user_input()
