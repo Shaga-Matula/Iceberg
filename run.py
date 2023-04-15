@@ -30,36 +30,46 @@ def print_rules():# Rules of the game
         print(Fore.YELLOW +
             "\n     |%%%%%%%%%%%%%--%%%  ICEBURGS  %%%--%%%%%%%%%%%%|" +
             Style.RESET_ALL)
-        print("\n  Hello and welcome to Iceberge's, a game of cunning and guile.\n")
+        print("\n  Hello and welcome to Iceberg’s, a game of cunning and guile.\n")
         print("  The object of the game is to destroy 3 Icebergs to clear a")
-        print("  path for your ship to cross, but! its fogy and you can not see,")
-        print("  fortuneatly the sea is flat as a pancake and you can hear the sound")
-        print("  dripping water as the icebergs melt, 'Its so quite' the first mate says.")
-        print("\n  Use this to your advantage, your crew will listen out for the ")
-        print("  sound of ice crushing under the weight your torpedios")
+        print("  path for your ship to cross, but! Its fogy and you cannot see,")
+        print("  fortunately the sea is flat as a pancake and you can hear the sound")
+        print("  dripping water as the icebergs melt, 'It’s so quite' you hear")
+        print("  the first mate say, 'its so quite'.")
+        print("\n  Use this tranquillity to your advantage, your crew will listen ")
+        print("  out for the sound of ice crushing under the weight your torpedoes")
         print("  as you hunt in the fog for the ICEBERGS")
-        print("\n  You can acheve your goal by selecting Coordinates to launch ")
-        print(" your torpedos into the foggy night.")
+        print("\n  You can achieve your goal by selecting Coordinates to launch ")
+        print("  your torpedoes into the foggy night.\n")
         print("  Firstly select a letter from the top row of A to J.\n")
-        print("  Then insert a colon : to seperate letters from numbers\n")
+        print("  Then insert a colon : to separate letters from numbers\n")
         print("  After the colon you can select a number from 1 to 20")
         print(Fore.BLUE + "  Please note the input must be 4 char long." +
             Style.RESET_ALL)
-        print("  An example of this would be B:12, for colum b row 12\n")
+        print("  An example of this would be B:12, for Colum b row 12\n")
         print("  If you choose row number under 10 it must be precede with an 0")
-        print("  An example of this for colum h row 2, would be H:02 \n")
+        print("  An example of this for Colum h row 2, would be H:02 \n")
         print(
-            "  Icebures are huge and 90% is hidden underwater, so you will need")
-        print("  hit it dead center to destroy the Iceberg.")
+            "  Icebergs are huge and 90% is hidden underwater, so you will need")
+        print("  hit it dead centre to destroy the Iceberg.\n")
         print(
             "  Thus you may hit outside of the Iceberg before you can hit its center."
         )
-        print("  If so the computer will display a 1, if its a miss you get a 0")
-        print("  An example of this for colum h row 2, would be H:02 \n\n")
+        print("  If so the computer will display a 1, if it’s a miss you get a 0")
+        print("  An example of this for Colum h row 2, would be H:02 \n")
+        print("  The game is over wheyou sink all 3 Icebergs or quit game \n")
+        print("  Good luck captain and God Speed! \n\n")
         wait = input("\n \n Press Enter to continue.")
-        run_help = ("no_help")
         os.system('cls' if os.name == 'nt' else 'clear')
-        main()
+        print(Fore.BLUE + "\n \n \n \n \n If you need to see the rules again")
+        print(Fore.BLUE +" input 'help' to the Coordinates with no quotations")
+        print(Fore.BLUE + "\n \n \n \n \n If you want to quit the game.")
+        print(Fore.BLUE +" input 'end_game' to the Coordinates with no quotations")
+        wait = input("\n \n Press Enter to continue." + Style.RESET_ALL)
+        os.system('cls' if os.name == 'nt' else 'clear')
+        run_help = ("no_help")
+        return run_help
+    calculate_iceberg_squares()
 def create_game_board():
   
     """
@@ -136,7 +146,7 @@ def calculate_iceberg_squares():
             ice_burg_container = num + 1, num - 1, num + 10, num - 10, num - 9, num + 9, num - 11, num + 11
             
          
-            #Calculate outer box from given randam number
+            #Calculate outer box from given randam number, note to look for math function to shortin
             outer_top = num - 18, num - 19, num - 20, num - 21, num - 22
             outer_left_right = num - 2, num - 12, num - 8, num + 2, num + 12, num + 8
             outer_bottom = num + 18, num + 19, num + 20, num + 21, num + 22
@@ -164,8 +174,8 @@ def calculate_iceberg_squares():
                     iceberg_three.append(element)
             
             x += 1
-            doit = "done"
-
+           
+        doit = "done"
         return tree_icebergs
 
 
@@ -192,14 +202,18 @@ def get_user_input():
     user_shot = input("\n Please Choose Coordinates Captain:")
 
 
-    if user_shot == "help":
+    if user_shot == "help":#run the help file and display rules of play
         os.system('cls' if os.name == 'nt' else 'clear')
+        global run_help
         run_help = ("help")
         print(
             "\n\n\n\n\n\n\n\n\n\n You have chosen to help. Come back soon!!"
         )
         wait = input("\n \n Press Enter to continue.")
         print_rules()
+        calculate_iceberg_squares()
+        return run_help
+
     if user_shot == "end_game":
         os.system('cls' if os.name == 'nt' else 'clear')
         print(
@@ -209,9 +223,13 @@ def get_user_input():
         quit()
 
     if user_shot == "":  # If the string is empty
-        print("Incorrect number of charictors, you must choose 4")
-        print("Try Again :")
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print("\n \n \n \n \n \n \n You have not entered any characters, you must choose 4, eg b:12")
+        print("\n Please Try Again :")
+        wait = input("\n \n Press Enter to continue.")
+        os.system('cls' if os.name == 'nt' else 'clear')
         return "error"
+        
         main()
 
     if (user_shot[0].isalpha()
