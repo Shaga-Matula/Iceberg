@@ -26,38 +26,43 @@ run_help = ("help")
 def print_rules():# Rules of the game
     global run_help
     if run_help == ("help"):
+        print("\n\n")
         os.system('cls' if os.name == 'nt' else 'clear')
         print(Fore.YELLOW +
-            "\n     |%%%%%%%%%%%%%--%%%  ICEBURGS  %%%--%%%%%%%%%%%%|" +
+            "     |%%%%%%%%%%%%%--%%%  ICEBERGS  %%%--%%%%%%%%%%%%|" +
             Style.RESET_ALL)
-        print("\n  Hello and welcome to Iceberg’s, a game of cunning and guile.\n")
+        print("  Hello and welcome to Iceberg’s, a game of cunning and guile.\n")
         print("  The object of the game is to destroy 3 Icebergs to clear a")
         print("  path for your ship to cross, but! Its fogy and you cannot see,")
         print("  fortunately the sea is flat as a pancake and you can hear the sound")
-        print("  dripping water as the icebergs melt, 'It’s so quite' you hear")
-        print("  the first mate say, 'its so quite'.")
-        print("\n  Use this tranquillity to your advantage, your crew will listen ")
+        print("  of dripping water as the icebergs melt, 'It’s so quiet' you hear")
+        print("  the first mate say, 'its so quiet'.")
+        print("\n  Use this tranquility to your advantage, your crew will listen ")
         print("  out for the sound of ice crushing under the weight your torpedoes")
         print("  as you hunt in the fog for the ICEBERGS")
+        wait = input("\n \n Press Enter to continue." + Style.RESET_ALL)
+        os.system('cls' if os.name == 'nt' else 'clear')
         print("\n  You can achieve your goal by selecting Coordinates to launch ")
         print("  your torpedoes into the foggy night.\n")
         print("  Firstly select a letter from the top row of A to J.\n")
         print("  Then insert a colon : to separate letters from numbers\n")
-        print("  After the colon you can select a number from 1 to 20")
+        print("  After the colon you can select a number from 01 to 20")
         print(Fore.BLUE + "  Please note the input must be 4 char long." +
             Style.RESET_ALL)
-        print("  An example of this would be B:12, for Colum b row 12\n")
-        print("  If you choose row number under 10 it must be precede with an 0")
-        print("  An example of this for Colum h row 2, would be H:02 \n")
+        print("  An example of this would be B:12, for Column b row 12\n")
+        print("  If you choose row number under 10 it must be preceded with a 0")
+        print("  An example of this for Column h row 2, would be H:02 \n")
+        wait = input("\n \n Press Enter to continue." + Style.RESET_ALL)
+        os.system('cls' if os.name == 'nt' else 'clear')
         print(
-            "  Icebergs are huge and 90% is hidden underwater, so you will need")
+            "  Iceburgs are huge and 90% is hidden underwater, so you will need")
         print("  hit it dead centre to destroy the Iceberg.\n")
         print(
             "  Thus you may hit outside of the Iceberg before you can hit its center."
         )
         print("  If so the computer will display a 1, if it’s a miss you get a 0")
-        print("  An example of this for Colum h row 2, would be H:02 \n")
-        print("  The game is over wheyou sink all 3 Icebergs or quit game \n")
+        print("  An example of this for Column h row 2, would be H:02 \n")
+        print("  The game is over when you sink all 3 Iceburgs or quit game \n")
         print("  Good luck captain and God Speed! \n\n")
         wait = input("\n \n Press Enter to continue.")
         os.system('cls' if os.name == 'nt' else 'clear')
@@ -187,7 +192,6 @@ def error_1(chestnut):  #Prints out user errors
     os.system('cls' if os.name == 'nt' else 'clear')
     print(chestnut)
     wait = input("\n \n Press Enter to continue.")
-    user_shot = "error"
     main()
 
 
