@@ -52,8 +52,8 @@ def print_rules():# Rules of the game
         print("  After the colon you can select a number from 01 to 20")
         print(Fore.BLUE + "  Please note the input must be 4 char long." +
             Style.RESET_ALL)
-        print("  An example of this would be B:12, for Column b row 12\n")
-        print("  If you choose row number under 10 it must be preceded with a 0")
+        print("  An example of this would be B:02, for Column b row 2.\n")
+        print("  If you choose a row number under 10 it must be preceded with a 0")
         print("  An example of this for Column h row 2, would be H:02 \n")
         wait = input("\n \n  Press Enter to continue." + Style.RESET_ALL)
         os.system('cls' if os.name == 'nt' else 'clear')
@@ -203,6 +203,7 @@ user_shot_taken = []
 
 def error_1(chestnut):  #Prints out user errors
     os.system('cls' if os.name == 'nt' else 'clear')
+    print("\n\n")
     print(chestnut)
     wait = input("\n \n Press Enter to continue.")
     main()
@@ -224,7 +225,7 @@ def get_user_input():
         global run_help
         run_help = ("help")
         print(
-            "\n\n\n\n\n\n\n\n\n\n You have chosen to help. Come back soon!!"
+            "\n\n\n\n\n\n\n\n\n\n You have chosen to help. You will be returned to game when finished!!"
         )
         wait = input("\n \n Press Enter to continue.")
         print_rules()
@@ -351,7 +352,7 @@ def check_hits():#User experience feedback
  
     if user_number in direct_hit_list:
         os.system('cls' if os.name == 'nt' else 'clear')
-        print(f"Its a hit Captain its a hit!!!, you sunk an Iceberg captain")
+        print(f"Its a hit Captain its a hit!!!, you smashed an Iceberg captain")
         wait = input("\n \n Press Enter to continue.")
         hit_list.append(user_number)
         ########################## Reveal if correct #########################
@@ -375,7 +376,7 @@ def check_hits():#User experience feedback
         ##############################
     elif user_number in tree_icebergs:
         os.system('cls' if os.name == 'nt' else 'clear')
-        print(f"Youv'e cliped one Captain its a near hit!!!, Your close to a Iceberg Captain")
+        print("\n\n\n\n\n Youv'e cliped one Captain its a near hit!!!, Your close to a Iceberg Captain")
         wait = input("\n \n Press Enter to continue.")
         very_near.append(user_number)
         user_shot_taken.append(user_number)
@@ -385,7 +386,9 @@ def check_hits():#User experience feedback
 
     if (len(hit_list) == 3):
         os.system('cls' if os.name == 'nt' else 'clear')
-        print(f"Yeaaaa You Win, your amazing .. you got all three Icebergs ")
+        print("\n\n\n\n\n You did it Captain, You did it. You Win .. you got all three Icebergs ")
+        print(" \n            Congratulations You WON!!!!!!!")
+
         wait = input("Press Enter to continue.")
     
 create_game_board()
