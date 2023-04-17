@@ -60,32 +60,57 @@
 
 # The Game board
 
-### The game bord consists of 200 squares, top row A to J and side column of 01 to 20. 
+### The game bord consists of 200 squares, top row A to J and side column of 01 to 20. The user is proppted to input coordinates at the bottom of page.  
 
 <figure>
 <img src="assets/images/game_board.png" width=400>
 </figure>
 
-You can achieve your goal by selecting Coordinates to launch 
-your torpedoes into the foggy night.
-Firstly select a letter from the top row of A to J.
-Then insert a colon : to separate letters from numbers
-After the colon you can select a number from 01 to 20
-"  Please note the input must be 4 char long." +
+# Method
+### You can achieve your goal by selecting Coordinates to launch your torpedoes into the foggy night.Firstly select a letter from the top row of A to J. Then insert a colon : to separate letters from numbers. After the colon you can select a number from 01 to 20.
+
+### "  Please note the input must be 4 char long." +
     
-An example of this would be B:02, for Column b row 2.
-If you choose a row number under 10 it must be preceded with a 0
-An example of this for Column h row 2, would be H:02 
-    
+### An example of this would be B:02, for Column b row 2. If you choose a row number under 10 it must be preceded with a 0. An example of this for Column h row 2, would be H:02 
+
+
+<figure>
+<img src="assets/images/ho2.png" width=400>
+</figure>
         
     
-"  Iceburgs are huge and 90% is hidden underwater, so you will need
-hit it dead centre to destroy the Iceberg.
+### Iceburgs are huge and 90% is hidden underwater, so you will need hit it dead centre to destroy the Iceberg.
+### Thus you may hit outside of the Iceberg before you can hit its center.
 
-  "  Thus you may hit outside of the Iceberg before you can hit its center."
-)
-If so the computer will display a 1, if it’s a miss you get a 0
-Icebergs take up 9 spaces, X in middle, surounded by 1's 
+### The computer will display a 0 if its a miss as below. 
+
+<figure>
+<img src="assets/images/miss.png" width=400>
+</figure>
+
+### If you clip the outside of the Iceberg the computer will display a 1. 
+<figure>
+<img src="assets/images/clipped_1.png" width=400>
+</figure>
+
+### You will also recieve a message from the crew that you have cliped an Iceberg and tthat its a near hit.
+
+<figure>
+<img src="assets/images/clipped.png" width=400>
+</figure>
+
+### Icebergs take up 9 spaces, X in middle, surounded by 1's 
+
+<figure>
+<img src="assets/images/dir_hit.png" width=400>
+</figure>
+
+### The game will reveal the complete iceberg if you smash its center.
+
+<figure>
+<img src="assets/images/finished_game.png" width=400>
+</figure>
+
 The game is over when you sink all 3 Icebergs or quit game 
 Good luck captain and God Speed! 
   
