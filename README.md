@@ -18,10 +18,15 @@
     1.  [Project Goals](#Project-Goals)
     2.  [User Experience](#User-experience)
     3.  [Target Audience](#Target-Audience)
-2.  [Technical Design](#Technical-Design)
+2.  [How to Play Iceberg](#How-to-play-Iceberge)
+    1.  [The Game Board](#The-Game-Board)
+    2.  [Method](#Method)
+3.  [Help File](#Help-File)
+
+
+
+3.  [Technical Design](#Technical-Design)
     1. [Flowchart](#Flowchart)
-3.  [How to Play Iceberg](#How-to-play-Iceberge)
-    2.  [The Game Board](#The-Game-Board)
 
 
 <hr style="border:1px solid white">
@@ -41,6 +46,8 @@
 * Create a game that track and reports all errors with feedback to the user.
 * Create a game that challenging against a computer opponent.
 * Accecpt upper and lower case input for letters in cordanates to speed up user experience. 
+* Add help function to game so user can recall help at any time.
+* Add quit game function so user can quit game if so desired. 
 
 
 ## Target Audience
@@ -58,7 +65,7 @@
 ### Use this tranquility to your advantage, your crew will listen out for the sound of ice crushing under the weight your torpedoes as you hunt in the fog for the "ICEBERGS".
 &nbsp;       
 
-# The Game board
+## The Game board
 
 ### The game bord consists of 200 squares, top row A to J and side column of 01 to 20. The user is proppted to input coordinates at the bottom of page.  
 
@@ -66,11 +73,11 @@
 <img src="assets/images/game_board.png" width=400>
 </figure>
 
-# Method
-### You can achieve your goal by selecting Coordinates to launch your torpedoes into the foggy night.Firstly select a letter from the top row of A to J. Then insert a colon : to separate letters from numbers. After the colon you can select a number from 01 to 20.
-
-### "  Please note the input must be 4 char long." +
-    
+## Method
+### You can achieve your goal by selecting Coordinates to launch your torpedoes into the foggy night. Firstly select a letter from the top row of A to J. Then insert a colon : to separate letters from numbers. After the colon you can select a number from 01 to 20.
+&nbsp; 
+### "  Please note the input must be 4 char long." 
+&nbsp; 
 ### An example of this would be B:02, for Column b row 2. If you choose a row number under 10 it must be preceded with a 0. An example of this for Column h row 2, would be H:02 
 
 
@@ -111,19 +118,17 @@
 <img src="assets/images/finished_game.png" width=400>
 </figure>
 
-The game is over when you sink all 3 Icebergs or quit game 
-Good luck captain and God Speed! 
-  
-"  The game will reveal the complete iceberg if you smash its center.
-"  Smash all three Icebergs.. You Win!, quit game... You Lose!
-"    If you need to see the rules again.
-Input 'help' to the Coordinates with no quotations.
-"    If you want to quit the game.
-Input 'end_game' to the Coordinates with no quotations
-
-
-
+### The game is over when you sink all 3 Icebergs or quit game by typing end_game at the command prompt. If the user needs to see the rules again they can input 'help' to the command prompt.  
+### Good luck captain and God Speed! 
 &nbsp;
+### Help File
+
+
+
+
+
+
+
 &nbsp;
 &nbsp;
 &nbsp;

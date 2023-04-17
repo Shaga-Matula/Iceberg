@@ -29,59 +29,62 @@ def print_rules():# Rules of the game
         print("\n\n")
         os.system('cls' if os.name == 'nt' else 'clear')
         print(Fore.YELLOW +
-            "     |%%%%%%%%%%%%%--%%%  ICEBERGS  %%%--%%%%%%%%%%%%|\n" +
+            "     |%%%%%%%%%%%%%--%%%  ICEBERG  %%%--%%%%%%%%%%%%|\n" +
             Style.RESET_ALL)
-        print("  Hello and welcome to Iceberg’s, a game of cunning and guile.\n")
+        print("  Hello and welcome to Iceberg, a game of cunning and guile.\n")
         print("  The object of the game is to destroy 3 Icebergs to clear a")
-        print("  path for your ship to cross, but! Its fogy and you cannot see,")
+        print("  path for your ship to cross, but! It's foggy and you cannot see,")
         print("  fortunately the sea is flat as a pancake and you can hear the sound")
         print("  of dripping water as the icebergs melt, 'It’s so quiet' you hear")
-        print("  the first mate say, 'its so quiet'.")
+        print("  the first mate say, 'It's so quiet'.")
         print("\n  Use this tranquility to your advantage, your crew will listen ")
         print("  out for the sound of ice crushing under the weight your torpedoes")
-        print("  as you hunt in the fog for the ICEBERGS")
+        print("  as you hunt in the fog for the ICEBERG's")
         wait = input("\n \n  Press Enter to continue." + Style.RESET_ALL)
         os.system('cls' if os.name == 'nt' else 'clear')
         print(Fore.YELLOW +
-            "     |%%%%%%%%%%%%%--%%%  ICEBERGS  %%%--%%%%%%%%%%%%|\n" +
+            "     |%%%%%%%%%%%%%--%%%  ICEBERG  %%%--%%%%%%%%%%%%|\n" +
             Style.RESET_ALL)
         print("  You can achieve your goal by selecting Coordinates to launch ")
         print("  your torpedoes into the foggy night.\n")
         print("  Firstly select a letter from the top row of A to J.\n")
+        print("  The first letter is not case sensitive") 
         print("  Then insert a colon : to separate letters from numbers\n")
         print("  After the colon you can select a number from 01 to 20")
         print(Fore.BLUE + "  Please note the input must be 4 char long." +
             Style.RESET_ALL)
+           
         print("  An example of this would be B:02, for Column b row 2.\n")
         print("  If you choose a row number under 10 it must be preceded with a 0")
         print("  An example of this for Column h row 2, would be H:02 \n")
         wait = input("\n \n  Press Enter to continue." + Style.RESET_ALL)
         os.system('cls' if os.name == 'nt' else 'clear')
         print(Fore.YELLOW +
-            "     |%%%%%%%%%%%%%--%%%  ICEBERGS  %%%--%%%%%%%%%%%%|\n" +
+            "     |%%%%%%%%%%%%%--%%%  ICEBERG  %%%--%%%%%%%%%%%%|\n" +
             Style.RESET_ALL)
         print(
-            "  Iceburgs are huge and 90% is hidden underwater, so you will need")
+            "  Icebergs are huge and 90% is hidden underwater, so you will need to")
         print("  hit it dead centre to destroy the Iceberg.\n")
         print(
-            "  Thus you may hit outside of the Iceberg before you can hit its center."
+            "  Thus you may hit outside of the Iceberg before you hit its center."
         )
-        print("  If so the computer will display a 1, if it’s a miss you get a 0")
-        print("  Icebergs take up 9 spaces, X in middle, surounded by 1's \n")
+        print("  If so, the computer will display a 1, if it’s a miss you get a 0")
+        print("  Icebergs take up 9 spaces, X in middle, surrounded by 1's \n")
         print("  The game is over when you sink all 3 Icebergs or quit game \n")
         print("  Good luck captain and God Speed! \n\n")
         wait = input("\n \n  Press Enter to continue.")
         os.system('cls' if os.name == 'nt' else 'clear')
         print(Fore.YELLOW +
-            "     |%%%%%%%%%%%%%--%%%  ICEBERGS  %%%--%%%%%%%%%%%%|\n" +
+            "     |%%%%%%%%%%%%%--%%%  ICEBERG  %%%--%%%%%%%%%%%%|\n" +
             Style.RESET_ALL)
-        print(Fore.BLUE +   "\n  The game will reveal the complete iceberg if you smash its center.")
-        print(Fore.BLUE +   "  Smash all three Icebergs.. You Win!, quit game... You Lose!")
-        print(Fore.BLUE + "\n \n \n  If you need to see the rules again.")
+        print(Fore.BLUE +   "\n  The game will reveal the complete Iceberg if you smash it's center.")
+        print(Fore.BLUE +   "\n  If you smash all three Icebergs.. You Win!")
+        print(Fore.BLUE + "  If you enter end_game and quit.... You Lose!.")
+        print(Fore.BLUE + "\n \n  If you need to see the rules again.")
         print(Fore.BLUE +"  Input 'help' to the Coordinates with no quotations.")
-        print(Fore.BLUE + "\n \n \n  If you want to quit the game.")
+        print(Fore.BLUE + "\n \n  If you want to quit the game.")
         print(Fore.BLUE +"  Input 'end_game' to the Coordinates with no quotations")
-        wait = input("\n \n\n\n  Press Enter to continue." + Style.RESET_ALL)
+        wait = input("\n \n\n  Press Enter to continue." + Style.RESET_ALL)
         os.system('cls' if os.name == 'nt' else 'clear')
         run_help = ("no_help")
         return run_help
