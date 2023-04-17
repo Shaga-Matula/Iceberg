@@ -30,22 +30,21 @@
     1. [Page Four](#page-Four)
 
 4.  [Error Catching](#error-catching)
-    1.  [Error catch 1. (Help function)](#error-catch-1)
-    2.  [Error catch 2. (End_Game function) ](#error-catch-2)
-    3.  [Error catch 3. (Check for Blank) ](#error-catch-3)
-    4.  [Uppercase 4. (Check if Upper Case)](#error-catch-4)
-    5.  [Error catch 5. (Check if range A to J)](#error-catch-5)
-    6.  [Error catch 6. (Check for 4 Char) ](#error-catch-6)
-    7.  [Error catch 7. (Check for Colon)](#error-catch-7)
-    8.  [Error catch 8. (Check 3rd input Number)](#error-catch-8)
-    9.  [Error catch 9. (Check range number is 0 to 2)](#error-catch-9)
-    10. [Error catch 10. (If input 3 is = 2, input 4 must be a 0) ](#error-catch-10)
-    11. [Error catch 11. (Check input 4 is a number)](#error-catch-11)
-    12. [ Error catch 12. (Check for duplicates)](#error-catch-12)
+    1.  [Error catch 1. (Help function)](#error-catch-1-help-function)
+    2.  [Error catch 2. (End_Game function) ](#error-catch-2-end_game-function)
+    3.  [Error catch 3. (Check for Blank) ](#error-catch-3-check-for-blank)
+    4.  [Uppercase 4. (Check if Upper Case)](#uppercase-check-if-upper-case)
+    5.  [Error catch 5. (Check if range A to J)](#error-catch-5-check-if-range-a-to-j)
+    6.  [Error catch 6. (Check for 4 Char) ](#error-catch-6-check-for-4-char)
+    7.  [Error catch 7. (Check for Colon)](#error-catch-7-check-for-colon)
+    8.  [Error catch 8. (Check 3rd input Number)](#error-catch-8-check-3rd-input-number)
+    9.  [Error catch 9. (Check range number is 0 to 2)](#error-catch-9-check-range-number-is-0-to-2)
+    10. [Error catch 10. (If input 3 is = 2, input 4 must be a 0) ](#error-catch-10-if-input-3-is--2-input-4-must-be-a-0)
+    11. [Error catch 11. (Check input 4 is a number)](#error-catch-11-check-input-4-is-a-number)
+    12. [ Error catch 12. (Check for duplicates)](#error-catch-12-check-for-duplicates)
 
-3.  [Technical Design](#Technical-Design)
-    1. [Flowchart](#Flowchart)
-
+3.  [Testing](#testing)
+    1. [Manual Testing](#manual-testing)
 
 <hr style="border:1px solid white">
 
@@ -196,6 +195,7 @@
 </figure>
 
 ## Error catch 2. (End_Game function) 
+
 ### Error catch 2, will watch for user input and compare it to 'end_game' function. This will display a message informing the user that they will end the game. “You lose” is purposely not included in the message as this would be a negative statement to the user. “Please come back soon” was enabled for a more positive feedback experience.
 
 
@@ -205,6 +205,7 @@
 </figure>
 
 ## Error catch 3. (Check for Blank) 
+
 ### Error catch 3, checks if the first input by the user blank or no input. If so the computer will display and error to the user asking them to try again. 
 
 <figure>
@@ -212,6 +213,7 @@
 </figure>
 
 ## Uppercase. (Check if Upper Case)
+
 ### Next the computer will check if the input is upper case and then transpose it to lower case. 
 
 <figure>
@@ -219,6 +221,7 @@
 </figure>
 
 ## Error catch 4. (Is first a Letter) 
+
 ### Error catch 4, checks if the first input by the user is a letter. If this is not a letter the computer will display and error to the user asking them to try again. 
 
 <figure>
@@ -226,6 +229,7 @@
 </figure>
 
 ## Error catch 5. (Check if range A to J)
+
 ### Error catch 5, checks if the first input by the user is a letter between A and J. If this is not a letter between A and J the computer will display and error to the user asking them to try again. 
 ### The program allows for upper and lower case.
 
@@ -234,6 +238,7 @@
 </figure>
 
 ## Error catch 6. (Check for 4 Char) 
+
 ### Error catch 6, checks that the user has input four characters to the coordinates prompt. The computer will display their input and error to the user asking them to try again.
 
 <figure>
@@ -241,46 +246,64 @@
 </figure>
 
 ## Error catch 7. (Check for Colon)
+
 ### Error catch 7, checks the second input and compares it to a : colon, if it is not, the user receives an error message.  
 <figure>
 <img src="assets/images/colon_error.png" width=400>
 </figure>
 
+
 ## Error catch 8. (Check 3rd input Number)
+
 ### Error catch 8, checks the third input is a number, if it is not, the user receives an error message stating that it must be 0, 1, or 2. This is because there are only 200 grids in the game map.   
 <figure>
 <img src="assets/images/third__diget_error.png" width=400>
 </figure>
 
 ## Error catch 9. (Check range number is 0 to 2) 
+
 ### Error catch 9, checks the third is a 0, 1 or 2 , if it is not, the user receives an error message stating that it must be 0, 1, or 2. This is because there are only 200 grids in the game map.   
 <figure>
 <img src="assets/images/third__diget_error.png" width=400>
 </figure>
 
 ## Error catch 10. (If input 3 is = 2, input 4 must be a 0) 
+
 ### Error catch 10, checks if third digit is 2 that the fourth digit has to be a 0, if it is not, the user receives an error message that if the 3rd digit is a 2 then the second must be a 0. This is because there are only 200 grids in the game map.   
 <figure>
 <img src="assets/images/range_error.png" width=400>
 </figure>
 
 ## Error catch 11. (Check input 4 is a number)
+
 ### Error catch 11, checks if the forth input is a number, if it is not, the user receives an error message showing what they input and displaying an error message that the 4th input is not a number and please try again. .   
 <figure>
 <img src="assets/images/forth_input.png" width=400>
 </figure>
 
 ## Error catch 12. (Check for duplicates)
+
 ### Error catch 12, checks if the if the user has already input there coordinates and if so the user receives an error message showing what they input there coordinates before and please try again. .   
 
 <figure>
-<img src="assets/images/forth_input.png" width=400>
+<img src="assets/images/duplicates.png" width=400>
 </figure>
 
+<hr style="border:1px solid white">
+
+# Testing
+
+## Manual Testing
 
 
-
-
+| Test Item          | Method |  Input details | Desired Result                          | Result     | Pass |
+| ------------------ | ------ | -------------- | --------------------------------------- | ---------- | ---- |
+| Command Line Input | Input  |      A:01      | The corresponding cell will display a 0 | As desired | Yes  |
+| Command Line Input | Input  |      B:01      | The corresponding cell will display a 0 | As desired | Yes  |
+| Command Line Input | Input  |      C:01      | The corresponding cell will display a 0 | As desired | Yes  |
+| Command Line Input | Input  |      D:01      | The corresponding cell will display a 0 | As desired | Yes  |
+| Command Line Input | Input  |      E:01      | The corresponding cell will display a 0 | As desired | Yes  |
+| Command Line Input | Input  |      F:01      | The corresponding cell will display a 0 | As desired | Yes  |
 
 
 
