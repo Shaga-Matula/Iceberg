@@ -30,6 +30,8 @@
     1. [Page Four](#page-Four)
 
 4.  [Error Catching](#error-catching)
+    1.  [Error catch 1](#error-catch-1)
+    2.  [Error catch 2](#error-catch-2)
 
 3.  [Technical Design](#Technical-Design)
     1. [Flowchart](#Flowchart)
@@ -175,18 +177,44 @@
 ### A great deal of the project has been devoted to error catching from the user input. This is a complex procedure attempting to catch all input from the user, checking the input is valid.
 
 ## Error catch 1.  
-### Error catch 1 will watch for user input and compair it to 'help' function. This will display a message informing the user that they will be brought to the help file and then returned to the game. 
+### Error catch 1, will watch for user input and compair it to 'help' function. This will display a message informing the user that they will be brought to the help file and then returned to the game. 
 
 <figure>
 <img src="assets/images/usr_help_message.png" width=400>
 </figure>
 
 ## Error catch 2. 
-### Error catch 2 will watch for user input and compare it to 'end_game' function. This will display a message informing the user that they will end the game. “You lose” is purposely not included in the message as this would be a negative statement to the user. “Please come back soon” was enabled for a more positive feedback experience.
+### Error catch 2, will watch for user input and compare it to 'end_game' function. This will display a message informing the user that they will end the game. “You lose” is purposely not included in the message as this would be a negative statement to the user. “Please come back soon” was enabled for a more positive feedback experience.
 
 <figure>
 <img src="assets/images/end_game_message.png" width=400>
 </figure>
+
+## Error catch 3. 
+### Error catch 3, checks if the first input by the user is a letter. If this is not a letter the computer will display and error to the user asking them to try again. 
+
+<figure>
+<img src="assets/images/error_3_message.png" width=400>
+</figure>
+
+## Error catch 4. 
+### Error catch 4, checks if the first input by the user is a letter between A and J. If this is not a letter between A and J the computer will display and error to the user asking them to try again. 
+### The program allows for upper and lower case.
+
+<figure>
+<img src="assets/images/error_4_message.png" width=400>
+</figure>
+
+## Error catch 5. 
+### Error catch 5, checks that the user has input four characters to the coordinates prompt. The computer will display their input and error to the user asking them to try again.
+
+<figure>
+<img src="assets/images/error_5_message.png" width=400>
+</figure>
+
+
+
+
 
 
 &nbsp;
