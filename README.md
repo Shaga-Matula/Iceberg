@@ -175,12 +175,18 @@
 ### A great deal of the project has been devoted to error catching from the user input. This is a complex procedure attempting to catch all input from the user, checking the input is valid.
 
 ## Error catch 1.  
-### Error catch 1 and 2 will watch for user input and compair it to 'help' function. This will display a message informing the user that they will be brought to the help file and then returned to the game. 
+### Error catch 1 will watch for user input and compair it to 'help' function. This will display a message informing the user that they will be brought to the help file and then returned to the game. 
 
 <figure>
 <img src="assets/images/usr_help_message.png" width=400>
 </figure>
 
+## Error catch 2. 
+### Error catch 2 will watch for user input and compare it to 'end_game' function. This will display a message informing the user that they will end the game. “You lose” is purposely not included in the message as this would be a negative statement to the user. “Please come back soon” was enabled for a more positive feedback experience.
+
+<figure>
+<img src="assets/images/end_game_message.png" width=400>
+</figure>
 
 
 &nbsp;

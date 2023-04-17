@@ -238,7 +238,7 @@ def get_user_input():
     if user_shot == "end_game":
         os.system('cls' if os.name == 'nt' else 'clear')
         print(
-            "\n\n\n\n\n\n\n\n\n\n You have chosen to end game. Come back soon!!"
+            "\n\n\n\n\n\n\n\n\n\n You have chosen to end game. Please come back soon!!"
         )
         wait = input("\n \n Press Enter to continue.")
         quit()
