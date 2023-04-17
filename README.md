@@ -121,9 +121,15 @@
 ### The game is over when you sink all 3 Icebergs or quit game by typing end_game at the command prompt. If the user needs to see the rules again they can input 'help' to the command prompt.  
 ### Good luck captain and God Speed! 
 &nbsp;
-### Help File
+# Help File
 
+### On launching the help file is displayed 
 
+# Page one sets the event with some creative wrighting.
+
+<figure>
+<img src="assets/images/finished_game.png" width=400>
+</figure>
 
 
 
