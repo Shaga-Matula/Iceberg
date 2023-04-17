@@ -32,9 +32,16 @@
 4.  [Error Catching](#error-catching)
     1.  [Error catch 1](#error-catch-1)
     2.  [Error catch 2](#error-catch-2)
-    2.  [Error catch 3](#error-catch-3)
-    2.  [Error catch 4](#error-catch-4)
-    2.  [Error catch 5](#error-catch-5)
+    3.  [Error catch 3](#error-catch-3)
+    4.  [Error catch 4](#error-catch-4)
+    5.  [Error catch 5](#error-catch-5)
+    6.  [Error catch 6](#error-catch-6)
+    7.  [Error catch 7](#error-catch-7)
+    8.  [Error catch 8](#error-catch-8)
+    9.  [Error catch 9](#error-catch-9)
+    10.  [Error catch 10](#error-catch-10)
+    11.  [Error catch 11](#error-catch-11)
+  
 
 3.  [Technical Design](#Technical-Design)
     1. [Flowchart](#Flowchart)
@@ -254,10 +261,11 @@
 </figure>
 
 ## Error catch 11. 
-### Error catch 1, checks if digit is a number, if it is not, the user receives an error message that if the 4th digit is not a number and please try again. .   
+### Error catch 11, checks if the forth input is a number, if it is not, the user receives an error message showing what they input and displaying an error message that the 4th input is not a number and please try again. .   
 <figure>
-<img src="assets/images/range_error.png" width=400>
+<img src="assets/images/forth_input.png" width=400>
 </figure>
+
 
 
 
