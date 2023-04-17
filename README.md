@@ -241,6 +241,27 @@
 <img src="assets/images/third__diget_error.png" width=400>
 </figure>
 
+## Error catch 9. 
+### Error catch 9, checks the third is a 0, 1 or 2 , if it is not, the user receives an error message stating that it must be 0, 1, or 2. This is because there are only 200 grids in the game map.   
+<figure>
+<img src="assets/images/third__diget_error.png" width=400>
+</figure>
+
+## Error catch 10. 
+### Error catch 10, checks if third digit is 2 that the fourth digit has to be a 0, if it is not, the user receives an error message that if the 3rd digit is a 2 then the second must be a 0. This is because there are only 200 grids in the game map.   
+<figure>
+<img src="assets/images/range_error.png" width=400>
+</figure>
+
+## Error catch 11. 
+### Error catch 1, checks if digit is a number, if it is not, the user receives an error message that if the 4th digit is not a number and please try again. .   
+<figure>
+<img src="assets/images/range_error.png" width=400>
+</figure>
+
+
+
+
 
 
 

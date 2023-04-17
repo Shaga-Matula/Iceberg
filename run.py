@@ -295,7 +295,7 @@ def get_user_input():
         error_1(chestnut)
     elif (user_shot[3].isdigit()) != True:  #Error if not a number
         chestnut = (
-            f"\n\n\n\n\n\n\n\n\n\n Third input {user_shot[3]} must be a number => 1, 2,  etc "
+            f"\n\n\n\n\n\n\n\n\n\n Fourth input {user_shot[3]} must be a number => 1, 2, 3, 4 etc "
         )
         error_1(chestnut)
     elif user_shot in user_shot_taken:  # If Duplicate input
