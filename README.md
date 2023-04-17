@@ -14,12 +14,14 @@
 
 ## README Table Content
 
-1. [Introduction](#Introduction)
-    1. [Project Goals](#Project-Goals)
-    2. [User Experience](#User-experience)
-    3. [Target Audience](#Target-Audience)
-2. [Technical Design](#Technical-Design)
+1.  [Introduction](#Introduction)
+    1.  [Project Goals](#Project-Goals)
+    2.  [User Experience](#User-experience)
+    3.  [Target Audience](#Target-Audience)
+2.  [Technical Design](#Technical-Design)
     1. [Flowchart](#Flowchart)
+3.  [How to Play Iceberg](#How-to-play-Iceberge)
+    2.  [The Game Board](#The-Game-Board)
 
 
 <hr style="border:1px solid white">
@@ -38,6 +40,7 @@
 * Create a game that gives instant and clear feed back to the user during the game.
 * Create a game that track and reports all errors with feedback to the user.
 * Create a game that challenging against a computer opponent.
+* Accecpt upper and lower case input for letters in cordanates to speed up user experience. 
 
 
 ## Target Audience
@@ -48,30 +51,35 @@
 <hr style="border:1px solid white">
 
 # How to play Iceberge
-    Hello and welcome to Iceberg’s, a game of cunning and guile.
-    The object of the game is to destroy 3 Icebergs to clear a
-    path for your ship to cross, but! Its fogy and you cannot see,
-    fortunately the sea is flat as a pancake and you can hear the sound
-    of dripping water as the icebergs melt, 'It’s so quiet' you hear
-    the first mate say, 'its so quiet'.
-    Use this tranquility to your advantage, your crew will listen 
-    out for the sound of ice crushing under the weight your torpedoes
-    as you hunt in the fog for the ICEBERGS
-            
-    You can achieve your goal by selecting Coordinates to launch 
-    your torpedoes into the foggy night.
-    Firstly select a letter from the top row of A to J.
-    Then insert a colon : to separate letters from numbers
-    After the colon you can select a number from 01 to 20
-    "  Please note the input must be 4 char long." +
+## Game creative writing introducton
+
+### Hello and welcome to Iceberg’s, a game of cunning and guile.The object of the game is to destroy 3  Icebergs to clear a path for your ship to cross, but! Its fogy and you cannot see, fortunately the sea is flat as a pancake and you can hear the sound of dripping water as the icebergs melt, 'It’s so quiet' you hear - the first mate say, 'its so quiet'.
+&nbsp;
+### Use this tranquility to your advantage, your crew will listen out for the sound of ice crushing under the weight your torpedoes as you hunt in the fog for the "ICEBERGS".
+&nbsp;       
+
+# The Game board
+
+### The game bord consists of 200 squares, top row A to J and side column of 01 to 20. 
+
+<figure>
+<img src="assets/images/game_board.png" width=400>
+</figure>
+
+You can achieve your goal by selecting Coordinates to launch 
+your torpedoes into the foggy night.
+Firstly select a letter from the top row of A to J.
+Then insert a colon : to separate letters from numbers
+After the colon you can select a number from 01 to 20
+"  Please note the input must be 4 char long." +
+    
+An example of this would be B:02, for Column b row 2.
+If you choose a row number under 10 it must be preceded with a 0
+An example of this for Column h row 2, would be H:02 
+    
         
-    An example of this would be B:02, for Column b row 2.
-    If you choose a row number under 10 it must be preceded with a 0
-    An example of this for Column h row 2, would be H:02 
-        
-            
-        
-  "  Iceburgs are huge and 90% is hidden underwater, so you will need
+    
+"  Iceburgs are huge and 90% is hidden underwater, so you will need
 hit it dead centre to destroy the Iceberg.
 
   "  Thus you may hit outside of the Iceberg before you can hit its center."
@@ -90,6 +98,34 @@ Input 'end_game' to the Coordinates with no quotations
 
 
 
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
 ## Technical Design
 
 

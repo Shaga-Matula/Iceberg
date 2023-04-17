@@ -93,8 +93,8 @@ def create_game_board():
         """
     #This prints the headder fo the game
     print(Fore.YELLOW +
-          "\n     |%%%%%%%%%%%%%--%%%  ICEBURG  %%%--%%%%%%%%%%%%|")
-    print(Fore.BLUE + "    | A || B || C || D || E || F || G || H || I || J |")
+          "\n      |%%%%%%%%%%%%%--%%%  ICEBURG  %%%--%%%%%%%%%%%%|")
+    print(Fore.BLUE + "     | A || B || C || D || E || F || G || H || I || J |")
     # print(Fore.GREEN + "    +---++---++---++---++---++---++---++---++---++---+")
     grid_space_counter = 1
     # loop will start at the 1 count for 20 more
@@ -114,7 +114,7 @@ def create_game_board():
             insert_symbol = insert_symbol + symbol
             grid_space_counter = grid_space_counter + 1
 
-        print(color_ama + (f"{x}  {insert_symbol}"))
+        print(color_ama + " " + (f"{x}  {insert_symbol}"))
 
 
 #These are the exclusions for the outer frame of the game/Note to shorten later if time
