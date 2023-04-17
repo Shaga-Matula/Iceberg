@@ -228,7 +228,7 @@ def get_user_input():
         global run_help
         run_help = ("help")
         print(
-            "\n\n\n\n\n\n\n\n\n\n You have chosen to help. You will be returned to game when finished!!"
+            "\n\n\n\n\n\n\n\n\n\n You have chosen help. You will be returned to game when finished!!"
         )
         wait = input("\n \n Press Enter to continue.")
         print_rules()

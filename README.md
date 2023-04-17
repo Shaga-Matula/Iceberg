@@ -10,7 +10,7 @@
 
 # Introduction
 
-### Iceberg is a game of cunning and guile for one player, with an espamated play time of 15 minuets. The object of the game is to destroy 3 Icebergs to clear a path for your ship to cross. The game is cotroled by inputing coordanates to smash 3 virtual hidden Icebergs. 
+### Iceberg is a game of cunning and guile for one player, with an estimated play time of 15 minutes. The object of the game is to destroy 3 Icebergs to clear a path for your ship to cross. The game is controlled by inputting coordinates to smash 3 virtual hidden Icebergs. 
 
 ## README Table Content
 
@@ -18,12 +18,18 @@
     1.  [Project Goals](#Project-Goals)
     2.  [User Experience](#User-experience)
     3.  [Target Audience](#Target-Audience)
+
 2.  [How to Play Iceberg](#How-to-play-Iceberge)
     1.  [The Game Board](#The-Game-Board)
     2.  [Method](#Method)
+
 3.  [Help File](#Help-File)
+    1. [Page One](#page-one)
+    1. [Page Two](#page-Two)
+    1. [Page Three](#page-Three)
+    1. [Page Four](#page-Four)
 
-
+4.  [Error Catching](#error-catching)
 
 3.  [Technical Design](#Technical-Design)
     1. [Flowchart](#Flowchart)
@@ -33,52 +39,57 @@
 
 ## Project Goals
 
-* Create a game using Python, that takes input data from the user and manipulate the data to present a game thats both interesting and enjoyable.
-* Create a help file that display in clear and precice instructions on how to play.
+* Create a game using Python, that takes input data from the user and manipulate the data to present a game that’s both interesting and enjoyable.
+* Create a help file that display in clear and precise instructions on how to play.
+
 
 
 
 ## User experience
 
 
-* Create an atmosphere using creative writing that that enbeds the user to the task.
+* Create an atmosphere using creative writing that that embeds the user to the task.
 * Create a game that gives instant and clear feed back to the user during the game.
 * Create a game that track and reports all errors with feedback to the user.
 * Create a game that challenging against a computer opponent.
-* Accecpt upper and lower case input for letters in cordanates to speed up user experience. 
+* Accept upper and lower case input for letters in coordinates to speed up user experience. 
 * Add help function to game so user can recall help at any time.
-* Add quit game function so user can quit game if so desired. 
+* Add quit game function so user can quit game if so desired.
+
+
 
 
 ## Target Audience
 - Younger and older users who like playing games.
-- Older users who want to retain ther connative abilites in later years. 
-- People who want to play a 15 min game waiting for an apointment. 
+- Older users who want to retain their conative abilities in later years. 
+- People who want to play a 15 min game waiting for an appointment. 
 
 <hr style="border:1px solid white">
 
-# How to play Iceberge
-## Game creative writing introducton
+# How to play Iceberg
+## Game creative writing introduction
 
-### Hello and welcome to Iceberg’s, a game of cunning and guile.The object of the game is to destroy 3  Icebergs to clear a path for your ship to cross, but! Its fogy and you cannot see, fortunately the sea is flat as a pancake and you can hear the sound of dripping water as the icebergs melt, 'It’s so quiet' you hear - the first mate say, 'its so quiet'.
+### Hello and welcome to Iceberg, a game of cunning and guile. The object of the game is to destroy 3 Icebergs to clear a path for your ship to cross, but! Its fogy and you cannot see, fortunately the sea is flat as a pancake and you can hear the sound of dripping water as the icebergs melt, 'It’s so quiet' you hear - the first mate say, 'it’s so quiet'.
 &nbsp;
-### Use this tranquility to your advantage, your crew will listen out for the sound of ice crushing under the weight your torpedoes as you hunt in the fog for the "ICEBERGS".
-&nbsp;       
+### Use this tranquillity to your advantage, your crew will listen out for the sound of ice crushing under the weight your torpedoes as you hunt in the fog for the "ICEBERGS".
+&nbsp;  
+     
 
 ## The Game board
 
-### The game bord consists of 200 squares, top row A to J and side column of 01 to 20. The user is proppted to input coordinates at the bottom of page.  
+### The game board consists of 200 squares, top row A to J and side column of 01 to 20. The user is prompted to input coordinates at the bottom of page.  
 
 <figure>
 <img src="assets/images/game_board.png" width=400>
 </figure>
 
 ## Method
-### You can achieve your goal by selecting Coordinates to launch your torpedoes into the foggy night. Firstly select a letter from the top row of A to J. Then insert a colon : to separate letters from numbers. After the colon you can select a number from 01 to 20.
+### You can achieve your goal by selecting Coordinates to launch your torpedoes into the foggy night. Firstly select a letter from the top row of A to J. Then insert a colon: to separate letters from numbers. After the colon you can select a number from 01 to 20.
 &nbsp; 
 ### "  Please note the input must be 4 char long." 
 &nbsp; 
-### An example of this would be B:02, for Column b row 2. If you choose a row number under 10 it must be preceded with a 0. An example of this for Column h row 2, would be H:02 
+### An example of this would be B:02, for Column b row 2. If you choose a row number less than 10 it must be preceded with a 0. An example of this for Column h row 2, would be H:02.
+
 
 
 <figure>
@@ -121,17 +132,54 @@
 ### The game is over when you sink all 3 Icebergs or quit game by typing end_game at the command prompt. If the user needs to see the rules again they can input 'help' to the command prompt.  
 ### Good luck captain and God Speed! 
 &nbsp;
+<hr style="border:1px solid white">
+
 # Help File
 
+## Page one
 ### On launching the help file is displayed 
-
-# Page one sets the event with some creative wrighting.
+### Page one sets the event with some creative writing and immerses the user in the story, setting the scenario and drawing the user into the game.
 
 <figure>
-<img src="assets/images/finished_game.png" width=400>
+<img src="assets/images/help_1.png" width=600>
 </figure>
 
+## Page two
 
+### Page two of the help file gives clear instructions on how to play the game and how to enter Coordinates, stating that the first letter is not case sensitive. 
+
+<figure>
+<img src="assets/images/help_2.png" width=600>
+</figure>
+
+## Page three
+
+### Page three explains the damage system to the user, detailing what happens with misses, near hits, direct hits and how to win the game. 
+
+<figure>
+<img src="assets/images/help_3.png" width=600>
+</figure>
+
+## Page four
+
+### Page four explains that if you smash the center of the Iceberg it will reveal the surounding targets so the user doenent get confused with other Icebergs. The page clearly explains how to Win or how to Lose. 
+
+<figure>
+<img src="assets/images/help_4.png" width=600>
+</figure>
+
+<hr style="border:1px solid white">
+
+# Error Catching
+
+### A great deal of the project has been devoted to error catching from the user input. This is a complex procedure attempting to catch all input from the user, checking the input is valid.
+
+## Error catch 1.  
+### Error catch 1 and 2 will watch for user input and compair it to 'help' function. This will display a message informing the user that they will be brought to the help file and then returned to the game. 
+
+<figure>
+<img src="assets/images/usr_help_message.png" width=400>
+</figure>
 
 
 
