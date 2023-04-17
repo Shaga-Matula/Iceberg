@@ -47,6 +47,49 @@
 
 <hr style="border:1px solid white">
 
+# How to play Iceberge
+    Hello and welcome to Iceberg’s, a game of cunning and guile.
+    The object of the game is to destroy 3 Icebergs to clear a
+    path for your ship to cross, but! Its fogy and you cannot see,
+    fortunately the sea is flat as a pancake and you can hear the sound
+    of dripping water as the icebergs melt, 'It’s so quiet' you hear
+    the first mate say, 'its so quiet'.
+    Use this tranquility to your advantage, your crew will listen 
+    out for the sound of ice crushing under the weight your torpedoes
+    as you hunt in the fog for the ICEBERGS
+            
+    You can achieve your goal by selecting Coordinates to launch 
+    your torpedoes into the foggy night.
+    Firstly select a letter from the top row of A to J.
+    Then insert a colon : to separate letters from numbers
+    After the colon you can select a number from 01 to 20
+    "  Please note the input must be 4 char long." +
+        
+    An example of this would be B:02, for Column b row 2.
+    If you choose a row number under 10 it must be preceded with a 0
+    An example of this for Column h row 2, would be H:02 
+        
+            
+        
+  "  Iceburgs are huge and 90% is hidden underwater, so you will need
+hit it dead centre to destroy the Iceberg.
+
+  "  Thus you may hit outside of the Iceberg before you can hit its center."
+)
+If so the computer will display a 1, if it’s a miss you get a 0
+Icebergs take up 9 spaces, X in middle, surounded by 1's 
+The game is over when you sink all 3 Icebergs or quit game 
+Good luck captain and God Speed! 
+  
+"  The game will reveal the complete iceberg if you smash its center.
+"  Smash all three Icebergs.. You Win!, quit game... You Lose!
+"    If you need to see the rules again.
+Input 'help' to the Coordinates with no quotations.
+"    If you want to quit the game.
+Input 'end_game' to the Coordinates with no quotations
+
+
+
 ## Technical Design
 
 
@@ -56,7 +99,7 @@
   <img src="assets/images/flowchart.png" width=500>
 </figure>
 
-
+# The flow diagram was created with lucidchart whach give the basic structure of the code direction.
 
 
 
