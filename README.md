@@ -295,6 +295,7 @@
 
 ## Manual Testing
 
+### Cell Functionality 
 
 | Test Item          | Method |  Input details | Desired Result                          | Result     | Pass |
 | ------------------ | ------ | -------------- | --------------------------------------- | ---------- | ---- |
@@ -304,6 +305,80 @@
 | Command Line Input | Input  |      D:01      | The corresponding cell will display a 0 | As desired | Yes  |
 | Command Line Input | Input  |      E:01      | The corresponding cell will display a 0 | As desired | Yes  |
 | Command Line Input | Input  |      F:01      | The corresponding cell will display a 0 | As desired | Yes  |
+| Command Line Input | Input  |      G:01      | The corresponding cell will display a 0 | As desired | Yes  |
+| Command Line Input | Input  |      H:01      | The corresponding cell will display a 0 | As desired | Yes  |
+| Command Line Input | Input  |      I:01      | The corresponding cell will display a 0 | As desired | Yes  |
+| Command Line Input | Input  |      J:01      | The corresponding cell will display a 0 | As desired | Yes  |
+| Command Line Input | Input  |      A:02      | The corresponding cell will display a 0 | As desired | Yes  |
+| Command Line Input | Input  |      B:02      | The corresponding cell will display a 0 | As desired | Yes  |
+
+### All 200 cells were tested for functionality, from A:01 to J:20 with no errors.
+
+# Input Testing
+
+### Random changing of letters and numbers plus
+### All these symbols wer tested as first char # ! @ # & ( ) – 
+### [ { } ] : ; ', ? / * and symbol characters ` ~ $ ^ + = < > “
+
+| Test Item          | Method |  Input details | Desired Result                          | Result     | Pass |
+| ------------------ | ------ | -------------- | --------------------------------------- | ---------- | ---- |
+| Command Line Input | Input  |      5:01      | Error message displayed                 | As desired | Yes  |
+| Command Line Input | Input  |      z:01      | Error message displayed                 | As desired | Yes  |
+| Command Line Input | Input  |      p:01      | Error message displayed                 | As desired | Yes  |
+| Command Line Input | Input  |      =:01      | Error message displayed                 | As desired | Yes  |
+| Command Line Input | Input  |      #:01      | Error message displayed                 | As desired | Yes  |
+| Command Line Input | Input  |      +:01      | Error message displayed                 | As desired | Yes  |
+| Command Line Input | Input  |      `:01      | Error message displayed                 | As desired | Yes  |
+| Command Line Input | Input  |      *:01      | Error message displayed                 | As desired | Yes  |
+
+### Random changing of letters and numbers plus
+### All these symbols were tested as second char # ! @ # & ( ) – 
+### [ { } ] : ; ', ? / * and symbol characters ` ~ $ ^ + = < > “
+
+| Test Item          | Method |  Input details | Desired Result                          | Result     | Pass |
+| ------------------ | ------ | -------------- | --------------------------------------- | ---------- | ---- |
+| Command Line Input | Input  |      A;01      | Error message displayed                 | As desired | Yes  |
+| Command Line Input | Input  |      A@01      | Error message displayed                 | As desired | Yes  |
+| Command Line Input | Input  |      A+01      | Error message displayed                 | As desired | Yes  |
+| Command Line Input | Input  |      A401      | Error message displayed                 | As desired | Yes  |
+| Command Line Input | Input  |      A-01      | Error message displayed                 | As desired | Yes  |
+| Command Line Input | Input  |      A¬01      | Error message displayed                 | As desired | Yes  |
+| Command Line Input | Input  |      A>01      | Error message displayed                 | As desired | Yes  |
+| Command Line Input | Input  |      A=01      | Error message displayed                 | As desired | Yes  |
+
+### Random changing of letters and numbers plus
+### All these symbols wer tested as third char # ! @ # & ( ) – 
+### [ { } ] : ; ', ? / * and symbol characters ` ~ $ ^ + = < > “ 
+
+
+| Test Item          | Method |  Input details | Desired Result                          | Result     | Pass |
+| ------------------ | ------ | -------------- | --------------------------------------- | ---------- | ---- |
+| Command Line Input | Input  |      A:;4      | Error message displayed                 | As desired | Yes  |
+| Command Line Input | Input  |      B:@1      | Error message displayed                 | As desired | Yes  |
+| Command Line Input | Input  |      A:+1      | Error message displayed                 | As desired | Yes  |
+| Command Line Input | Input  |      A:"1      | Error message displayed                 | As desired | Yes  |
+| Command Line Input | Input  |      A:=6      | Error message displayed                 | As desired | Yes  |
+| Command Line Input | Input  |      A:>1      | Error message displayed                 | As desired | Yes  |
+| Command Line Input | Input  |      A:~8      | Error message displayed                 | As desired | Yes  |
+| Command Line Input | Input  |      A:?1      | Error message displayed                 | As desired | Yes  |
+
+
+### Random changing of letters and numbers plus
+### All these symbols wer tested as fourth char # ! @ # & ( ) – 
+### [ { } ] : ; ', ? / * and symbol characters ` ~ $ ^ + = < > “ 
+
+| Test Item          | Method |  Input details | Desired Result                          | Result     | Pass |
+| ------------------ | ------ | -------------- | --------------------------------------- | ---------- | ---- |
+| Command Line Input | Input  |      A:1#      | Error message displayed                 | As desired | Yes  |
+| Command Line Input | Input  |      B:1~      | Error message displayed                 | As desired | Yes  |
+| Command Line Input | Input  |      A:1"      | Error message displayed                 | As desired | Yes  |
+| Command Line Input | Input  |      A:2£      | Error message displayed                 | As desired | Yes  |
+| Command Line Input | Input  |      A:0$      | Error message displayed                 | As desired | Yes  |
+| Command Line Input | Input  |      A:2^      | Error message displayed                 | As desired | Yes  |
+| Command Line Input | Input  |      A:1!      | Error message displayed                 | As desired | Yes  |
+| Command Line Input | Input  |      A:0/      | Error message displayed                 | As desired | Yes  |
+
+
 
 
 
