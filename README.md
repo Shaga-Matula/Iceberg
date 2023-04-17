@@ -379,7 +379,10 @@
 | Command Line Input | Input  |      A:0/      | Error message displayed                 | As desired | Yes  |
 
 
-
+| Test Item          | Method |  Input details | Desired Result                         - | Result     | Pass |
+| ------------------ | ------ | -------------- | ---------------------------------------- | ---------- | ---- |
+| Command Line Input | Input  |      help      | Information displayed\taken to help file | As desired | Yes  |
+| Command Line Input | Input  |      end_game  | Information displayed\Exit game          | As desired | Yes  |
 
 
 
