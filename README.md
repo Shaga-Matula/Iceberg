@@ -32,6 +32,9 @@
 4.  [Error Catching](#error-catching)
     1.  [Error catch 1](#error-catch-1)
     2.  [Error catch 2](#error-catch-2)
+    2.  [Error catch 3](#error-catch-3)
+    2.  [Error catch 4](#error-catch-4)
+    2.  [Error catch 5](#error-catch-5)
 
 3.  [Technical Design](#Technical-Design)
     1. [Flowchart](#Flowchart)
@@ -191,26 +194,53 @@
 </figure>
 
 ## Error catch 3. 
-### Error catch 3, checks if the first input by the user is a letter. If this is not a letter the computer will display and error to the user asking them to try again. 
+### Error catch 3, checks if the first input by the user blank or no input. If so the computer will display and error to the user asking them to try again. 
+
+<figure>
+<img src="assets/images/no_input_message.png" width=400>
+</figure>
+
+## Uppercase
+### Next the computer will check if the input is upper case and then transpose it to lower case. 
+
+<figure>
+<img src="assets/images/to_lower.png" width=400>
+</figure>
+
+## Error catch 4. 
+### Error catch 4, checks if the first input by the user is a letter. If this is not a letter the computer will display and error to the user asking them to try again. 
 
 <figure>
 <img src="assets/images/error_3_message.png" width=400>
 </figure>
 
-## Error catch 4. 
-### Error catch 4, checks if the first input by the user is a letter between A and J. If this is not a letter between A and J the computer will display and error to the user asking them to try again. 
+## Error catch 5. 
+### Error catch 5, checks if the first input by the user is a letter between A and J. If this is not a letter between A and J the computer will display and error to the user asking them to try again. 
 ### The program allows for upper and lower case.
 
 <figure>
 <img src="assets/images/error_4_message.png" width=400>
 </figure>
 
-## Error catch 5. 
-### Error catch 5, checks that the user has input four characters to the coordinates prompt. The computer will display their input and error to the user asking them to try again.
+## Error catch 6. 
+### Error catch 6, checks that the user has input four characters to the coordinates prompt. The computer will display their input and error to the user asking them to try again.
 
 <figure>
 <img src="assets/images/error_5_message.png" width=400>
 </figure>
+
+## Error catch 7. 
+### Error catch 7, checks the second input and compares it to a : colon, if it is not, the user receives an error message.  
+<figure>
+<img src="assets/images/colon_error.png" width=400>
+</figure>
+
+## Error catch 8. 
+### Error catch 8, checks the third input is a number, if it is not, the user receives an error message stating that it must be 0, 1, or 2. This is because there are only 200 grids in the game map.   
+<figure>
+<img src="assets/images/third__diget_error.png" width=400>
+</figure>
+
 
 
 
