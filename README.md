@@ -381,44 +381,31 @@
 ### The error above was fixed by adding code to catch a double 00 input. 
 
 ### Random changing of letters and numbers plus
-### All these symbols wer tested as fourth char # ! @ # & ( ) – 
+### All these symbols wer tested as end_game and help char # ! @ # & ( ) – 
 ### [ { } ] : ; ', ? / * and symbol characters ` ~ $ ^ + = < > “ 
 
 | Test Item          | Method |  Input details | Desired Result                           | Result     | Pass |
 | ------------------ | ------ | -------------- | ---------------------------------------- | ---------- | ---- |
 | Command Line Input | Input  |      help      | Information displayed\taken to help file | As desired | Yes  |
 | Command Line Input | Input  |      end_game  | Information displayed\Exit game          | As desired | Yes  |
+| Command Line Input | Input  |      end_gam@  | Error displayed                          | As desired | Yes  |
+| Command Line Input | Input  |      e-d_game  | Error displayed                          | As desired | Yes  |
+| Command Line Input | Input  |      end_@ame  | Error displayed                          | As desired | Yes  |
+| Command Line Input | Input  |      hilp      | Error displayed                          | As desired | Yes  |
 
 
 
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-## Technical Design
+<hr style="border:1px solid white">
+
+# Bugs and fixes
+
+### DRY (Don't Repeat Yourself) a principle of software development was implemented. The focus of DRY is to avoid repetition of information. All code was scrutinised for repeats and where time allowed code was streamlined.
+
+-By streamlining 11 areas in a function and adding a variable to compensate for, 32 lines of code were deemed unnecessary and the Dry approach was implemented. Rewriting the function with a variable named (chestnut) to enable the error messages to print. The code below is an example of how DRY was approached. Please note code image is for demonstrative purposes and is not the exact code edited.  
+
+<figure>
+  <img src="assets/images/dry.png" width=500>
+</figure>
 
 
 ### Flowchart
@@ -428,8 +415,6 @@
 </figure>
 
 # The flow diagram was created with lucidchart whach give the basic structure of the code direction.
-
-
 
 
 
@@ -485,14 +470,15 @@ You can clone the repository by following these steps:
 7. Press Enter to create your local clone.
 
 ## Credits
-# Thanks to Gareth Mc
+- Thanks to Gareth McGirr Mentor for help and advice
+- Thanks to Paul Thomas O’Riordan 
 
 ### Code
 - Code Institute Python lessons.
 - Code Institute Love Sandwiches project.
 
 ## Acknowledgments
-
+- Thanks to Gareth McGirr Mentor displayed                          
 
 
 /////////////////////////////////////////////
