@@ -1,11 +1,11 @@
 # This allows identity of operating system
 import os
 
-# Imports colored print
-from colorama import Fore, Style
-
 # importing the random module
 import random
+
+# Imports colored print
+from colorama import Fore, Style
 
 very_near = []
 direct_hit_list = []

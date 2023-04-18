@@ -477,9 +477,12 @@ At the time of creation, the PEP8 online Python validation website was inoperati
   <img src="assets/images/print_er.png" width=300>
 </figure>
 
+### Remaining warnings
+### The warnings below are outstanding and need further research to configure a workable solution. 
 
-
-### 
+<figure>
+  <img src="assets/images/pylint_errors.png" width=300>
+</figure>
 
 ### The flow diagram was created with lucidchart which give the basic structure of the code direction.
 
@@ -512,6 +515,7 @@ At the time of creation, the PEP8 online Python validation website was inoperati
 - Score keeping
 - User name and password
 - Timer
+- Change board sizes 
  
 
 ## Deployment
