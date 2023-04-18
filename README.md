@@ -45,6 +45,11 @@
 
 3.  [Testing](#testing)
     1. [Manual Testing](#manual-testing)
+    2. [Cell Functionality](#cell-functionality)
+    3. [Input Testing](#input-testing)
+    4. [PEP8 Validation](#pep8-validation)
+4.  [Bugs](#bugs-and-fixes)
+    1. [DRY](#dry)
 
 <hr style="border:1px solid white">
 
@@ -395,9 +400,26 @@
 
 
 
+## PEP8 Validation
+
+### PEP8 Testing
+At the time of creation, the PEP8 online Python validation website was inoperative. To validate the code, a PEP8 validator that is built into the GitPod Workspace was used.
+
+1. Run the command 'pip3 install pycodestyle'. (Note that this extension may already be installed, in which case this command will do nothing.)
+2. In the workspace, press Ctrl+Shift+P (or Cmd+Shift+P on Mac).
+3. Type the word 'linter' into the search bar that appears. 
+4. Click on 'Python: Select Linter' from the filtered results.
+5. Select 'pycodestyle' from the list.
+6. PEP8 errors will now be underlined in red, as well as being listed in the PROBLEMS tab beside the terminal.
+
+### 64 yellow warnings were flagged in run.py. These were down to # sign in comments. 
+
+
 <hr style="border:1px solid white">
 
 # Bugs and fixes
+
+## DRY
 
 ### DRY (Don't Repeat Yourself) a principle of software development was implemented. The focus of DRY is to avoid repetition of information. All code was scrutinised for repeats and where time allowed code was streamlined.
 
@@ -407,14 +429,34 @@
   <img src="assets/images/dry.png" width=500>
 </figure>
 
+## Border bug
+
+### Bug: - When the computer is generating the board and icebergs, it randomly picks a number from 1 to 200. But as the iceberg is 3 x 3 cells and is produced by starting with the centre a visual error occurred which displaced the iceberg when a border number was chosen.
+<figure>
+  <img src="assets/images/border_bug_screen.png" width=300>
+</figure>
+
+### Fix: - Exclusions were added to prevent the code from choosing any border cells.  
+
+<figure>
+  <img src="assets/images/border_bug_fix.png" width=300>
+</figure>
+
+
+## Grid error
+
+### 
+<figure>
+  <img src="assets/images/border_bug_fix.png" width=300>
+</figure>
 
 ### Flowchart
 
 <figure>
-  <img src="assets/images/flowchart.png" width=500>
+  <img src="assets/images/grid_error.png" width=300>
 </figure>
 
-# The flow diagram was created with lucidchart whach give the basic structure of the code direction.
+### The flow diagram was created with lucidchart whach give the basic structure of the code direction.
 
 
 
@@ -429,20 +471,6 @@
 - Gitpod
 
 
-
-## Validation
-
-### PEP8 validation
-At the time of creation, the PEP8 online Python validation website was inoperative. To validate the code, a PEP8 validator that is built into the GitPod Workspace was used.
-
-1. Run the command 'pip3 install pycodestyle'. (Note that this extension may already be installed, in which case this command will do nothing.)
-2. In the workspace, press Ctrl+Shift+P (or Cmd+Shift+P on Mac).
-3. Type the word 'linter' into the search bar that appears. 
-4. Click on 'Python: Select Linter' from the filtered results.
-5. Select 'pycodestyle' from the list.
-6. PEP8 errors will now be underlined in red, as well as being listed in the PROBLEMS tab beside the terminal.
-
-# 64 yellow warnings were flagged in run.py. These are down to # sign in comments. These are printed direct to the console and not used in any functions.
 
 
 
