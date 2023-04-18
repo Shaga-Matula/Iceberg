@@ -1,4 +1,7 @@
-# This allows identity of operating system
+"""
+Welcome to the Iceberge Readme.MD file.
+"""
+
 import os
 
 # importing the random module
@@ -14,12 +17,12 @@ hit_list = []
 user_shot_taken = []
 user_number = ()
 
-run_help = ("help")
+run_help = "help"
 
 
 def print_rules():  # Rules of the game
     global run_help
-    if run_help == ("help"):
+    if run_help == "help":
         print("\n\n")
         os.system('cls' if os.name == 'nt' else 'clear')
         print((Fore.YELLOW + "     |%%%%%%%%%%%%%--%%%  ICEBERG"
@@ -76,7 +79,7 @@ def print_rules():  # Rules of the game
         print(Fore.BLUE + "  quotations")
         input("\n \n\n  Press Enter to continue." + Style.RESET_ALL)
         os.system('cls' if os.name == 'nt' else 'clear')
-        run_help = ("no_help")
+        run_help = "no_help"
         return run_help
     calculate_iceberg_squares()
 
@@ -96,7 +99,7 @@ def create_game_board():
         insert_symbol = " "
         if x >= 10:
             insert_symbol = ""
-        for y in range(10):
+        for _ in range(10):
             symbol = "|---|"
             if grid_space_counter in hit_list:
                 symbol = "|-X-|"  # Hit List:Reveal = direct_hit_list

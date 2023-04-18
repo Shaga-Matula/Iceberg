@@ -477,10 +477,13 @@ At the time of creation, the PEP8 online Python validation website was inoperati
 
 ### 27 errors were alter and fixed that ware too long in print statements. Below is an example for a print statement too long. 
 
-
 <figure>
   <img src="assets/images/print_er_er.png" width=300>
 </figure>
+<figure>
+  <img src="assets/images/print_er.png" width=300>
+</figure>
+
 
 ### Fix: -Mentor Gareth McGirr pointed me in the right direction. Print statements can be broken to reduce line length. 
 
@@ -488,7 +491,7 @@ At the time of creation, the PEP8 online Python validation website was inoperati
 ### Code error below was highlighted by Pylint as incorrect. There were 3 instances that need correcting. 
 
 <figure>
-  <img src="assets/images/print_er.png" width=300>
+  <img src="assets/images/pylint.png" width=350>
 </figure>
 
 ### Remaining warnings
@@ -496,6 +499,12 @@ At the time of creation, the PEP8 online Python validation website was inoperati
 
 <figure>
   <img src="assets/images/pylint_errors.png" width=300>
+</figure>
+
+### Update first warning fixed
+
+<figure>
+  <img src="assets/images/y_warning.png" width=300>
 </figure>
 
 ### The flow diagram was created with lucidchart which give the basic structure of the code direction.
