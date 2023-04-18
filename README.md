@@ -3,8 +3,8 @@
 
 # Iceberg
 
-### [Ling to github code](https://github.com/Shaga-Matula/Iceberg)
-### [Link to Heroku](https://iceberg.herokuapp.com/)
+### [Ling to Iceberg github code](https://github.com/Shaga-Matula/Iceberg)
+### [Link to Iceberg Heroku](https://iceberg.herokuapp.com/)
 &nbsp;
 <hr style="border:1px solid white">
 
