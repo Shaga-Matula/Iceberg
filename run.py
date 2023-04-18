@@ -244,8 +244,6 @@ def get_user_input():
         os.system('cls' if os.name == 'nt' else 'clear')
         return "error"
 
-        main()
-
     # If user inputs upper case make lower case
 
     if (user_shot[0].isalpha()):
@@ -255,9 +253,10 @@ def get_user_input():
     if user_shot == "error":  # there was an error
         main()
     elif (len(user_shot)) != 4:  # Error if more than 4 digets
-        chestnut = "\n\n\n\n\n\n\n\n\n\n Incorrect number of inputs, you must choose 4. Please try again"
+        chestnut = "\n\n\n\n\n\n\n\n\n\n Incorrect number"
+        "of inputs, you must choose 4. Please try again"
         error_1(chestnut)
-    elif (user_shot[0].isalpha()) != True:  # Error if not a letter
+    elif not (user_shot[0].isalpha()):  # Error if not a letter
         chestnut = (
             f"\n\n\n\n\n\n\n\n\n\n Your first input was {user_shot[0]}."
             " This must be a letter between A and J. Please try again"
@@ -274,7 +273,7 @@ def get_user_input():
             "\n\n\n\n\n\n\n\n\n\n Your second input. It must be a colon :"
         )
         error_1(chestnut)
-    elif (user_shot[2].isdigit()) != True:  # Error if not a number diget
+    elif not (user_shot[2].isdigit()):  # Error if not a number diget
         chestnut = (
             "\n\n\n\n\n\n\n\n\n\n Third input must be a number => 0, 1 or 2 "
         )
@@ -290,7 +289,7 @@ def get_user_input():
             "only be 0 as the range is 1 to 200"
         )
         error_1(chestnut)
-    elif (user_shot[3].isdigit()) != True:  # Error if not a number
+    elif not (user_shot[3].isdigit()):  # Error if not a number
         chestnut = (
             f"\n\n\n\n\n\n\n\n\n\n Fourth input {user_shot[3]}"
             "must be a number => 1, 2, 3, 4 etc "
@@ -402,8 +401,7 @@ def check_hits():  # User experience feedback
         os.system('cls' if os.name == 'nt' else 'clear')
         print("\n\n\n\n\n You did it Captain, You did it, were saved ")
         print(" \n            Congratulations You WON!!!!!!!\n\n\n\n")
-
-        wait = input("Press Enter to continue.")
+        input("Press Enter to continue.")
 
 
 create_game_board()

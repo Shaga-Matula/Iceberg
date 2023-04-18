@@ -445,19 +445,26 @@ At the time of creation, the PEP8 online Python validation website was inoperati
 
 ## Grid error
 
-### 
-<figure>
-  <img src="assets/images/border_bug_fix.png" width=300>
-</figure>
-
-### Flowchart
+### Due to column numbering the board was displaced. 
 
 <figure>
   <img src="assets/images/grid_error.png" width=300>
 </figure>
 
-### The flow diagram was created with lucidchart whach give the basic structure of the code direction.
+### Fix: A minor tweak of the code added to facilitate a gap. 
 
+<figure>
+  <img src="assets/images/grid_fix.png" width=150>
+</figure>
+
+### The flow diagram was created with lucidchart which give the basic structure of the code direction.
+
+### Flowchart
+
+
+<figure>
+  <img src="assets/images/flowchart.png" width=300>
+</figure>
 
 
 ### Languages
@@ -475,7 +482,7 @@ At the time of creation, the PEP8 online Python validation website was inoperati
 
 
 ## Deployment
-Use the following steps to deploy the poject to Heroku:
+- Use the following steps to deploy the poject to Heroku:
 1. Use the "pip freeze -> requiremnts.txt" command in the gitPod terminal; to save any libraries that need to be installed to the project files in Heroku.
 2. Login or create a Heroku account.
 3. Click the "New" button in the upper right corner and select "Create New App".
@@ -488,7 +495,7 @@ Use the following steps to deploy the poject to Heroku:
 10. Click enable automatic deploys and then deploy branch.
 11. Wait for the app to build and then click on the "View" link.
 
-You can clone the repository by following these steps:
+- You can clone the repository by following these steps:
 1. Go to the GitHub repository.
 2. Locate the Code button above the list of files and click it.
 3. Select if you prefer to clone using HTTPS, SSH, or Github CLI and click the copy button to copy the URL to your clipboard.
@@ -506,11 +513,5 @@ You can clone the repository by following these steps:
 - Code Institute Love Sandwiches project.
 
 ## Acknowledgments
-- Thanks to Gareth McGirr Mentor displayed                          
+- Thanks to Gareth McGirr Mentor                          
 
-
-/////////////////////////////////////////////
-* Bug 1, grid alignment (2/4/2023)
-* Installed Math random (2/4/2023)
-* Bug 2, border bug fix (3/4/2023)
-* INstalled pip install colorama (3/4/2023)
