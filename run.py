@@ -277,12 +277,12 @@ def get_user_input():
         error_1(chestnut)
     elif (user_shot[1]) != ":":  # Error if not a colon :
         chestnut = (
-            f"\n\n\n\n\n\n\n\n\n\n Your second input was {user_shot[1]} sorry it must be a colon => : "
+            f"\n\n\n\n\n\n\n\n\n\n Your second input. It must be a colon :"
         )
         error_1(chestnut)
     elif (user_shot[2].isdigit()) != True:  # Error if not a number diget
         chestnut = (
-            f"\n\n\n\n\n\n\n\n\n\n Third input {user_shot[2]} must be a number => 0, 1 or 2 "
+            f"\n\n\n\n\n\n\n\n\n\n Third input must be a number => 0, 1 or 2 "
         )
         error_1(chestnut)
     elif int(user_shot[2]) >= 3:  # Error if value is over 20 in choce
@@ -292,7 +292,7 @@ def get_user_input():
     elif int(user_shot[2]) == 2 and int(
             user_shot[3]) != 0:  # Error if value is over 20 in choce
         chestnut = (
-            f"\n\n\n\n\n\n\n\n\n\n If the first diget is 2 second diget can only be 0 as the range is 1 to 200"
+            f"\n\n\n\n\n\n\n\n\n\n First diget is 2 second diget can only be 0 as the range is 1 to 200"
         )
         error_1(chestnut)
     elif (user_shot[3].isdigit()) != True:  # Error if not a number
@@ -303,6 +303,12 @@ def get_user_input():
     elif user_shot in user_shot_taken:  # If Duplicate input
         chestnut = (
             "\n\n\n\n\n\n\n\n\n\n Sorry, you have already inputed these coordinates:... Please try again"
+        )
+        error_1(chestnut)
+        # Error
+    elif int(user_shot[2]) == 0 and int(user_shot[3]) == 0:
+        chestnut = (
+            f"\n\n\n\n\n\n\n\n\n\n Sorry out of range"
         )
         error_1(chestnut)
     else:

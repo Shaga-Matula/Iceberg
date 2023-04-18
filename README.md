@@ -376,10 +376,15 @@
 | Command Line Input | Input  |      A:0$      | Error message displayed                 | As desired | Yes  |
 | Command Line Input | Input  |      A:2^      | Error message displayed                 | As desired | Yes  |
 | Command Line Input | Input  |      A:1!      | Error message displayed                 | As desired | Yes  |
-| Command Line Input | Input  |      A:0/      | Error message displayed                 | As desired | Yes  |
+| Command Line Input | Input  |      A:00      | No                                      | nothing    | no   |
 
+### The error above was fixed by adding code to catch a double 00 input. 
 
-| Test Item          | Method |  Input details | Desired Result                         - | Result     | Pass |
+### Random changing of letters and numbers plus
+### All these symbols wer tested as fourth char # ! @ # & ( ) – 
+### [ { } ] : ; ', ? / * and symbol characters ` ~ $ ^ + = < > “ 
+
+| Test Item          | Method |  Input details | Desired Result                           | Result     | Pass |
 | ------------------ | ------ | -------------- | ---------------------------------------- | ---------- | ---- |
 | Command Line Input | Input  |      help      | Information displayed\taken to help file | As desired | Yes  |
 | Command Line Input | Input  |      end_game  | Information displayed\Exit game          | As desired | Yes  |
@@ -434,28 +439,9 @@
 ### Frameworks & Tools
 - LucidChart
 - Heroku
-- Google Drive: Used as a cloud hosting platform for the spreadsheet.
-- Google Spreadsheet: Used because Python does not have a built in library to store data in an external spreadsheet.
 - pycodestyle: Used as a validation tool instead of pep8 online.
 - gitHub
 - Gitpod
-- Git
-
-## Features
-
-### Welcome Message
-
-
-
-### Game Board
-
-
-### Game Inputs
-
-
-
-### Game Over
-
 
 
 
@@ -471,12 +457,8 @@ At the time of creation, the PEP8 online Python validation website was inoperati
 5. Select 'pycodestyle' from the list.
 6. PEP8 errors will now be underlined in red, as well as being listed in the PROBLEMS tab beside the terminal.
 
-There were no errors or warnings flagged in login.py.
-There were no errors or warnings flagged in test_login.py
-15 yellow warnings were flagged in run.py. These are down to the symbol combinations used in the ASCII art and logo. These are printed direct to the console and not used in any functions.
+# 64 yellow warnings were flagged in run.py. These are down to # sign in comments. These are printed direct to the console and not used in any functions.
 
-
-### Testing user stories
 
 
 ## Deployment
@@ -493,10 +475,6 @@ Use the following steps to deploy the poject to Heroku:
 10. Click enable automatic deploys and then deploy branch.
 11. Wait for the app to build and then click on the "View" link.
 
-You can fork the repository by following these steps:
-1. Go to the GitHub repository.
-2. Click on the Fork button in the upper right-hand corner.
-
 You can clone the repository by following these steps:
 1. Go to the GitHub repository.
 2. Locate the Code button above the list of files and click it.
@@ -507,22 +485,13 @@ You can clone the repository by following these steps:
 7. Press Enter to create your local clone.
 
 ## Credits
-
-### Media
-- ASCII art: https://asciiart.website/index.php?art=transportation/nautical
+# Thanks to Gareth Mc
 
 ### Code
 - Code Institute Python lessons.
 - Code Institute Love Sandwiches project.
-- Knowledge Mavens https://www.youtube.com/watch?v=alJH_c9t4zw&t=673s
-- Corey Schafer https://www.youtube.com/watch?v=6tNS--WetLI
 
 ## Acknowledgments
-I would like to take the opportunity to thank:
-- My mentor Mo Shami for his feedback, advice, guidance and support.
-- My beautiful wife, Megan, for her continued love and support.
-- Jim, Sawyer, and the other fantasic members of Code Institute's community team.
-- The great people of class June '22 for their ideas and humour.
 
 
 
