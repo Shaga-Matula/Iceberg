@@ -1,6 +1,3 @@
-
-import json
-
 # This allows identity of operating system
 import os
 
@@ -30,9 +27,8 @@ def print_rules():  # Rules of the game
     if run_help == ("help"):
         print("\n\n")
         os.system('cls' if os.name == 'nt' else 'clear')
-        print(Fore.YELLOW +
-        "     |%%%%%%%%%%%%%--%%%  ICEBERG  %%%--%%%%%%%%%%%%|\n" +
-        Style.RESET_ALL)
+        print((Fore.YELLOW + "     |%%%%%%%%%%%%%--%%%  ICEBERG"
+                             "%%%--%%%%%%%%%%%%|\n" + Style.RESET_ALL))
         print("  Hello and welcome to Iceberg, a game of cunning and guile.\n")
         print("  The object of the game is to destroy 3 Icebergs to clear a")
         print("  path for your ship to cross, but! It's foggy and you cannot ")
@@ -43,27 +39,23 @@ def print_rules():  # Rules of the game
         print("  listen out for the sound of ice crushing under the ")
         print("  weight your torpedoesas as you hunt in the fog for")
         print("  the ICEBERG's")
-        wait = input("\n \n  Press Enter to continue." + Style.RESET_ALL)
+        input("\n \n  Press Enter to continue." + Style.RESET_ALL)
         os.system('cls' if os.name == 'nt' else 'clear')
-        print(Fore.YELLOW +
-            "     |%%%%%%%%%%%%%--%%%  ICEBERG  %%%--%%%%%%%%%%%%|\n" +
-            Style.RESET_ALL)
+        print((Fore.YELLOW + "     |%%%%%%%%%%%%%--%%%  ICEBERG"
+                             "%%%--%%%%%%%%%%%%|\n" + Style.RESET_ALL))
         print("  You can achieve your goal by selecting Coordinates to launch")
         print("  your torpedoes into the foggy night.\n")
         print("  Firstly select a letter from the top row of A to J.\n")
         print("  The first letter is not case sensitive")
         print("  Then insert a colon : to separate letters from numbers\n")
         print("  After the colon you can select a number from 01 to 20")
-        print(Fore.BLUE + "  Please note the input must be 4 char long." +
-            Style.RESET_ALL)
         print("  An example of this would be B:02, for Column b row 2.\n")
-        print("  If you choose a row number under 10 it must be preceded with a 0")
+        print("  Row number under 10 it must be preceded with a 0")
         print("  An example of this for Column h row 2, would be H:02 \n")
-        wait = input("\n \n  Press Enter to continue." + Style.RESET_ALL)
+        input("\n \n  Press Enter to continue." + Style.RESET_ALL)
         os.system('cls' if os.name == 'nt' else 'clear')
-        print(Fore.YELLOW +
-            "     |%%%%%%%%%%%%%--%%%  ICEBERG  %%%--%%%%%%%%%%%%|\n" +
-            Style.RESET_ALL)
+        print((Fore.YELLOW + "     |%%%%%%%%%%%%%--%%%  ICEBERG"
+                             "%%%--%%%%%%%%%%%%|\n" + Style.RESET_ALL))
         print(
             "  Icebergs are huge and 90% is hidden underwater, so you will")
         print("   need to hit it dead centre to destroy the Iceberg.\n")
@@ -74,11 +66,10 @@ def print_rules():  # Rules of the game
         print("  by 1's \n  The game is over when you sink all 3 Icebergs ")
         print("  or quit game. \n")
         print("  Good luck captain and God Speed! \n\n")
-        wait = input("\n \n  Press Enter to continue.")
+        input("\n \n  Press Enter to continue.")
         os.system('cls' if os.name == 'nt' else 'clear')
-        print(Fore.YELLOW +
-            "     |%%%%%%%%%%%%%--%%%  ICEBERG  %%%--%%%%%%%%%%%%|\n" +
-            Style.RESET_ALL)
+        print((Fore.YELLOW + "     |%%%%%%%%%%%%%--%%%  ICEBERG"
+                             "%%%--%%%%%%%%%%%%|\n" + Style.RESET_ALL))
         print(Fore.BLUE + "\n  The game will reveal the complete Iceberg if")
         print(Fore.BLUE + "  you smash it's center")
         print(Fore.BLUE + "\n  If you smash all three Icebergs.. You Win!")
@@ -88,7 +79,7 @@ def print_rules():  # Rules of the game
         print(Fore.BLUE + "\n  quotations. If you want to quit the game.")
         print(Fore.BLUE + "  Input 'end_game' to the Coordinates with no")
         print(Fore.BLUE + "  quotations")
-        wait = input("\n \n\n  Press Enter to continue." + Style.RESET_ALL)
+        input("\n \n\n  Press Enter to continue." + Style.RESET_ALL)
         os.system('cls' if os.name == 'nt' else 'clear')
         run_help = ("no_help")
         return run_help
@@ -158,8 +149,6 @@ def calculate_iceberg_squares():
         # the excluded list andreturn the value of 3 sets of 9 numbers
         # representing the icebergs
 
-        # Declair variables needed
-
         # Pick randam number and compair to exclusion list
         x = 1
         while x <= 3:
@@ -167,12 +156,15 @@ def calculate_iceberg_squares():
                 [i for i in range(1, 200) if i not in excluded_numbers])
             direct_hit_list.append(num)
             # Place all 8 surounding boxes into exclusion array
-            ice_burg_container = num + 1, num - 1, num + 10, num - 10, num - 9, num + 9, num - 11, num + 11
+            ice_burg_container = num + 1, num - 1, num + 10, num - 10, \
+                num - 9, num + 9, num - 11, num + 11
             # Calculate outer box from given randam number
             outer_top = num - 18, num - 19, num - 20, num - 21, num - 22
-            outer_left_right = num - 2, num - 12, num - 8, num + 2, num + 12, num + 8
+            outer_left_right = num - 2, num - 12, num - 8, \
+                num + 2, num + 12, num + 8
             outer_bottom = num + 18, num + 19, num + 20, num + 21, num + 22
             outer_numbers = outer_bottom + outer_left_right + outer_top
+            print(outer_numbers)
             # Merge all 3 iceburg 3x3 into tree iceburg array
             tree_icebergs.extend(ice_burg_container)
             # Merge all numbers to exclusion array
@@ -210,7 +202,7 @@ def error_1(chestnut):  # Prints out user errors
     os.system('cls' if os.name == 'nt' else 'clear')
     print("\n\n")
     print(chestnut)
-    wait = input("\n \n Press Enter to continue.")
+    input("\n \n Press Enter to continue.")
     main()
 
 
@@ -230,7 +222,7 @@ def get_user_input():
         run_help = ("help")
         print("\n\n\n\n\n\n\n\n\n\n You have chosen help.")
         print("\n You will be returned to game when finished!!")
-        wait = input("\n \n Press Enter to continue.")
+        input("\n \n Press Enter to continue.")
         print_rules()
         calculate_iceberg_squares()
         return run_help
@@ -240,7 +232,7 @@ def get_user_input():
         print(
             "\n\n\n\n\n\n\n\n\n\n You have chosen to end game.")
         print("\n Please come back soon!!")
-        wait = input("\n \n Press Enter to continue.")
+        input("\n \n Press Enter to continue.")
         quit()
 
     if user_shot == "":  # If the string is empty
@@ -248,7 +240,7 @@ def get_user_input():
         print("\n \n \n \n \n \n \n You have not entered any")
         print("\n characters, you must choose 4, eg b:12")
         print("\n Please Try Again :")
-        wait = input("\n \n Press Enter to continue.")
+        input("\n \n Press Enter to continue.")
         os.system('cls' if os.name == 'nt' else 'clear')
         return "error"
 
@@ -267,48 +259,53 @@ def get_user_input():
         error_1(chestnut)
     elif (user_shot[0].isalpha()) != True:  # Error if not a letter
         chestnut = (
-            f"\n\n\n\n\n\n\n\n\n\n Your first input was {user_shot[0]}. This must be a letter between A and J. Please try again"
+            f"\n\n\n\n\n\n\n\n\n\n Your first input was {user_shot[0]}."
+            " This must be a letter between A and J. Please try again"
         )
         error_1(chestnut)
-    elif user_shot[0] not in allowed_letters:  #Error if not in list a to j
+    elif user_shot[0] not in allowed_letters:  # Error if not in list a to j
         chestnut = (
-            f"\n\n\n\n\n\n\n\n\n\n Your first input was {user_shot[0]} it must be between A and J. Please try again"
+            f"\n\n\n\n\n\n\n\n\n\n Your first input was {user_shot[0]}"
+            " it must be between A and J. Please try again"
         )
         error_1(chestnut)
     elif (user_shot[1]) != ":":  # Error if not a colon :
         chestnut = (
-            f"\n\n\n\n\n\n\n\n\n\n Your second input. It must be a colon :"
+            "\n\n\n\n\n\n\n\n\n\n Your second input. It must be a colon :"
         )
         error_1(chestnut)
     elif (user_shot[2].isdigit()) != True:  # Error if not a number diget
         chestnut = (
-            f"\n\n\n\n\n\n\n\n\n\n Third input must be a number => 0, 1 or 2 "
+            "\n\n\n\n\n\n\n\n\n\n Third input must be a number => 0, 1 or 2 "
         )
         error_1(chestnut)
     elif int(user_shot[2]) >= 3:  # Error if value is over 20 in choce
         chestnut = (
-            f"\n\n\n\n\n\n\n\n\n\n  Out of range 3rd diget must be 0, 1 or 2 ")
+            "\n\n\n\n\n\n\n\n\n\n  Out of range 3rd diget must be 0, 1 or 2 ")
         error_1(chestnut)
     elif int(user_shot[2]) == 2 and int(
             user_shot[3]) != 0:  # Error if value is over 20 in choce
         chestnut = (
-            f"\n\n\n\n\n\n\n\n\n\n First diget is 2 second diget can only be 0 as the range is 1 to 200"
+            "\n\n\n\n\n\n\n\n\n\n First diget is 2 second diget can"
+            "only be 0 as the range is 1 to 200"
         )
         error_1(chestnut)
     elif (user_shot[3].isdigit()) != True:  # Error if not a number
         chestnut = (
-            f"\n\n\n\n\n\n\n\n\n\n Fourth input {user_shot[3]} must be a number => 1, 2, 3, 4 etc "
+            f"\n\n\n\n\n\n\n\n\n\n Fourth input {user_shot[3]}"
+            "must be a number => 1, 2, 3, 4 etc "
         )
         error_1(chestnut)
     elif user_shot in user_shot_taken:  # If Duplicate input
         chestnut = (
-            "\n\n\n\n\n\n\n\n\n\n Sorry, you have already inputed these coordinates:... Please try again"
+            "\n\n\n\n\n\n\n\n\n\n Sorry, you have already"
+            "inputed these coordinates:... Please try again"
         )
         error_1(chestnut)
         # Error
     elif int(user_shot[2]) == 0 and int(user_shot[3]) == 0:
         chestnut = (
-            f"\n\n\n\n\n\n\n\n\n\n Sorry out of range"
+            "\n\n\n\n\n\n\n\n\n\n Sorry 00 is out of range"
         )
         error_1(chestnut)
     else:
@@ -366,8 +363,8 @@ def check_hits():  # User experience feedback
 
     if user_number in direct_hit_list:
         os.system('cls' if os.name == 'nt' else 'clear')
-        print(f"Its a hit Captain its a hit!!, you smashed an Iceberg captain")
-        wait = input("\n \n Press Enter to continue.")
+        print("Its a hit Captain its a hit!!, you smashed an Iceberg captain")
+        input("\n \n Press Enter to continue.")
         hit_list.append(user_number)
         #  ######################### Reveal if correct ######################
 
@@ -394,7 +391,7 @@ def check_hits():  # User experience feedback
         os.system('cls' if os.name == 'nt' else 'clear')
         print("\n\n\n\n\n Youv'e cliped one Captain its a near hit!!!")
         print("\n Your close to a Iceberg Captain")
-        wait = input("\n \n Press Enter to continue.")
+        input("\n \n Press Enter to continue.")
         very_near.append(user_number)
         user_shot_taken.append(user_number)
     else:
