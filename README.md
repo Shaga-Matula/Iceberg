@@ -412,7 +412,16 @@ At the time of creation, the PEP8 online Python validation website was inoperati
 5. Select 'pycodestyle' from the list.
 6. PEP8 errors will now be underlined in red, as well as being listed in the PROBLEMS tab beside the terminal.
 
-### 64 yellow warnings were flagged in run.py. These were down to # sign in comments. 
+### Pylint
+- Also Pylint was user for error finding
+- Navigate to extensions 
+- Search for Pylint
+- Click Install
+
+<figure>
+  <img src="assets/images/pylint_install.png" width=250>
+</figure>
+
 
 
 <hr style="border:1px solid white">
@@ -423,7 +432,7 @@ At the time of creation, the PEP8 online Python validation website was inoperati
 
 ### DRY (Don't Repeat Yourself) a principle of software development was implemented. The focus of DRY is to avoid repetition of information. All code was scrutinised for repeats and where time allowed code was streamlined.
 
--By streamlining 11 areas in a function and adding a variable to compensate for, 32 lines of code were deemed unnecessary and the Dry approach was implemented. Rewriting the function with a variable named (chestnut) to enable the error messages to print. The code below is an example of how DRY was approached. Please note code image is for demonstrative purposes and is not the exact code edited.  
+-By streamlining 11 areas in a function and adding a variable to compensate for deletion, 32 lines of code were deemed unnecessary and the Dry approach was implemented. Rewriting the function with a variable named (chestnut) to enable the error messages to print. The code below is an example of how DRY was approached. Please note code image is for demonstrative purposes and is not the exact code edited.  
 
 <figure>
   <img src="assets/images/dry.png" width=500>
@@ -459,7 +468,10 @@ At the time of creation, the PEP8 online Python validation website was inoperati
 
 ## Pylint
 
-### Fixed 27 error of code too long. Below is an example for a print statement too long.
+### Fixed 15 comment errors due to spacing. Eg #comment to # comment 
+
+### 27 errors were alter and fixed that ware too long in print statements. Below is an example for a print statement too long. 
+
 
 <figure>
   <img src="assets/images/print_er_er.png" width=300>
@@ -493,6 +505,8 @@ At the time of creation, the PEP8 online Python validation website was inoperati
   <img src="assets/images/flowchart.png" width=300>
 </figure>
 
+<hr style="border:1px solid white">
+# Acknowledgements
 
 ### Languages
 - Python 3
@@ -508,8 +522,9 @@ At the time of creation, the PEP8 online Python validation website was inoperati
 
 
 ## Gsheets
-- Please not that I am not blameing or critisze Code Anywhere in any way, shape or form. As in real life situations we must adapt to any unforytunate issues that migt occur. I wish code anywhere all the best of scucess in the future.    
-- After a great deal of trouble migrating to Code Anywhere and due to lost time during this process, I decided not to implament gsheets for username and scores untill a further date. 
+- Please not that I am not criticizing Code Anywhere in any way, shape or form. As in real life situations we must adapt to any unfortunate issues that might occur. I wish code anywhere all the best of success in the future.    
+- Howerver after a great deal of trouble migrating to Code Anywhere and due to lost time during this process, I decided not to implement gsheets for username and scores until a further date. 
+
 
 ## Future Devolopment
 - Score keeping
@@ -551,7 +566,7 @@ At the time of creation, the PEP8 online Python validation website was inoperati
 - Code Institute Love Sandwiches project.
 
 
-## Acknowledgments
+## Special Thanks
 - Thanks to Gareth McGirr Mentor 
 - Thanks to Paul Thomas O’Riordan (The Facilitator)                         
 
