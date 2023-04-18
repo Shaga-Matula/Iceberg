@@ -3,6 +3,11 @@
 
 # Iceberg
 
+### [Ling to github code](https://github.com/Shaga-Matula/Iceberg)
+### [Link to Heroku](https://iceberg.herokuapp.com/)
+&nbsp;
+<hr style="border:1px solid white">
+
 ![Start screen](assets/images/game_page.png)
 
 &nbsp;
@@ -479,9 +484,6 @@ At the time of creation, the PEP8 online Python validation website was inoperati
 
 ### Fix: -Mentor Gareth McGirr pointed me in the right direction. Print statements can be broken to reduce line length. 
 
-<figure>
-  <img src="assets/images/print_er.png" width=300>
-</figure>
 
 ### Code error below was highlighted by Pylint as incorrect. There were 3 instances that need correcting. 
 
@@ -506,6 +508,7 @@ At the time of creation, the PEP8 online Python validation website was inoperati
 </figure>
 
 <hr style="border:1px solid white">
+
 # Acknowledgements
 
 ### Languages
