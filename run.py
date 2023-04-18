@@ -58,15 +58,15 @@ def print_rules():  # Rules of the game
                              "%%%--%%%%%%%%%%%%|\n" + Style.RESET_ALL))
         print(
             "  Icebergs are huge and 90% is hidden underwater, so you will")
-        print("   need to hit it dead centre to destroy the Iceberg.\n")
+        print("  need to hit it dead centre to destroy the Iceberg.\n")
         print("  Thus you may hit outside of the Iceberg before you hit its")
         print("  center")
-        print("  If so, the computer will display a 1, if it’s a miss you ")
+        print("\n  If so, the computer will display a 1, if it’s a miss you ")
         print("  get a 0. Icebergs take up 9 spaces, X in middle, surrounded")
-        print("  by 1's \n  The game is over when you sink all 3 Icebergs ")
+        print("  by 1's.\n\n  The game is over when you sink all 3 Icebergs ")
         print("  or quit game. \n")
         print("  Good luck captain and God Speed! \n\n")
-        input("\n \n  Press Enter to continue.")
+        input("  Press Enter to continue.")
         os.system('cls' if os.name == 'nt' else 'clear')
         print((Fore.YELLOW + "     |%%%%%%%%%%%%%--%%%  ICEBERG"
                              "%%%--%%%%%%%%%%%%|\n" + Style.RESET_ALL))
@@ -164,7 +164,6 @@ def calculate_iceberg_squares():
                 num + 2, num + 12, num + 8
             outer_bottom = num + 18, num + 19, num + 20, num + 21, num + 22
             outer_numbers = outer_bottom + outer_left_right + outer_top
-            print(outer_numbers)
             # Merge all 3 iceburg 3x3 into tree iceburg array
             tree_icebergs.extend(ice_burg_container)
             # Merge all numbers to exclusion array
@@ -251,8 +250,8 @@ def get_user_input():
     if user_shot == "error":  # there was an error
         main()
     elif (len(user_shot)) != 4:  # Error if more than 4 digets
-        chestnut = "\n\n\n\n\n\n\n\n\n\n Incorrect number"
-        "of inputs, you must choose 4. Please try again"
+        chestnut = "\n\n\n\n\n\n\n\n\n\n Incorrect number" \
+                   "of inputs, you must choose 4. Please try again"
         error_1(chestnut)
     elif not (user_shot[0].isalpha()):  # Error if not a letter
         chestnut = (
@@ -361,7 +360,7 @@ def check_hits():  # User experience feedback
 
     if user_number in direct_hit_list:
         os.system('cls' if os.name == 'nt' else 'clear')
-        print("Its a hit Captain its a hit!!, you smashed an Iceberg captain")
+        print("Its a hit Captain, its a hit!!, you smashed an Iceberg captain")
         input("\n \n Press Enter to continue.")
         hit_list.append(user_number)
         #  ######################### Reveal if correct ######################

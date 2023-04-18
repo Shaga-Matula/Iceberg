@@ -457,6 +457,30 @@ At the time of creation, the PEP8 online Python validation website was inoperati
   <img src="assets/images/grid_fix.png" width=150>
 </figure>
 
+## Pylint
+
+### Fixed 27 error of code too long. Below is an example for a print statement too long.
+
+<figure>
+  <img src="assets/images/print_er_er.png" width=300>
+</figure>
+
+### Fix: -Mentor Gareth McGirr pointed me in the right direction. Print statements can be broken to reduce line length. 
+
+<figure>
+  <img src="assets/images/print_er.png" width=300>
+</figure>
+
+### Code error below was highlighted by Pylint as incorrect. There were 3 instances that need correcting. 
+
+<figure>
+  <img src="assets/images/print_er.png" width=300>
+</figure>
+
+
+
+### 
+
 ### The flow diagram was created with lucidchart which give the basic structure of the code direction.
 
 ### Flowchart
@@ -476,10 +500,19 @@ At the time of creation, the PEP8 online Python validation website was inoperati
 - pycodestyle: Used as a validation tool instead of pep8 online.
 - gitHub
 - Gitpod
+- [Black PEP8](https://black.vercel.app/) for helping format code to PEP8 standards
+- Pylint 
 
 
+## Gsheets
+- Please not that I am not blameing or critisze Code Anywhere in any way, shape or form. As in real life situations we must adapt to any unforytunate issues that migt occur. I wish code anywhere all the best of scucess in the future.    
+- After a great deal of trouble migrating to Code Anywhere and due to lost time during this process, I decided not to implament gsheets for username and scores untill a further date. 
 
-
+## Future Devolopment
+- Score keeping
+- User name and password
+- Timer
+ 
 
 ## Deployment
 - Use the following steps to deploy the poject to Heroku:
@@ -507,11 +540,14 @@ At the time of creation, the PEP8 online Python validation website was inoperati
 ## Credits
 - Thanks to Gareth McGirr Mentor for help and advice
 - Thanks to Paul Thomas O’Riordan 
+- Code institute for providing a python essentials template to work from and a terminal on Heroku to deploy my project.
 
 ### Code
 - Code Institute Python lessons.
 - Code Institute Love Sandwiches project.
 
+
 ## Acknowledgments
-- Thanks to Gareth McGirr Mentor                          
+- Thanks to Gareth McGirr Mentor 
+- Thanks to Paul Thomas O’Riordan (The Facilitator)                         
 
