@@ -2,15 +2,10 @@
 import os
 
 # Imports colored print
-from colorama import Fore, Back, Style
+from colorama import Fore, Style
 
 # importing the random module
 import random
-# importing string for alpha betic calculation
-import string
-# import sys for break in loops
-import sys
-
 
 very_near = []
 direct_hit_list = []
