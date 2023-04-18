@@ -142,13 +142,13 @@ doit = "notdone"
 
 
 def calculate_iceberg_squares():
+    """
+    This function will pick a random number between 1,200 that is not in
+    the excluded list andreturn the value of 3 sets of 9 numbers
+    representing the icebergs
+    """
     global doit
     if doit == ("notdone"):
-        # note to shorten code below repetitive, if time.
-        # This function will pick a random number between 1,200 that is not in
-        # the excluded list andreturn the value of 3 sets of 9 numbers
-        # representing the icebergs
-
         # Pick randam number and compair to exclusion list
         x = 1
         while x <= 3:
@@ -207,13 +207,11 @@ def error_1(chestnut):  # Prints out user errors
 
 
 def get_user_input():
-    chestnut = []
-
-    allowed_letters = "abcdefghijABCDEFGHIJ"
     """
     This function valadates the input data from the user.
     """
-
+    chestnut = []
+    allowed_letters = "abcdefghijABCDEFGHIJ"
     user_shot = input("\n Please Choose Coordinates Captain:")
 
     if user_shot == "help":  # run the help file and display rules of play
@@ -315,17 +313,18 @@ def get_user_input():
 
 create_game_board()
 
+
 ############################################################################
 
-"""
-This function compaires the user input to its coradnents and
-translates to board
 
-"""
 dict_1 = {}
 
 
 def translate_user_input(user_input):
+    """
+This function compaires the user input to its coradnents and
+translates to board
+"""
     letters = []
     for i in range(97, 107):
         letters.append(chr(i))
