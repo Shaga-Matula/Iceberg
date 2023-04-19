@@ -1,9 +1,10 @@
 """
-Welcome to the Iceberge Game Python Project PP_03 
+Welcome to the Iceberge Game Python Project PP_03
 for Code Instatute By Paul Gleeson 21/04/2023
 """
 
-# Gsheets and Json credintial file. 
+# Gsheets and Json credintial file.
+# import gspread
 import gspread
 from google.oauth2.service_account import Credentials
 import json
@@ -12,14 +13,13 @@ import json
 import os
 # Import for timer
 import time
-from time import sleep
 
 # importing the random module
 import random
 
 # Imports colored print
 from colorama import Fore, Style
-### ########### Gsheets connection ################
+# ## ########### Gsheets connection ################
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -38,14 +38,14 @@ data = grids_sheet.get_all_values()
 # Inform user of bad connection to gsheets
 try:
     if SHEET.worksheet('grid'):
-        print(f"Connect to Gsheets OK!!! ")
+        print("Connect to Gsheets OK!!! ")
         input("\n\n       Press Enter to continue.")
-except:
+except SHEET.DoesNotExist:
     print("\n\n\n     A Gsheets exception occurred")
     print("\n     Cannot connect to Gsheets")
     input("\n\n       Press Enter to continue.")
 
-### ##### Main program ######################## 
+# ## ##### Main program ########################
 
 # Declair variables
 very_near = []
@@ -61,6 +61,9 @@ start_time = time.time()
 
 
 def print_rules():  # Rules of the game
+    """
+    This function prints the help file to screen
+    """
     global run_help
     if run_help == "help":
         print("\n\n")
@@ -444,7 +447,6 @@ def check_hits():  # User experience feedback
         print(f" Your time was {elapsed_time} Captain\n\n")
         
         input(" Press Enter to continue.")
-
 
 
 create_game_board()
