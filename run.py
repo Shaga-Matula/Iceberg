@@ -37,7 +37,7 @@ data = grids_sheet.get_all_values()
 
 # Inform user of bad connection to gsheets
 try:
-    if SHEET.worksheet('grid-'):
+    if SHEET.worksheet('grid'):
         print(f"Connect to Gsheets OK!!! ")
         input("\n\n       Press Enter to continue.")
 except:
