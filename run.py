@@ -5,9 +5,10 @@ for Code Instatute By Paul Gleeson 21/04/2023
 
 # Gsheets and Json credintial file.
 # import gspread
+import json
 import gspread
 from google.oauth2.service_account import Credentials
-import json
+
 
 # Import for screen refresh
 import os
@@ -37,11 +38,11 @@ data = grids_sheet.get_all_values()
 
 # Inform user of bad connection to gsheets
 try:
-    if SHEET.worksheet('grid'):
+    if SHEET.worksheet('cgrid'):
         print("Connect to Gsheets OK!!! ")
         input("\n\n       Press Enter to continue.")
-except SHEET.DoesNotExist:
-    print("\n\n\n     A Gsheets exception occurred")
+except gspread.exceptions.GSpreadException as e:
+    print(f"\n\n\n    A Gsheets exception occurred ==>  {e}")
     print("\n     Cannot connect to Gsheets")
     input("\n\n       Press Enter to continue.")
 
@@ -445,7 +446,6 @@ def check_hits():  # User experience feedback
             "%M Min and %S Sec", time.gmtime(elapsed_time)
         )
         print(f" Your time was {elapsed_time} Captain\n\n")
-        
         input(" Press Enter to continue.")
 
 
