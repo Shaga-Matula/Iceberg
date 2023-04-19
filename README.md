@@ -535,8 +535,8 @@ At the time of creation, the PEP8 online Python validation website was inoperati
 
 
 ## Gsheets
-- Please not that I am not criticizing Code Anywhere in any way, shape or form. As in real life situations we must adapt to any unfortunate issues that might occur. I wish code anywhere all the best of success in the future.    
-- Howerver after a great deal of trouble migrating to Code Anywhere and due to lost time during this process, I decided not to implement gsheets for username and scores until a further date. 
+- Gsheets is installed and configured saving timer information. A creds.json file was created amd confogured to work with the Gsheets API and github.    
+
 
 
 ## Future Devolopment
@@ -544,11 +544,13 @@ At the time of creation, the PEP8 online Python validation website was inoperati
 - User name and password
 - Timer
 - Change board sizes 
- 
+
+## A timer was added to allow for a more competivive experience. 
+
 
 ## Deployment
 - Use the following steps to deploy the poject to Heroku:
-1. Use the "pip freeze -> requiremnts.txt" command in the gitPod terminal; to save any libraries that need to be installed to the project files in Heroku.
+1. Use the "pip freeze -- local > requirements.txt" command in the gitPod terminal; to save any libraries that need to be installed to the project files in Heroku.
 2. Login or create a Heroku account.
 3. Click the "New" button in the upper right corner and select "Create New App".
 4. Choose an app name and your region and click "Create App". Note: the app name must be unique.
