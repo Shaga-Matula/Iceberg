@@ -1,23 +1,63 @@
 """
-Welcome to the Iceberge Readme.MD file.
+Welcome to the Iceberge Game Python Project PP_03 
+for Code Instatute By Paul Gleeson 21/04/2023
 """
 
+# Gsheets and Json credintial file. 
+import gspread
+from google.oauth2.service_account import Credentials
+import json
+
+# Import for screen refresh
 import os
+# Import for timer
+import time
+from time import sleep
 
 # importing the random module
 import random
 
 # Imports colored print
 from colorama import Fore, Style
+### ########### Gsheets connection ################
+SCOPE = [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive"
+]
 
+creds = json.load(open('creds.json'))
+CREDS = Credentials.from_service_account_info(creds)
+SCOPED_CREDS = CREDS.with_scopes(SCOPE)
+GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+SHEET = GSPREAD_CLIENT.open("Iceberg")
+
+grids_sheet = SHEET.worksheet('grid')
+data = grids_sheet.get_all_values()
+
+# Inform user of bad connection to gsheets
+try:
+    if SHEET.worksheet('grid-'):
+        print(f"Connect to Gsheets OK!!! ")
+        input("\n\n       Press Enter to continue.")
+except:
+    print("\n\n\n     A Gsheets exception occurred")
+    print("\n     Cannot connect to Gsheets")
+    input("\n\n       Press Enter to continue.")
+
+### ##### Main program ######################## 
+
+# Declair variables
 very_near = []
 direct_hit_list = []
 miss_var = []
 hit_list = []
 user_shot_taken = []
 user_number = ()
-
 run_help = "help"
+
+# Start the game timer
+start_time = time.time()
 
 
 def print_rules():  # Rules of the game
@@ -396,8 +436,15 @@ def check_hits():  # User experience feedback
     if (len(hit_list) == 3):
         os.system('cls' if os.name == 'nt' else 'clear')
         print("\n\n\n\n\n You did it Captain, You did it, were saved ")
-        print(" \n            Congratulations You WON!!!!!!!\n\n\n\n")
-        input("Press Enter to continue.")
+        print(" \n         Congratulations You WON!!!!!!!\n\n")
+        elapsed_time = time.time() - start_time
+        elapsed_time = time.strftime(
+            "%M Min and %S Sec", time.gmtime(elapsed_time)
+        )
+        print(f" Your time was {elapsed_time} Captain\n\n")
+        
+        input(" Press Enter to continue.")
+
 
 
 create_game_board()
