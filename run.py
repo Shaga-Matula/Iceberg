@@ -404,7 +404,8 @@ def check_hits():  # User experience feedback
 
     if user_number in direct_hit_list:
         os.system('cls' if os.name == 'nt' else 'clear')
-        print("\n\n Its a hit Captain, its a hit!!, you've smashed an Iceberg captain")
+        print("\n\n Its a hit Captain, its a hit!!, you've smashed an Iceberg"
+              "captain")
         input("\n \n Press Enter to continue.")
         hit_list.append(user_number)
         #  ######################### Reveal if correct ######################
@@ -480,16 +481,20 @@ def calculate_score():
         input("\n Press enter to continue")
     else:
         print("Gsheets unavailable")
-        
+
 
 create_game_board()
 
+
 def main():
+    """
+    Main program
+    """
     print_rules()
     calculate_iceberg_squares()
     create_game_board()
     check_hits()
     main()
-    
-    
+
+
 main()
