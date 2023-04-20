@@ -71,10 +71,10 @@
 ## User experience
 
 
-* Create an atmosphere using creative writing that that embeds the user to the task.
-* Create a game that gives instant and clear feed back to the user during the game.
-* Create a game that track and reports all errors with feedback to the user.
-* Create a game that challenging against a computer opponent.
+* Create an atmosphere using creative writing that embeds the user to the task.
+* Create a game that gives instant and clear feedback to the user during the game.
+* Create a game that tracks and reports all errors with feedback to the user.
+* Create a game that is challenging against a computer opponent.
 * Accept upper and lower case input for letters in coordinates to speed up user experience. 
 * Add help function to game so user can recall help at any time.
 * Add quit game function so user can quit game if so desired.
@@ -92,9 +92,9 @@
 # How to play Iceberg
 ## Game creative writing introduction
 
-### Hello and welcome to Iceberg, a game of cunning and guile. The object of the game is to destroy 3 Icebergs to clear a path for your ship to cross, but! Its fogy and you cannot see, fortunately the sea is flat as a pancake and you can hear the sound of dripping water as the icebergs melt, 'It’s so quiet' you hear - the first mate say, 'it’s so quiet'.
+### Hello and welcome to Iceberg, a game of cunning and guile. The object of the game is to destroy 3 Icebergs to clear a path for your ship to cross, but! Its foggy and you cannot see, fortunately the sea is flat as a pancake and you can hear the sound of dripping water as the icebergs melt, 'It’s so quiet' you hear - the first mate say, 'it’s so quiet'.
 &nbsp;
-### Use this tranquillity to your advantage, your crew will listen out for the sound of ice crushing under the weight your torpedoes as you hunt in the fog for the "ICEBERGS".
+### Use this tranquillity to your advantage, your crew will listen out for the sound of ice crushing under the weight of your torpedoes as you hunt in the fog for the "ICEBERGS".
 &nbsp;  
      
 
@@ -134,13 +134,13 @@
 <img src="assets/images/clipped_1.png" width=400>
 </figure>
 
-### You will also recieve a message from the crew that you have cliped an Iceberg and tthat its a near hit.
+### You will also recieve a message from the crew that you have cliped an Iceberg and that its a near hit.
 
 <figure>
 <img src="assets/images/clipped.png" width=400>
 </figure>
 
-### Icebergs take up 9 spaces, X in middle, surounded by 1's 
+### Icebergs take up 9 spaces, X in middle, surrounded by 1's 
 
 <figure>
 <img src="assets/images/dir_hit.png" width=400>
@@ -186,7 +186,7 @@
 
 ## Page four
 
-### Page four explains that if you smash the center of the Iceberg it will reveal the surounding targets so the user doenent get confused with other Icebergs. The page clearly explains how to Win or how to Lose. 
+### Page four explains that if you smash the center of the Iceberg it will reveal the surounding targets so the user doesn't get confused with other Icebergs. The page clearly explains how to Win or how to Lose. 
 
 <figure>
 <img src="assets/images/help_4.png" width=600>
@@ -199,7 +199,7 @@
 ### A great deal of the project has been devoted to error catching from the user input. This is a complex procedure attempting to catch all input from the user, checking the input is valid.
 
 ## Error catch 1. (Help function)
-### Error catch 1, will watch for user input and compair it to 'help' function. This will display a message informing the user that they will be brought to the help file and then returned to the game. 
+### Error catch 1, will watch for user input and compare it to 'help' function. This will display a message informing the user that they will be brought to the help file and then returned to the game. 
 
 <figure>
 <img src="assets/images/usr_help_message.png" width=400>
@@ -328,7 +328,7 @@
 # Input Testing
 
 ### Random changing of letters and numbers plus
-### All these symbols wer tested as first char # ! @ # & ( ) – 
+### All these symbols were tested as first char # ! @ # & ( ) – 
 ### [ { } ] : ; ', ? / * and symbol characters ` ~ $ ^ + = < > “
 
 | Test Item          | Method |  Input details | Desired Result                          | Result     | Pass |
@@ -358,7 +358,7 @@
 | Command Line Input | Input  |      A=01      | Error message displayed                 | As desired | Yes  |
 
 ### Random changing of letters and numbers plus
-### All these symbols wer tested as third char # ! @ # & ( ) – 
+### All these symbols were tested as third char # ! @ # & ( ) – 
 ### [ { } ] : ; ', ? / * and symbol characters ` ~ $ ^ + = < > “ 
 
 
@@ -375,7 +375,7 @@
 
 
 ### Random changing of letters and numbers plus
-### All these symbols wer tested as fourth char # ! @ # & ( ) – 
+### All these symbols were tested as fourth char # ! @ # & ( ) – 
 ### [ { } ] : ; ', ? / * and symbol characters ` ~ $ ^ + = < > “ 
 
 | Test Item          | Method |  Input details | Desired Result                          | Result     | Pass |
@@ -392,7 +392,7 @@
 ### The error above was fixed by adding code to catch a double 00 input. 
 
 ### Random changing of letters and numbers plus
-### All these symbols wer tested as end_game and help char # ! @ # & ( ) – 
+### All these symbols were tested as end_game and help char # ! @ # & ( ) – 
 ### [ { } ] : ; ', ? / * and symbol characters ` ~ $ ^ + = < > “ 
 
 | Test Item          | Method |  Input details | Desired Result                           | Result     | Pass |
@@ -534,18 +534,22 @@ At the time of creation, the PEP8 online Python validation website was inoperati
 - Pylint 
 
 
-## Gsheets
-- Gsheets is installed and configured saving timer information. A creds.json file was created amd confogured to work with the Gsheets API and github.    
-
-
 
 ## Future Devolopment
-- Score keeping
+- Change board sizes
 - User name and password
-- Timer
-- Change board sizes 
+-  ~~ Score keeping ~~ 
+- ~~ Timer ~~
 
-## A timer was added to allow for a more competivive experience. 
+## A timer was added to allow for a more competitive experience. 
+- The time will be displayed when the user is finished the game. 
+
+## Gsheets
+- Gsheets is installed and configured for saving timer information. A creds.json file was created and configured to work with the Gsheets API and github. Score data is stored in column 1 of Gsheets and new user scores are added at the end of the game. This date is then pulled to the program it is indexed, and sorted. The new user score is compared to the list and a rank is obtained. This is then displayed to the user at the end of the game.
+
+<figure>
+  <img src="assets/images/winner.png" width=300>
+</figure>
 
 
 ## Deployment
@@ -582,6 +586,7 @@ At the time of creation, the PEP8 online Python validation website was inoperati
 
 
 ## Special Thanks
-- Thanks to Gareth McGirr Mentor 
-- Thanks to Paul Thomas O’Riordan (The Facilitator)                         
+- Thanks to Gareth McGirr Mentor.
+- Thanks to Paul Thomas O’Riordan (The Facilitator).
+- Special Thanks to Molly Papas Gleeson (16 Years) for proofreading.                        
 

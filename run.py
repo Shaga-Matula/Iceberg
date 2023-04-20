@@ -74,11 +74,11 @@ def print_rules():  # Rules of the game
         print("  The object of the game is to destroy 3 Icebergs to clear a")
         print("  path for your ship to cross, but! It's foggy and you cannot ")
         print("  see, fortunately the sea is flat as a pancake and you can")
-        print("  hear the soundof dripping water as the icebergs melt.")
+        print("  hear the sound of dripping water as the icebergs melt.")
         print("  'It's so quiet' you hear the first mate say,'It's so quiet'.")
         print("\n  Use this tranquility to your advantage, your crew will")
         print("  listen out for the sound of ice crushing under the ")
-        print("  weight your torpedoesas as you hunt in the fog for")
+        print("  weight of your torpedoes as you hunt in the fog for")
         print("  the ICEBERG's")
         input("\n \n  Press Enter to continue." + Style.RESET_ALL)
         os.system('cls' if os.name == 'nt' else 'clear')
@@ -404,7 +404,7 @@ def check_hits():  # User experience feedback
 
     if user_number in direct_hit_list:
         os.system('cls' if os.name == 'nt' else 'clear')
-        print("Its a hit Captain, its a hit!!, you smashed an Iceberg captain")
+        print("\n\n Its a hit Captain, its a hit!!, you've smashed an Iceberg captain")
         input("\n \n Press Enter to continue.")
         hit_list.append(user_number)
         #  ######################### Reveal if correct ######################
@@ -431,7 +431,7 @@ def check_hits():  # User experience feedback
     elif user_number in tree_icebergs:
         os.system('cls' if os.name == 'nt' else 'clear')
         print("\n\n\n\n\n Youv'e cliped one Captain its a near hit!!!")
-        print("\n Your close to a Iceberg Captain")
+        print("\n You're close to a Iceberg Captain")
         input("\n \n Press Enter to continue.")
         very_near.append(user_number)
         user_shot_taken.append(user_number)
