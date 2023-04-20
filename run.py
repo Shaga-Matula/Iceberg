@@ -439,7 +439,7 @@ def check_hits():  # User experience feedback
         miss_var.append(user_number)
         user_shot_taken.append(user_number)
 
-    if (len(hit_list) == 3):  # Here we can update the spreadsheet with time
+    if (len(hit_list) == 3):  # Winner will call calculate_score()
         os.system('cls' if os.name == 'nt' else 'clear')
         print("\n\n\n\n\n You did it Captain, You did it, were saved ")
         print(" \n         Congratulations You WON!!!!!!!\n\n")

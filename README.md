@@ -51,9 +51,10 @@
 
 3.  [Testing](#testing)
     1. [Manual Testing](#manual-testing)
-    2. [Cell Functionality](#cell-functionality)
-    3. [Input Testing](#input-testing)
-    4. [PEP8 Validation](#pep8-validation)
+    2. [Actual Gameplay Testing](#Actual-Gameplay-Testing)
+    3. [Cell Functionality](#cell-functionality)
+    4. [Input Testing](#input-testing)
+    5. [PEP8 Validation](#pep8-validation)
 4.  [Bugs](#bugs-and-fixes)
     1. [DRY](#dry)
 
@@ -140,7 +141,7 @@
 <img src="assets/images/clipped.png" width=400>
 </figure>
 
-### Icebergs take up 9 spaces, X in middle, surrounded by 1's 
+### Icebergs take up 9 spaces, the centre is marked by an X in middle, surrounded by 1's 
 
 <figure>
 <img src="assets/images/dir_hit.png" width=400>
@@ -196,7 +197,7 @@
 
 # Error Catching
 
-### A great deal of the project has been devoted to error catching from the user input. This is a complex procedure attempting to catch all input from the user, checking the input is valid.
+ ### A great deal of the project has been devoted to error catching from the user input. This is a complex procedure attempting to catch all input from the user, checking the input is valid. Please note that the text in some of the messages have changed due to line width restrictions. 
 
 ## Error catch 1. (Help function)
 ### Error catch 1, will watch for user input and compare it to 'help' function. This will display a message informing the user that they will be brought to the help file and then returned to the game. 
@@ -306,7 +307,7 @@
 
 ## Manual Testing
 
-### Gameplay Testing
+### Actual Gameplay Testing
 - Actual gameplay test was performed by the Gleeson family team. Over 100 games were played successfully with no errors. Reports from the testers were very positive, especially when the timer and score rank were implemented. Users reported a good feel and fun story with exciting gameplay. The game passed the "Tested by Teenagers" test which is highly revered in the teenage testing scene (so my daughter told me). 
 
 <figure>
@@ -549,13 +550,15 @@ At the time of creation, the PEP8 online Python validation website was inoperati
 ## Future Devolopment
 - Change board sizes
 - User name and password
--  ~~ Score keeping ~~ 
-- ~~ Timer ~~
+-  ~~Score keeping~~ 
+- ~~Timer~~
 
-## A timer was added to allow for a more competitive experience. 
-- The time will be displayed when the user is finished the game. 
+### Timer 
+- Timer was added to allow for a better user experience. The time will be displayed when the user is finished the game. The timer values are set to display in minutes and second giving the user a game with more of a competitive feel.  
 
-## Gsheets
+
+
+## Gsheets Scores
 - Gsheets is installed and configured for saving timer information. A creds.json file was created and configured to work with the Gsheets API and github. Score data is stored in column 1 of Gsheets and new user scores are added at the end of the game. This date is then pulled to the program it is indexed, and sorted. The new user score is compared to the list and a rank is obtained. This is then displayed to the user at the end of the game.
 
 <figure>
