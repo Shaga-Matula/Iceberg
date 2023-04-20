@@ -36,7 +36,7 @@ grids_sheet = SHEET.worksheet('grid')
 
 # Inform user of bad connection to gsheets
 try:
-    if SHEET.worksheet('grid....!!!fjs'):
+    if SHEET.worksheet('grid'):
         print("Connect to Gsheets OK!!! ")
         input("\n\n       Press Enter to continue.")
 except gspread.exceptions.GSpreadException as e:

@@ -306,6 +306,13 @@
 
 ## Manual Testing
 
+### Gameplay Testing
+- Actual gameplay test was performed by the Gleeson family team. Over 100 games were played successfully with no errors. Reports from the testers were very positive, especially when the timer and score rank were implemented. Users reported a good feel and fun story with exciting gameplay. The game passed the "Tested by Teenagers" test which is highly revered in the teenage testing scene (so my daughter told me). 
+
+<figure>
+<img src="assets/images/games_played.png" width=700>
+</figure>
+
 ### Cell Functionality 
 
 | Test Item          | Method |  Input details | Desired Result                          | Result     | Pass |
@@ -326,6 +333,10 @@
 ### All 200 cells were tested for functionality, from A:01 to J:20 with no errors.
 
 # Input Testing
+
+<figure>
+<img src="assets/images/testinginput.png" width=200>
+</figure>
 
 ### Random changing of letters and numbers plus
 ### All these symbols were tested as first char # ! @ # & ( ) – 
