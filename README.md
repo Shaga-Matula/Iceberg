@@ -556,13 +556,15 @@ At the time of creation, the PEP8 online Python validation website was inoperati
 ### Timer 
 - Timer was added to allow for a better user experience. The time will be displayed when the user is finished the game. The timer values are set to display in minutes and second giving the user a game with more of a competitive feel.  
 
-
+<figure>
+  <img src="assets/images/winner.png" width=300>
+</figure>
 
 ## Gsheets Scores
 - Gsheets is installed and configured for saving timer information. A creds.json file was created and configured to work with the Gsheets API and github. Score data is stored in column 1 of Gsheets and new user scores are added at the end of the game. This date is then pulled to the program it is indexed, and sorted. The new user score is compared to the list and a rank is obtained. This is then displayed to the user at the end of the game.
 
 <figure>
-  <img src="assets/images/winner.png" width=300>
+  <img src="assets/images/gsheet.png" width=75>
 </figure>
 
 

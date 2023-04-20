@@ -464,7 +464,7 @@ def calculate_score():
         print(f"\n Your time was {elapsed_time} Captain\n\n")
         input(" Press Enter to continue.")
 
-        scors_list = [] # Call first 10 cells
+        scors_list = []  # Call first 10 cells
         for cell in grids_sheet.range('A1:A10'):
             scors_list.append(cell.value)
         
@@ -476,6 +476,7 @@ def calculate_score():
         scors_list.sort()  # Index the list and compair user time
         index = scors_list.index(scors_compair[0])
         print(f"\n You are ranked number {index + 1} in the score list")
+        print(f"\n Well done captain ")
         input("\n Press enter to continue")
     else:
         print("Gsheets unavailable")
