@@ -8,7 +8,7 @@ for Code Instatute By Paul Gleeson 21/04/2023
 import json
 import gspread
 from google.oauth2.service_account import Credentials
-
+import math
 
 # Import for screen refresh
 import os
@@ -32,12 +32,13 @@ CREDS = Credentials.from_service_account_info(creds)
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("Iceberg")
-data = []
 grids_sheet = SHEET.worksheet('grid')
-data = grids_sheet.get_all_values()
-print(data)
-data_2 = for num in data   https://www.youtube.com/watch?v=OZDGVTmQ45Q&ab_channel=LearnGoogleSheets%26ExcelSpreadsheets
-grids_sheet.append_row(data_2)
+# grids_sheet = SHEET.worksheet('grid')
+# data = ()
+# print(data)
+# data_2 = [int(num) for num in data]
+# print(data_2)
+# grids_sheet.append_row(data_2)
 
 # Inform user of bad connection to gsheets
 try:
@@ -441,17 +442,20 @@ def check_hits():  # User experience feedback
         miss_var.append(user_number)
         user_shot_taken.append(user_number)
 
-    if (len(hit_list) == 3):# Here we can update the spreadsheet with time
+    if (len(hit_list) == 3):  # Here we can update the spreadsheet with time
         os.system('cls' if os.name == 'nt' else 'clear')
         print("\n\n\n\n\n You did it Captain, You did it, were saved ")
         print(" \n         Congratulations You WON!!!!!!!\n\n")
-        elapsed_time = time.time() - start_time # Calculate time spent
+        elapsed_time = time.time() - start_time  # Calculate time spent
+
         # Here we can update the spreadsheet with time spent
-        grids_sheet.append_row(elapsed_time)
-        print("Updating Gsheets .... ")
+        elapsed_time = time.time() - start_time
+        users_time_score = [elapsed_time]
+        grids_sheet.append_row(users_time_score)
+        print("\n Updating Gsheets .... ")
         elapsed_time = time.strftime(
             "%M Min and %S Sec", time.gmtime(elapsed_time)
-        )
+        )  # Format time for display
         print(f" Your time was {elapsed_time} Captain\n\n")
         input(" Press Enter to continue.")
 
