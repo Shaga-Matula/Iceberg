@@ -33,16 +33,10 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open("Iceberg")
 grids_sheet = SHEET.worksheet('grid')
-# grids_sheet = SHEET.worksheet('grid')
-# data = ()
-# print(data)
-# data_2 = [int(num) for num in data]
-# print(data_2)
-# grids_sheet.append_row(data_2)
 
 # Inform user of bad connection to gsheets
 try:
-    if SHEET.worksheet('grid'):
+    if SHEET.worksheet('grid....!!!fjs'):
         print("Connect to Gsheets OK!!! ")
         input("\n\n       Press Enter to continue.")
 except gspread.exceptions.GSpreadException as e:
@@ -398,6 +392,9 @@ translates to board
 
 
 def check_hits():  # User experience feedback
+    """
+    This function calculates hit and misses
+    """
     usr_input = get_user_input()
     if usr_input == "error":
         usr_input = ""
@@ -446,22 +443,45 @@ def check_hits():  # User experience feedback
         os.system('cls' if os.name == 'nt' else 'clear')
         print("\n\n\n\n\n You did it Captain, You did it, were saved ")
         print(" \n         Congratulations You WON!!!!!!!\n\n")
-        elapsed_time = time.time() - start_time  # Calculate time spent
+        calculate_score()
 
+
+def calculate_score(): 
+    """
+    This function calculates the user time and rank
+    using Gsheets. 
+
+    """       
+    if SHEET.worksheet('grid'):
+        elapsed_time = time.time() - start_time  # Calculate time spent
         # Here we can update the spreadsheet with time spent
-        elapsed_time = time.time() - start_time
         users_time_score = [elapsed_time]
         grids_sheet.append_row(users_time_score)
         print("\n Updating Gsheets .... ")
         elapsed_time = time.strftime(
             "%M Min and %S Sec", time.gmtime(elapsed_time)
         )  # Format time for display
-        print(f" Your time was {elapsed_time} Captain\n\n")
+        print(f"\n Your time was {elapsed_time} Captain\n\n")
         input(" Press Enter to continue.")
 
+        scors_list = [] # Call first 10 cells
+        for cell in grids_sheet.range('A1:A10'):
+            scors_list.append(cell.value)
+        
+        for element in users_time_score:
+            scors_compair = []
+            scors_list.append(str(element))
+            scors_compair.append(str(element))
+
+        scors_list.sort()  # Index the list and compair user time
+        index = scors_list.index(scors_compair[0])
+        print(f"\n You are ranked number {index + 1} in the score list")
+        input("\n Press enter to continue")
+    else:
+        print("Gsheets unavailable")
+        
 
 create_game_board()
-
 
 def main():
     print_rules()
@@ -469,6 +489,6 @@ def main():
     create_game_board()
     check_hits()
     main()
-
-
+    
+    
 main()
