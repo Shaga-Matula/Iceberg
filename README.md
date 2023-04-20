@@ -18,6 +18,9 @@
 
 ### Iceberg is a game of cunning and guile for one player, with an estimated play time of 15 minutes. The object of the game is to destroy 3 Icebergs to clear a path for your ship to cross. The game is controlled by inputting coordinates to smash 3 virtual hidden Icebergs. 
 
+- New features 
+- Timer and user rank were added, a timer has been added and the users time to play the game is stored in gsheets. This is then compaired with the last 10
+
 ## README Table Content
 
 1.  [Introduction](#Introduction)
@@ -57,6 +60,10 @@
     5. [PEP8 Validation](#pep8-validation)
 4.  [Bugs](#bugs-and-fixes)
     1. [DRY](#dry)
+    2  [Border bug](#Border-bug)
+    3. [Grid Error](#Grid-error)
+    4. [Pylint Errors](#Pylint-Errors)
+    5. [Code error](#Code-error)
 
 <hr style="border:1px solid white">
 
@@ -484,7 +491,7 @@ At the time of creation, the PEP8 online Python validation website was inoperati
   <img src="assets/images/grid_fix.png" width=150>
 </figure>
 
-## Pylint
+## Pylint Errors
 
 ### Fixed 15 comment errors due to spacing. Eg #comment to # comment 
 
@@ -501,7 +508,8 @@ At the time of creation, the PEP8 online Python validation website was inoperati
 ### Fix: -Mentor Gareth McGirr pointed me in the right direction. Print statements can be broken to reduce line length. 
 
 
-### Code error below was highlighted by Pylint as incorrect. There were 3 instances that need correcting. 
+### Code error 
+- The below error was highlighted by Pylint as incorrect. There were 3 instances that need correcting. 
 
 <figure>
   <img src="assets/images/pylint.png" width=350>
@@ -522,7 +530,9 @@ At the time of creation, the PEP8 online Python validation website was inoperati
 
 ### The flow diagram was created with lucidchart which give the basic structure of the code direction.
 
-### Flowchart
+## Flowchart
+- This flow chat was instrumental in creating this program; it maps the general flow of information and data through the processes and creates a logic map of where code should be implemented. It is essential to the project and for me is also the first step. 
+
 
 
 <figure>
@@ -576,11 +586,20 @@ At the time of creation, the PEP8 online Python validation website was inoperati
 4. Choose an app name and your region and click "Create App". Note: the app name must be unique.
 5. Go to the "Settings" tab, add the python build pack and then the node.js build pack. This is to ensure the project functions correctly with the Code Institute pre-installed template.
 6. Create a "Config VAR" with the 'CREDS' key and the enter the value of the creds.json file.
+
+<figure>
+  <img src="assets/images/CREDS.JSON.png" width=75>
+</figure>
+
+
 7. Create a second "Config VAR" with the key of 'PORT' and value of '8000'
 8. Go to the "Deploy" tab and pick GitHub as a deployment method.
 9. Search for a repository to connect to.
 10. Click enable automatic deploys and then deploy branch.
 11. Wait for the app to build and then click on the "View" link.
+
+
+
 
 - You can clone the repository by following these steps:
 1. Go to the GitHub repository.
