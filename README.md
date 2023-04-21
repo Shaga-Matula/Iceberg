@@ -60,10 +60,11 @@
     5. [PEP8 Validation](#pep8-validation)
 4.  [Bugs](#bugs-and-fixes)
     1. [DRY](#dry)
-    2  [Border bug](#Border-bug)
+    2. [Border bug](#Border-bug)
     3. [Grid Error](#Grid-error)
     4. [Pylint Errors](#Pylint-Errors)
     5. [Code error](#Code-error)
+    6. [Remaining warnings](#Remaining-warnings)
 
 <hr style="border:1px solid white">
 
@@ -530,8 +531,10 @@ At the time of creation, the PEP8 online Python validation website was inoperati
 
 ### The flow diagram was created with lucidchart which give the basic structure of the code direction.
 
+<hr style="border:1px solid white">
+
 ## Flowchart
-- This flow chat was instrumental in creating this program; it maps the general flow of information and data through the processes and creates a logic map of where code should be implemented. It is essential to the project and for me is also the first step. 
+- This flow chart was instrumental in creating this program; it maps the general flow of information and data through the processes and creates a logic map of where code should be implemented. It is essential to the project and for me is also the first step. 
 
 
 
@@ -578,6 +581,8 @@ At the time of creation, the PEP8 online Python validation website was inoperati
 </figure>
 
 
+
+## 
 ## Deployment
 - Use the following steps to deploy the poject to Heroku:
 1. Use the "pip freeze -- local > requirements.txt" command in the gitPod terminal; to save any libraries that need to be installed to the project files in Heroku.
