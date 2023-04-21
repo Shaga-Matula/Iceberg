@@ -237,6 +237,9 @@ user_shot_taken = []
 
 
 def error_1(chestnut):  # Prints out user errors
+    """
+    This function prints the error messages on screen
+    """
     os.system('cls' if os.name == 'nt' else 'clear')
     print("\n\n")
     print(chestnut)
@@ -409,7 +412,8 @@ def check_hits():  # User experience feedback
         #  ######################### Reveal if correct ######################
 
         # Note DRY
-        
+
+
         if user_number in iceberg_one:  # If user hits iceberg
             del iceberg_one[0]          # reveal surounding
             for element in iceberg_one:
