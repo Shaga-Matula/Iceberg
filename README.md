@@ -65,6 +65,16 @@
     4. [Pylint Errors](#Pylint-Errors)
     5. [Code error](#Code-error)
     6. [Remaining warnings](#Remaining-warnings)
+5.  [Acknowledgements](#Acknowledgements)
+    1. [Languages](#Languages)
+    2. [Frameworks & Tools](#Frameworks-&-Tools)
+    3. [Future Devolopment](#Future-Devolopment)
+        1. [Timer](#Timer)
+        2. [Gsheets Scores](#Gsheets-Scores)
+        3. [Gsheets Exception](#Gsheets-Exception)
+    4. [Deployment](#Deployment)
+    5. [Credits](#Credits)
+
 
 <hr style="border:1px solid white">
 
@@ -574,15 +584,22 @@ At the time of creation, the PEP8 online Python validation website was inoperati
 </figure>
 
 ## Gsheets Scores
-- Gsheets is installed and configured for saving timer information. A creds.json file was created and configured to work with the Gsheets API and github. Score data is stored in column 1 of Gsheets and new user scores are added at the end of the game. This date is then pulled to the program it is indexed, and sorted. The new user score is compared to the list and a rank is obtained. This is then displayed to the user at the end of the game.
+- Gsheets is installed and configured for saving timer information. A creds.json file was created and configured to work with the Gsheets API and github. Score data is stored in column 1 of Gsheets and new user scores are added at the end of the game. This data is then pulled to the program it is then indexed, and sorted. The new user score is compared to the list and a rank is obtained. This is then displayed to the user at the end of the game.
 
 <figure>
   <img src="assets/images/gsheet.png" width=75>
 </figure>
 
+## Gsheets Exception
+- When the program starts an attempt to make a connection to Gsheets is performed. In order to catch and the error's a Try Except approach was used. The program will generate an error if there is no connection and alert to the user. The user is informed that they can play the game but no rank can be given. 
+
+<figure>
+  <img src="assets/images/exception_error.png" width=125>
+</figure>
 
 
-## 
+<hr style="border:1px solid white">
+
 ## Deployment
 - Use the following steps to deploy the poject to Heroku:
 1. Use the "pip freeze -- local > requirements.txt" command in the gitPod terminal; to save any libraries that need to be installed to the project files in Heroku.
@@ -606,14 +623,16 @@ At the time of creation, the PEP8 online Python validation website was inoperati
 
 
 
-- You can clone the repository by following these steps:
-1. Go to the GitHub repository.
+- Clone the repository by following these steps:
+1. Navigate GitHub repository.
 2. Locate the Code button above the list of files and click it.
 3. Select if you prefer to clone using HTTPS, SSH, or Github CLI and click the copy button to copy the URL to your clipboard.
 4. Open Git Bash.
 5. Change the current working directory to the one where you want the cloned directory.
 6. Type git clone and paste the URL from the clipboard ($ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY).
 7. Press Enter to create your local clone.
+
+<hr style="border:1px solid white">
 
 ## Credits
 - Thanks to Gareth McGirr Mentor for help and advice
