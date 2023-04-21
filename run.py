@@ -4,19 +4,17 @@ for Code Instatute By Paul Gleeson 21/04/2023
 """
 
 # Gsheets and Json credintial file.
-# import gspread
-import json
-import gspread
-from google.oauth2.service_account import Credentials
-import math
+# importing the random module
 
-# Import for screen refresh
-import os
+
+import random
+import os  # Import for screen refresh
+import json
 # Import for timer
 import time
+import gspread
+from google.oauth2.service_account import Credentials
 
-# importing the random module
-import random
 
 # Imports colored print
 from colorama import Fore, Style
@@ -184,9 +182,9 @@ doit = "notdone"
 
 def calculate_iceberg_squares():
     """
-    This function will pick a random number between 1,200 that is not in
-    the excluded list andreturn the value of 3 sets of 9 numbers
-    representing the icebergs
+    This function will pick a random number between 1 and 200 that is not in
+    the excluded list and return the value of 3 sets of 9 numbers
+    Representing the icebergs
     """
     global doit
     if doit == ("notdone"):
@@ -211,9 +209,9 @@ def calculate_iceberg_squares():
             excluded_numbers.extend(tree_icebergs)
             excluded_numbers.extend(outer_numbers)
 
-        # ########## seperate Iceburgs for reveal ################
+        # ########## Separate Icebergs for reveal ################
 
-        # note to shorten code below repetitive, if time.
+        # Note DRY if time
             if x == 1:
                 iceberg_one.append(num)
                 for element in ice_burg_container:
@@ -248,7 +246,7 @@ def error_1(chestnut):  # Prints out user errors
 
 def get_user_input():
     """
-    This function valadates the input data from the user.
+     This function validates the input data from the user.
     """
     chestnut = []
     allowed_letters = "abcdefghijABCDEFGHIJ"
@@ -362,8 +360,8 @@ dict_1 = {}
 
 def translate_user_input(user_input):
     """
-This function compaires the user input to its coradnents and
-translates to board
+This function compares the user input to its coordinates and
+translates it to board grid.. A:01 = 01 B:01 = 02 and so on.
 """
     letters = []
     for i in range(97, 107):
@@ -374,7 +372,7 @@ translates to board
         for i in range(len(numbers)):
             if numbers[i] <= 9:
                 numbers[i] = str(numbers[i]).zfill(2)  # Adds leading zero to
-        # Set format of string eg b:12
+        # Set format of string eg b:02
         final = []
         i = 0
         for i in (numbers):
@@ -410,8 +408,8 @@ def check_hits():  # User experience feedback
         hit_list.append(user_number)
         #  ######################### Reveal if correct ######################
 
-        # note to shorten code below repetitive, if time.
-
+        # Note DRY
+        
         if user_number in iceberg_one:  # If user hits iceberg
             del iceberg_one[0]          # reveal surounding
             for element in iceberg_one:
@@ -447,12 +445,12 @@ def check_hits():  # User experience feedback
         calculate_score()
 
 
-def calculate_score(): 
+def calculate_score():
     """
     This function calculates the user time and rank
-    using Gsheets. 
+    using Gsheets.
 
-    """       
+    """
     if SHEET.worksheet('grid'):
         elapsed_time = time.time() - start_time  # Calculate time spent
         # Here we can update the spreadsheet with time spent
@@ -468,7 +466,7 @@ def calculate_score():
         scors_list = []  # Call first 10 cells
         for cell in grids_sheet.range('A1:A10'):
             scors_list.append(cell.value)
-        
+
         for element in users_time_score:
             scors_compair = []
             scors_list.append(str(element))
@@ -477,7 +475,7 @@ def calculate_score():
         scors_list.sort()  # Index the list and compair user time
         index = scors_list.index(scors_compair[0])
         print(f"\n You are ranked number {index + 1} in the score list")
-        print(f"\n Well done captain ")
+        print("\n Well done captain ")
         input("\n Press enter to continue")
     else:
         print("Gsheets unavailable")
